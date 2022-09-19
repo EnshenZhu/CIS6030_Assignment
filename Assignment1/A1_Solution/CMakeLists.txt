@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(A1_Solution
         main.cpp
-        library/databaseComponents.cpp library/databaseComponents.h)
+        library/databaseComponents.cpp
+        library/databaseComponents.h)

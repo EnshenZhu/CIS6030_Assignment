@@ -1,0 +1,5 @@
+# ninja log v5
+16	648	6853177930366797	build.ninja	f4bf13fc992888bc
+3	2151	6853189744057847	CMakeFiles/A1_Solution.dir/main.cpp.obj	8f13c116c3a9e7b4
+23	2175	6853189744167807	CMakeFiles/A1_Solution.dir/library/databaseComponents.cpp.obj	44175fc50c25a25f
+2175	2438	6853189747138199	A1_Solution.exe	f4143a50871969cd

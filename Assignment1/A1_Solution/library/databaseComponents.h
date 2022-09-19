@@ -6,21 +6,22 @@
 #define A1_SOLUTION_DATABASECOMPONENTS_H
 
 #include <vector>
+using namespace std;
 
-class Record {
+struct Record {
 public:
     string field1;
     string field2;
     string field3;
     int endIndexField2;
 
-    Record(string aField1,string aField2,string aField3);
+    Record(string aField1, string aField2, string aField3);
 };
 
-class Block {
-    vector records;
-    Block *nextBlock;
-};
+//class Block {
+//    vector records;
+//    Block *nextBlock;
+//};
 
 
 #endif //A1_SOLUTION_DATABASECOMPONENTS_H

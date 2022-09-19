@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/Guelph_Master/CIS6030$ Information$ System/Assignments/Assignment1/A1_Solution/cmake-build-debug/
+cmake_ninja_workdir = D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target A1_Solution
 
@@ -49,13 +49,13 @@ cmake_ninja_workdir = D$:/Guelph_Master/CIS6030$ Information$ System/Assignments
 
 build cmake_object_order_depends_target_A1_Solution: phony || CMakeFiles/A1_Solution.dir
 
-build CMakeFiles/A1_Solution.dir/main.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/Assignments/Assignment1/A1_Solution/main.cpp || cmake_object_order_depends_target_A1_Solution
+build CMakeFiles/A1_Solution.dir/main.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/main.cpp || cmake_object_order_depends_target_A1_Solution
   DEP_FILE = CMakeFiles\A1_Solution.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
   OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir
 
-build CMakeFiles/A1_Solution.dir/library/databaseComponents.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/Assignments/Assignment1/A1_Solution/library/databaseComponents.cpp || cmake_object_order_depends_target_A1_Solution
+build CMakeFiles/A1_Solution.dir/library/databaseComponents.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/library/databaseComponents.cpp || cmake_object_order_depends_target_A1_Solution
   DEP_FILE = CMakeFiles\A1_Solution.dir\library\databaseComponents.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
@@ -84,7 +84,7 @@ build A1_Solution.exe: CXX_EXECUTABLE_LINKER__A1_Solution_Debug CMakeFiles/A1_So
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Guelph_Master\CIS6030 Information System\Assignments\Assignment1\A1_Solution\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D "D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -95,7 +95,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Guelph_Master\CIS6030 Information System\Assignments\Assignment1\A1_Solution\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"D:\Guelph_Master\CIS6030 Information System\Assignments\Assignment1\A1_Solution" -B"D:\Guelph_Master\CIS6030 Information System\Assignments\Assignment1\A1_Solution\cmake-build-debug""
+  COMMAND = cmd.exe /C "cd /D "D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution" -B"D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -113,7 +113,7 @@ build A1_Solution: phony A1_Solution.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/Guelph_Master/CIS6030 Information System/Assignments/Assignment1/A1_Solution/cmake-build-debug
+# Folder: D:/Guelph_Master/CIS6030 Information System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug
 
 build all: phony A1_Solution.exe
 

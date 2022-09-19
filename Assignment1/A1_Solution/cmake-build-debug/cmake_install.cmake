@@ -1,4 +1,4 @@
-# Install script for directory: D:/Guelph_Master/CIS6030 Information System/Assignments/Assignment1/A1_Solution
+# Install script for directory: D:/Guelph_Master/CIS6030 Information System/CIS6030_Assignment/Assignment1/A1_Solution
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Guelph_Master/CIS6030 Information System/Assignments/Assignment1/A1_Solution/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Guelph_Master/CIS6030 Information System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
