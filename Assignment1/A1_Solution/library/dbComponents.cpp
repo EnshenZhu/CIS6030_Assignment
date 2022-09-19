@@ -2,7 +2,7 @@
 // Created by winni on 2022-09-19.
 //
 # include <iostream>
-# include "./databaseComponents.h"
+# include "./dbComponents.h"
 
 using namespace std;
 
@@ -14,4 +14,4 @@ Record::Record(string aField1,string aField2,string aField3) {
     endIndexField2 = field1.length() + field2.length();
 }
 
-#include "databaseComponents.h"
+#include "dbComponents.h"
