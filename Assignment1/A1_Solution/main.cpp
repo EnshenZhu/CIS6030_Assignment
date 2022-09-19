@@ -31,19 +31,27 @@ vector<Record> transferFileToRecord(string theRoute) {
 
     while (getline(readFILE, textInput)) {
         // Output the text from the file
-        allRecords.push_back(allRecords());
-        Record &currentRecord = allRecords.back();
-        currentRecord.field1 = textInput.substr(0, 9);
-        currentRecord.endIndexField2 = fieldTwoEndIdx(textInput);
-        currentRecord.field2 = textInput.substr(10, currentRecord.endIndexField2 - 10);
-        currentRecord.field3 = textInput.substr(currentRecord.endIndexField2 + 1);
+        allRecords.push_back(Record());
+        Record &newRecord = allRecords.back();
+
+        newRecord.endIndexField2 = fieldTwoEndIdx(textInput);
+
+        newRecord.field1 = textInput.substr(0, 9);
+        newRecord.field2 = textInput.substr(10, newRecord.endIndexField2 - 10);
+        newRecord.field3 = textInput.substr(newRecord.endIndexField2 + 1);
     }
+
+    return allRecords;
 }
 
 int main() {
     string FileRoute = "../assets/A1_data.txt";
-    transferFileToRecord(str
-    FileRoute);
+    vector<Record> meta = transferFileToRecord(FileRoute);
+
+//    cout<<meta[2].field1<<endl;
+//    cout<<meta[2].field2<<endl;
+//    cout<<meta[2].field3<<endl;
+
 
 
 //    char word[50];

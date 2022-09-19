@@ -8,20 +8,18 @@
 #include <vector>
 using namespace std;
 
-struct Record {
+class Record {
 public:
     string field1;
     string field2;
     string field3;
     int endIndexField2;
-
-    Record(string aField1, string aField2, string aField3);
 };
 
 class BlockListNode {
 
 public:
-    short static const maxCapacity=1025;
+    short static const maxCapacity=1024;
     short currentSize;
     BlockListNode *nextBlockNode;
 };
