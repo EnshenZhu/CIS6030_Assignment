@@ -61,8 +61,6 @@ int main() {
 //        readFILE >> word;
 //    }
 
-//    cout << "time space" << endl;
-
 
 //    Record record1("a", "b", "c");
 //
