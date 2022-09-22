@@ -48,9 +48,9 @@ int main() {
     string FileRoute = "../assets/A1_data.txt";
     vector<Record> meta = transferFileToRecord(FileRoute);
 
-//    cout<<meta[2].field1<<endl;
-//    cout<<meta[2].field2<<endl;
-//    cout<<meta[2].field3<<endl;
+    cout<<meta[2].field1<<endl;
+    cout<<meta[2].field2<<endl;
+    cout<<meta[2].field3<<endl;
 
 
 
@@ -61,7 +61,7 @@ int main() {
 //        readFILE >> word;
 //    }
 
-    cout << "time space" << endl;
+//    cout << "time space" << endl;
 
 
 //    Record record1("a", "b", "c");
