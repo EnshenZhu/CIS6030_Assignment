@@ -16,12 +16,13 @@ public:
     int endIndexField2;
 };
 
+// build a LinkedList for the Block Class
 class BlockListNode {
 
 public:
     short static const maxCapacity=1024;
     short currentSize;
-    BlockListNode *nextBlockNode;
+    BlockListNode *nextBlockNode= nullptr; // specify the next pointer
 };
 
 
