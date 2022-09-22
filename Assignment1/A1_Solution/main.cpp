@@ -6,10 +6,10 @@
 using namespace std;
 
 
-int fieldTwoEndIdx(string str) {
+int fieldTwoEndIdx(string aString) {
     int count = 3;
-    for (int idx = 0; idx < str.size(); idx++) {
-        if (isspace(str[idx])) {
+    for (int idx = 0; idx < aString.size(); idx++) {
+        if (isspace(aString[idx])) {
             count -= 1;
             if (count == 0) return idx;
         }
@@ -48,9 +48,9 @@ int main() {
     string FileRoute = "../assets/A1_data.txt";
     vector<Record> meta = transferFileToRecord(FileRoute);
 
-//    cout<<meta[2].field1<<endl;
-//    cout<<meta[2].field2<<endl;
-//    cout<<meta[2].field3<<endl;
+    cout<<meta[6].field1<<endl;
+    cout<<meta[6].field2<<endl;
+    cout<<meta[6].field3<<endl;
 
 
 
@@ -60,8 +60,6 @@ int main() {
 //        cout << word << " ";
 //        readFILE >> word;
 //    }
-
-    cout << "time space" << endl;
 
 
 //    Record record1("a", "b", "c");
