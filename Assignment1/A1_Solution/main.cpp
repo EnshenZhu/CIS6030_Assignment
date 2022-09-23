@@ -1,5 +1,5 @@
 #include <iostream>
-#include "library/dbComponents.h"
+#include "dblibrary/dbComponents.h"
 #include <fstream>
 #include <cstdlib>
 

@@ -5,5 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(A1_Solution
         main.cpp
-        library/dbComponents.cpp
-        library/dbComponents.h)
+        dblibrary/dbComponents.cpp
+        dblibrary/dbComponents.h)
