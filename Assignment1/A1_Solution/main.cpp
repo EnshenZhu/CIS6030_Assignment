@@ -2,6 +2,7 @@
 #include "dblibrary/dbComponents.h"
 #include <fstream>
 #include <cstdlib>
+#include <algorithm>  // implement sorting
 
 using namespace std;
 
@@ -45,12 +46,24 @@ vector<Record> transferFileToRecord(string theRoute) {
 }
 
 int main() {
+    // config the raw input data location
     string FileRoute = "../assets/A1_data.txt";
-    vector<Record> meta = transferFileToRecord(FileRoute);
+    vector<Record> metaRecord = transferFileToRecord(FileRoute);
 
-    cout<<meta[7].field1<<endl;
-    cout<<meta[7].field2<<endl;
-    cout<<meta[7].field3<<endl;
+    // sorting all records base on their field 1
+    sort(metaRecord.begin(),
+         metaRecord.end(),
+         [](const Record &lhs, const Record &rhs) {
+             return lhs.field1 < rhs.field1;
+         });
+
+    cout << metaRecord[7].field1 << endl;
+    cout << metaRecord[7].field2 << endl;
+    cout << metaRecord[7].field3 << endl;
+
+
+
+//    vector<BlockNode> metaBlock;
 
 
 
