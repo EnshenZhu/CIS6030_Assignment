@@ -100,7 +100,7 @@ int main() {
     cout << "This script is going to create " << totalNumOfRecords << " records." << endl;
     cout << "The total size of all records are " << sizeOfAllData << " bytes." << endl;
 
-    vector<BlockNode> metaBlock=storeRecordPointersToBlocks(totalNumOfRecords,metaRecord);
+//    vector<BlockNode> metaBlock=storeRecordPointersToBlocks(totalNumOfRecords,metaRecord);
 
 
 //    vector<BlockNode> metaBlock;
