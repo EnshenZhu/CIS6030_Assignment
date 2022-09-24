@@ -52,6 +52,7 @@ vector<Record> transferFileToRecord(string theRoute) {
     return allRecords;
 }
 
+// start from here!!!
 vector<BlockNode> storeRecordPointersToBlocks(int numsOfRecords,Record allRecords) {
 
 

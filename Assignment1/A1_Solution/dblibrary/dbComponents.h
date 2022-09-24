@@ -26,17 +26,15 @@ class BlockNode {
 public:
     short static const maxCapacity = 1024;
     short static const miscSize = 2; // default miscellaneous size of a block
-    short currentSize;
+    short currentSize();
     BlockNode *nextBlockNode = nullptr; // specify the next pointer for the next block node
 
     // each block has a vector list to store all pointers
-//    vector<Record *> pointerOfRecords; // 3) should I write like this?
+    // vector<Record *> pointerOfRecords; // 3) should I write like this?
 
     vector<short> startPositionOfEachRecord; // recall that each <short> element takes two bits
     string recordContent;
-    short numsOfRecords;
-
-    // currentSize=recordContent.size+startPositionOfEachRecord.size*2+miscSize !!!!!
+    short numsOfRecords();
 };
 
 
