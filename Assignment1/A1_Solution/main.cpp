@@ -6,6 +6,13 @@
 
 using namespace std;
 
+int getSizeOfAllData(int numsOfRecords, vector<Record> allRecords) {
+    int totalSize = 0;
+    for (int idx = 0; idx < numsOfRecords; idx++) {
+        totalSize += allRecords[idx].getRecordSize();
+    }
+    return totalSize;
+}
 
 int fieldTwoEndIdx(string aString) {
     int count = 3;
@@ -45,6 +52,26 @@ vector<Record> transferFileToRecord(string theRoute) {
     return allRecords;
 }
 
+vector<BlockNode> storeRecordPointersToBlocks(int numsOfRecords,Record allRecords) {
+
+
+    vector<BlockNode> allBlocks; // create a vector of records
+
+    for (int idx=0;idx<numsOfRecords;idx++){
+
+        // 1) should I do the following?
+        // create a new block node
+
+        // while the block is not full after putting into a new record
+        // append the pointer of the record to the block
+
+        // Recall that each records inside one block need a
+
+        // 2) But how could me so later insertion and deletion
+    }
+    return allBlocks;
+}
+
 int main() {
     // config the raw input data location
     string FileRoute = "../assets/A1_data.txt";
@@ -57,10 +84,22 @@ int main() {
              return lhs.field1 < rhs.field1;
          });
 
-    cout << metaRecord[7].field1 << endl;
-    cout << metaRecord[7].field2 << endl;
-    cout << metaRecord[7].field3 << endl;
+    // get how many records in total that need to be store into blocks
+    int totalNumOfRecords = metaRecord.size();
 
+    //get the total size of all data in bytes
+    int sizeOfAllData = getSizeOfAllData(totalNumOfRecords, metaRecord);
+
+//    cout << metaRecord[7].field1 << endl;
+//    cout << metaRecord[7].field2 << endl;
+//    cout << metaRecord[7].field3 << endl;
+//
+//    cout << metaRecord[0].getRecordSize() << endl;
+
+    cout << "This script is going to create " << totalNumOfRecords << " records." << endl;
+    cout << "The total size of all records are " << sizeOfAllData << " bytes." << endl;
+
+    vector<BlockNode> metaBlock=storeRecordPointersToBlocks(totalNumOfRecords,metaRecord);
 
 
 //    vector<BlockNode> metaBlock;

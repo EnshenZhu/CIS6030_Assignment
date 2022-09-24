@@ -6,6 +6,9 @@
 
 using namespace std;
 
+short Record::getRecordSize() {
+    return this->field1.size()+this->field2.size()+this->field3.size();
+}
 
 
 
