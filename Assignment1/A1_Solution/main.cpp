@@ -1,5 +1,5 @@
 #include <iostream>
-#include "dblibrary/dbComponents.h"
+#include "db_library/dbComponents.h"
 #include <fstream>
 #include <cstdlib>
 #include <algorithm>  // implement sorting

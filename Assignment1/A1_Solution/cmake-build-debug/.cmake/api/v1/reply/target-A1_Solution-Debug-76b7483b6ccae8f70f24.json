@@ -56,7 +56,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				3
 			]
 		}
 	],
@@ -94,14 +95,16 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				3
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				2
+				2,
+				4
 			]
 		}
 	],
@@ -116,12 +119,23 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "dblibrary/dbComponents.cpp",
+			"path" : "db_library/dbComponents.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "dblibrary/dbComponents.h",
+			"path" : "db_library/dbComponents.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "BplusTree_library/BplusTree.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "BplusTree_library/BplusTree.h",
 			"sourceGroupIndex" : 1
 		}
 	],
