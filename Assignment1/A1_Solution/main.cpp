@@ -53,23 +53,58 @@ vector<Record> transferFileToRecord(string theRoute) {
 }
 
 // start from here!!!
-vector<BlockNode> storeRecordPointersToBlocks(int numsOfRecords,Record allRecords) {
-
+vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecords) {
 
     vector<BlockNode> allBlocks; // create a vector of records
 
-    for (int idx=0;idx<numsOfRecords;idx++){
+    int indexOfBlockNode = 0; // track the index of the Block Node
+    int indexOfRecord = 0; // track the index of the Record
+    short newRecordMiscSize = 2; // this is the extra default size when adding a new record into a block
 
-        // 1) should I do the following?
-        // create a new block node
+    while (indexOfRecord <= numsOfRecords) {
 
-        // while the block is not full after putting into a new record
-        // append the pointer of the record to the block
+        allBlocks.push_back(BlockNode());
+        BlockNode &newBlockNode = allBlocks.back();
+        newBlockNode.startPositionOfEachRecord.push_back(
+                0); // a new block will place the record started from the index=0 in the recordContent
 
-        // Recall that each records inside one block need a
+        while ((indexOfRecord <= numsOfRecords) &&
+               (newBlockNode.currentSize() + allRecords[indexOfRecord].getRecordSize() + newRecordMiscSize <=
+                newBlockNode.maxCapacity)) {  // we add another indexOfRecord <= numsOfRecords to prevent the over leak at the last block
 
-        // 2) But how could me so later insertion and deletion
+            string contentOfCurrentRecord = allRecords[indexOfRecord].field1 + allRecords[indexOfRecord].field2 +
+                                            allRecords[indexOfRecord].field3;
+            newBlockNode.recordContent.append(contentOfCurrentRecord); // add a new record to the block
+
+            int currentNumsOfRecordInTheBlock = newBlockNode.startPositionOfEachRecord.size(); // temporarily store the current numbers of records inside this block
+            newBlockNode.startPositionOfEachRecord.push_back(
+                    newBlockNode.startPositionOfEachRecord[currentNumsOfRecordInTheBlock - 1] +
+                    contentOfCurrentRecord.size()); // update the startPositionOfEachRecord
+
+            indexOfRecord += 1; // move to the next record
+
+        }
+
+//        cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
+//        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentSize() << endl;
+//        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.startPositionOfEachRecord[1])
+//             << endl;
+
+        indexOfBlockNode += 1; // move to the next node
+
     }
+
+
+    // 1) should I do the following?
+    // create a new block node
+
+    // while the block is not full after putting into a new record
+    // append the pointer of the record to the block
+
+    // Recall that each records inside one block need a
+
+    // 2) But how could me so later insertion and deletion
+
     return allBlocks;
 }
 
@@ -89,7 +124,7 @@ int main() {
     int totalNumOfRecords = metaRecord.size();
 
     //get the total size of all data in bytes
-    int sizeOfAllData = getSizeOfAllData(totalNumOfRecords, metaRecord);
+    int sizeOfAllRecord = getSizeOfAllData(totalNumOfRecords, metaRecord);
 
 //    cout << metaRecord[7].field1 << endl;
 //    cout << metaRecord[7].field2 << endl;
@@ -97,27 +132,30 @@ int main() {
 //
 //    cout << metaRecord[0].getRecordSize() << endl;
 
-    cout << "This script is going to create " << totalNumOfRecords << " records." << endl;
-    cout << "The total size of all records are " << sizeOfAllData << " bytes." << endl;
+    cout << "This script creates " << totalNumOfRecords << " records." << endl;
+    cout << "The total size of all records are " << sizeOfAllRecord << " bytes." << endl;
 
-//    vector<BlockNode> metaBlock=storeRecordPointersToBlocks(totalNumOfRecords,metaRecord);
+    vector<BlockNode> metaBlock = storeRecordToBlocks(totalNumOfRecords, metaRecord);
 
+//    vector<int> metaBlock={1,1,1};
 
-//    vector<BlockNode> metaBlock;
+    // get how many blocks we created
+    int totalNumOfBlock = metaBlock.size();
 
+    //get the total size of all data in bytes
+    int sizeOfAllBlock = totalNumOfBlock * 1024;
 
+    cout << "This script creates " << totalNumOfBlock << " blocks." << endl;
+    cout << "The total size of all blocks are " << sizeOfAllBlock << " bytes." << endl;
 
-//    char word[50];
-//    readFILE >> word;
-//    while (readFILE.good()) {
-//        cout << word << " ";
-//        readFILE >> word;
-//    }
+    cout << "The space usage rate is " << (sizeOfAllRecord + 0.0) / sizeOfAllBlock << endl;
 
+    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
+        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
+    }
+    cout << endl;
 
-//    Record record1("a", "b", "c");
-//
-//    cout << record1.endIndexField2 << endl;
+    cout << metaBlock[0].recordContent[0] << endl;
 
     return 0;
 }

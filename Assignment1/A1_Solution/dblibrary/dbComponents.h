@@ -32,7 +32,7 @@ public:
     // each block has a vector list to store all pointers
     // vector<Record *> pointerOfRecords; // 3) should I write like this?
 
-    vector<short> startPositionOfEachRecord; // recall that each <short> element takes two bits
+    vector<int> startPositionOfEachRecord; // recall that each <short> element takes two bits
     string recordContent;
     short numsOfRecords();
 };
