@@ -148,14 +148,17 @@ int main() {
     cout << "This script creates " << totalNumOfBlock << " blocks." << endl;
     cout << "The total size of all blocks are " << sizeOfAllBlock << " bytes." << endl;
 
-    cout << "The space usage rate is " << (sizeOfAllRecord + 0.0) / sizeOfAllBlock << endl;
+    cout << "The space usage rate is " << ((sizeOfAllRecord + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
 
-    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
-        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
-    }
-    cout << endl;
-
-    cout << metaBlock[0].recordContent[0] << endl;
+    // do validation printing
+//    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
+//        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
+//    }
+//    cout << endl;
+//
+//    cout << metaRecord[0].field3.size() << endl;
+//    cout << metaBlock[0].recordContent[55] << endl;
+    // end validation priting
 
     return 0;
 }
