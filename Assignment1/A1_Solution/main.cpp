@@ -44,22 +44,21 @@ vector<Record> transferFileToRecord(string theRoute) {
 
         newRecord.endIndexField2 = fieldTwoEndIdx(textInput);
 
-        newRecord.field1 = textInput.substr(0, 9);
-        newRecord.field2 = textInput.substr(10, newRecord.endIndexField2 - 10);
+        newRecord.field1 = textInput.substr(0, 10);
+        newRecord.field2 = textInput.substr(11, newRecord.endIndexField2 - 11);
         newRecord.field3 = textInput.substr(newRecord.endIndexField2 + 1);
     }
 
     return allRecords;
 }
 
-// start from here!!!
+// store records into blocks
 vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecords) {
 
     vector<BlockNode> allBlocks; // create a vector of records
 
     int indexOfBlockNode = 0; // track the index of the Block Node
     int indexOfRecord = 0; // track the index of the Record
-    short newRecordMiscSize = 2; // this is the extra default size when adding a new record into a block
 
     while (indexOfRecord <= numsOfRecords) {
 
@@ -69,7 +68,7 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
                 0); // a new block will place the record started from the index=0 in the recordContent
 
         while ((indexOfRecord <= numsOfRecords) &&
-               (newBlockNode.currentSize() + allRecords[indexOfRecord].getRecordSize() + newRecordMiscSize <=
+               (newBlockNode.currentSize() + allRecords[indexOfRecord].getRecordSize() <=
                 newBlockNode.maxCapacity)) {  // we add another indexOfRecord <= numsOfRecords to prevent the over leak at the last block
 
             string contentOfCurrentRecord = allRecords[indexOfRecord].field1 + allRecords[indexOfRecord].field2 +
@@ -82,18 +81,15 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
                     contentOfCurrentRecord.size()); // update the startPositionOfEachRecord
 
             indexOfRecord += 1; // move to the next record
-
         }
 
 //        cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
 //        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentSize() << endl;
 //        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.startPositionOfEachRecord[1])
 //             << endl;
-
         indexOfBlockNode += 1; // move to the next node
 
     }
-
 
     // 1) should I do the following?
     // create a new block node
@@ -106,6 +102,16 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
     // 2) But how could me so later insertion and deletion
 
     return allBlocks;
+}
+
+int calculateRealBlockSize(vector<BlockNode> allBlock) {
+    int realSize = 0;
+
+    for (int idx = 0; idx <= allBlock.size(); idx++) {
+        realSize += allBlock[idx].currentSize();
+    }
+
+    return realSize;
 }
 
 int main() {
@@ -136,6 +142,7 @@ int main() {
     cout << "The total size of all records are " << sizeOfAllRecord << " bytes." << endl;
 
     vector<BlockNode> metaBlock = storeRecordToBlocks(totalNumOfRecords, metaRecord);
+    int realAllBlockSize = calculateRealBlockSize(metaBlock);
 
 //    vector<int> metaBlock={1,1,1};
 
@@ -148,7 +155,7 @@ int main() {
     cout << "This script creates " << totalNumOfBlock << " blocks." << endl;
     cout << "The total size of all blocks are " << sizeOfAllBlock << " bytes." << endl;
 
-    cout << "The space usage rate is " << ((sizeOfAllRecord + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
+    cout << "The space usage rate is " << ((realAllBlockSize + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
 
     // do validation printing
 //    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
@@ -159,6 +166,9 @@ int main() {
 //    cout << metaRecord[0].field3.size() << endl;
 //    cout << metaBlock[0].recordContent[55] << endl;
     // end validation priting
+
+//    cout<<metaBlock[3276].startPositionOfEachRecord(endl()<<endl;
+    cout << metaBlock[3276].recordContent.substr(0, 100) << endl;
 
     return 0;
 }
