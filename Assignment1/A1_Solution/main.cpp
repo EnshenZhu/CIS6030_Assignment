@@ -60,14 +60,14 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
     int indexOfBlockNode = 0; // track the index of the Block Node
     int indexOfRecord = 0; // track the index of the Record
 
-    while (indexOfRecord <= numsOfRecords) {
+    while (indexOfRecord < numsOfRecords) {
 
         allBlocks.push_back(BlockNode());
         BlockNode &newBlockNode = allBlocks.back();
         newBlockNode.startPositionOfEachRecord.push_back(
                 0); // a new block will place the record started from the index=0 in the recordContent
 
-        while ((indexOfRecord <= numsOfRecords) &&
+        while ((indexOfRecord < numsOfRecords) &&
                (newBlockNode.currentSize() + allRecords[indexOfRecord].getRecordSize() <=
                 newBlockNode.maxCapacity)) {  // we add another indexOfRecord <= numsOfRecords to prevent the over leak at the last block
 
@@ -168,7 +168,7 @@ int main() {
     // end validation priting
 
 //    cout<<metaBlock[3276].startPositionOfEachRecord(endl()<<endl;
-    cout << metaBlock[3276].recordContent.substr(0, 100) << endl;
+    cout << metaBlock[3276].recordContent.substr(0, 0) << endl;
 
     return 0;
 }

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+    <option name="confirmBeforeUploading" value="false" />
     <serverData>
-      <paths name="Remote Host (8ce8ea87-3a6b-4e88-b5b2-1099aff23176)">
+      <paths name="Remote Host (8db3332c-a2ed-4845-9dd7-58501cea0fa7)">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/undergrad/0/enshen/workspace" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/undergrad/0/enshen/workspace/assignment1" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-remote-host" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

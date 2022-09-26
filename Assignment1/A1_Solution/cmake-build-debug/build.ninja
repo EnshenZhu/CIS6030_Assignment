@@ -51,19 +51,19 @@ build cmake_object_order_depends_target_A1_Solution: phony || CMakeFiles/A1_Solu
 
 build CMakeFiles/A1_Solution.dir/main.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/main.cpp || cmake_object_order_depends_target_A1_Solution
   DEP_FILE = CMakeFiles\A1_Solution.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -Wall -std=gnu++14
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
   OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir
 
 build CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/db_library/dbComponents.cpp || cmake_object_order_depends_target_A1_Solution
   DEP_FILE = CMakeFiles\A1_Solution.dir\db_library\dbComponents.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -Wall -std=gnu++14
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
   OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir\db_library
 
 build CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/BplusTree_library/BplusTree.cpp || cmake_object_order_depends_target_A1_Solution
   DEP_FILE = CMakeFiles\A1_Solution.dir\BplusTree_library\BplusTree.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -g -Wall -std=gnu++14
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
   OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir\BplusTree_library
 

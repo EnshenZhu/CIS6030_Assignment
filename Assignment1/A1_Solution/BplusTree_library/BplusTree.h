@@ -47,7 +47,7 @@ public:
 
     void showElm(int targetValue);
 
-    void searchElm(int targetValue);
+    void searchElm(int targetElement);
 
     void insertElm(int targetValue);
 
