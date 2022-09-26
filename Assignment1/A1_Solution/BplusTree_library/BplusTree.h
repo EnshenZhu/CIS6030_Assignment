@@ -5,9 +5,10 @@
 #ifndef A1_SOLUTION_BPLUSTREE_H
 #define A1_SOLUTION_BPLUSTREE_H
 
+
+#include <iostream>
 #include <climits>
 #include <fstream>
-#include <iostream>
 #include <sstream>
 
 using namespace std;
@@ -25,7 +26,7 @@ public:
     int *key, size;
     TreeNode **pointer;
 
-    bool is_leaf;
+    bool isLeaf;
 
     friend class BplusTree;
 
@@ -42,13 +43,15 @@ public:
 
     TreeNode *findParentNode(TreeNode *, TreeNode *);
 
-    void insertInternalNode(int, TreeNode *, TreeNode *);
+    TreeNode *findChildNode(TreeNode *, TreeNode *);
+
+    void showElm(int targetValue);
 
     void searchElm(int targetValue);
 
     void insertElm(int targetValue);
 
-    void showElm(int targetValue);
+    void insertInternalNode(int, TreeNode *, TreeNode *);
 
 };
 
