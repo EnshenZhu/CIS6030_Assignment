@@ -41,9 +41,9 @@ public:
 
     TreeNode *root;
 
-    TreeNode *findParentNode(TreeNode *, TreeNode *);
+    TreeNode *findParentNode(TreeNode *cursor, TreeNode *child);
 
-    TreeNode *findChildNode(TreeNode *, TreeNode *);
+    TreeNode *findChildNode(TreeNode *cursor);
 
     void showElm(int targetValue);
 
@@ -51,7 +51,7 @@ public:
 
     void insertElm(int target);
 
-    void insertInternalNode(int, TreeNode *, TreeNode *);
+    void insertInternalNode(int target, TreeNode *cursor, TreeNode *child);
 
 };
 
