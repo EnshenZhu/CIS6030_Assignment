@@ -22,12 +22,13 @@ BplusTree::BplusTree() {
     root = NULL;
 }
 
-// Search the Element
+// Search the leaf element
 void BplusTree::searchElm(int targetElement) {
     if (root == NULL) {
         cout << "The tree is empty." << endl;
     } else {
         TreeNode *cursor = root;
+
         while (cursor->isLeaf == false) {
             for (int idx = 0; idx < cursor->size; idx++) {
                 if (targetElement < cursor->key[idx]) {
@@ -40,6 +41,7 @@ void BplusTree::searchElm(int targetElement) {
                 }
             }
         }
+
         for (int index = 0; index < cursor->size; index++) {
             if (cursor->key[index] == targetElement) {
                 cout << targetElement << " is found" << endl;
@@ -50,7 +52,26 @@ void BplusTree::searchElm(int targetElement) {
     }
 }
 
-// Insert Operation
+// Find the parent
+TreeNode *BplusTree::findParentNode(TreeNode *cursor, TreeNode *child) {
+    TreeNode *parent;
+    if (cursor->isLeaf || (cursor->pointer[0])->isLeaf) {
+        return NULL;
+    }
+    for (int i = 0; i < cursor->size + 1; i++) {
+        if (cursor->pointer[i] == child) {
+            parent = cursor;
+            return parent;
+        } else {
+            parent = findParentNode(cursor->pointer[i], child);
+            if (parent != NULL)
+                return parent;
+        }
+    }
+    return parent;
+}
+
+// Insert the leaf element
 void BplusTree::insertElm(int target) {
     if (root == NULL) {
         root = new TreeNode;
@@ -62,13 +83,13 @@ void BplusTree::insertElm(int target) {
         TreeNode *parent;
         while (cursor->isLeaf == false) {
             parent = cursor;
-            for (int i = 0; i < cursor->size; i++) {
-                if (target < cursor->key[i]) {
-                    cursor = cursor->pointer[i];
+            for (int idx = 0; idx < cursor->size; idx++) {
+                if (target < cursor->key[idx]) {
+                    cursor = cursor->pointer[idx];
                     break;
                 }
-                if (i == cursor->size - 1) {
-                    cursor = cursor->pointer[i + 1];
+                if (idx == cursor->size - 1) {
+                    cursor = cursor->pointer[idx + 1];
                     break;
                 }
             }
@@ -124,7 +145,7 @@ void BplusTree::insertElm(int target) {
     }
 }
 
-// Insert Operation
+// Insert internal nodes
 void BplusTree::insertInternalNode(int target, TreeNode *cursor, TreeNode *child) {
     if (cursor->size < MAX) {
         int i = 0;
@@ -181,23 +202,4 @@ void BplusTree::insertInternalNode(int target, TreeNode *cursor, TreeNode *child
             insertInternalNode(cursor->key[cursor->size], findParentNode(root, cursor), newInternal);
         }
     }
-}
-
-// Find the parent
-TreeNode *BplusTree::findParentNode(TreeNode *cursor, TreeNode *child) {
-    TreeNode *parent;
-    if (cursor->isLeaf || (cursor->pointer[0])->isLeaf) {
-        return NULL;
-    }
-    for (int i = 0; i < cursor->size + 1; i++) {
-        if (cursor->pointer[i] == child) {
-            parent = cursor;
-            return parent;
-        } else {
-            parent = findParentNode(cursor->pointer[i], child);
-            if (parent != NULL)
-                return parent;
-        }
-    }
-    return parent;
 }

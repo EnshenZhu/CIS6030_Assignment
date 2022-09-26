@@ -23,9 +23,10 @@ class TreeNode {
 public:
     TreeNode();
 
-    int *key, size;
-    TreeNode **pointer;
+    int *key;
+    int size;
 
+    TreeNode **pointer;
     bool isLeaf;
 
     friend class BplusTree;

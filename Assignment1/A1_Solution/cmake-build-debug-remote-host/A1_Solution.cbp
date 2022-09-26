@@ -90,6 +90,12 @@
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/BplusTree_library/BplusTree.h">
 			<Option target="A1_Solution"/>
 		</Unit>
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/TestKit/generalTest.cpp">
+			<Option target="A1_Solution"/>
+		</Unit>
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/TestKit/generalTest.h">
+			<Option target="A1_Solution"/>
+		</Unit>
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/db_library/dbComponents.cpp">
 			<Option target="A1_Solution"/>
 		</Unit>
