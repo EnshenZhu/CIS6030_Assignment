@@ -5,9 +5,9 @@
 #include "BplusTree.h"
 
 #include <iostream>
-#include <climits>
-#include <fstream>
-#include <sstream>
+//#include <climits>
+//#include <fstream>
+//#include <sstream>
 #include <cmath>
 
 
@@ -51,10 +51,10 @@ void BplusTree::searchElm(int targetElement) {
 }
 
 // Insert Operation
-void BplusTree::insertElm(int targetValue) {
+void BplusTree::insertElm(int target) {
     if (root == NULL) {
         root = new TreeNode;
-        root->key[0] = targetValue;
+        root->key[0] = target;
         root->isLeaf = true;
         root->size = 1;
     } else {
@@ -63,7 +63,7 @@ void BplusTree::insertElm(int targetValue) {
         while (cursor->isLeaf == false) {
             parent = cursor;
             for (int i = 0; i < cursor->size; i++) {
-                if (targetValue < cursor->key[i]) {
+                if (target < cursor->key[i]) {
                     cursor = cursor->pointer[i];
                     break;
                 }
@@ -75,12 +75,12 @@ void BplusTree::insertElm(int targetValue) {
         }
         if (cursor->size < MAX) {
             int i = 0;
-            while (targetValue > cursor->key[i] && i < cursor->size)
+            while (target > cursor->key[i] && i < cursor->size)
                 i++;
             for (int j = cursor->size; j > i; j--) {
                 cursor->key[j] = cursor->key[j - 1];
             }
-            cursor->key[i] = targetValue;
+            cursor->key[i] = target;
             cursor->size++;
             cursor->pointer[cursor->size] = cursor->pointer[cursor->size - 1];
             cursor->pointer[cursor->size - 1] = NULL;
@@ -91,18 +91,18 @@ void BplusTree::insertElm(int targetValue) {
                 virtualNode[i] = cursor->key[i];
             }
             int i = 0, j;
-            while (targetValue > virtualNode[i] && i < MAX)
+            while (target > virtualNode[i] && i < MAX)
                 i++;
             for (int j = MAX + 1; j > i; j--) {
                 virtualNode[j] = virtualNode[j - 1];
             }
-            virtualNode[i] = x;
-            newLeaf->IS_LEAF = true;
+            virtualNode[i] = target;
+            newLeaf->isLeaf = true;
             cursor->size = (MAX + 1) / 2;
             newLeaf->size = MAX + 1 - (MAX + 1) / 2;
-            cursor->ptr[cursor->size] = newLeaf;
-            newLeaf->ptr[newLeaf->size] = cursor->ptr[MAX];
-            cursor->ptr[MAX] = NULL;
+            cursor->pointer[cursor->size] = newLeaf;
+            newLeaf->pointer[newLeaf->size] = cursor->pointer[MAX];
+            cursor->pointer[MAX] = NULL;
             for (i = 0; i < cursor->size; i++) {
                 cursor->key[i] = virtualNode[i];
             }
@@ -110,75 +110,94 @@ void BplusTree::insertElm(int targetValue) {
                 newLeaf->key[i] = virtualNode[j];
             }
             if (cursor == root) {
-                Node *newRoot = new Node;
+                TreeNode *newRoot = new TreeNode;
                 newRoot->key[0] = newLeaf->key[0];
-                newRoot->ptr[0] = cursor;
-                newRoot->ptr[1] = newLeaf;
-                newRoot->IS_LEAF = false;
+                newRoot->pointer[0] = cursor;
+                newRoot->pointer[1] = newLeaf;
+                newRoot->isLeaf = false;
                 newRoot->size = 1;
                 root = newRoot;
             } else {
-                insertInternal(newLeaf->key[0], parent, newLeaf);
+                insertInternalNode(newLeaf->key[0], parent, newLeaf);
             }
         }
     }
 }
 
 // Insert Operation
-void BPTree::insertInternal(int x, Node *cursor, Node *child) {
+void BplusTree::insertInternalNode(int target, TreeNode *cursor, TreeNode *child) {
     if (cursor->size < MAX) {
         int i = 0;
-        while (x > cursor->key[i] && i < cursor->size)
+        while (target > cursor->key[i] && i < cursor->size)
             i++;
         for (int j = cursor->size; j > i; j--) {
             cursor->key[j] = cursor->key[j - 1];
         }
         for (int j = cursor->size + 1; j > i + 1; j--) {
-            cursor->ptr[j] = cursor->ptr[j - 1];
+            cursor->pointer[j] = cursor->pointer[j - 1];
         }
-        cursor->key[i] = x;
+        cursor->key[i] = target;
         cursor->size++;
-        cursor->ptr[i + 1] = child;
+        cursor->pointer[i + 1] = child;
     } else {
-        Node *newInternal = new Node;
+        TreeNode *newInternal = new TreeNode;
         int virtualKey[MAX + 1];
-        Node *virtualPtr[MAX + 2];
+        TreeNode *virtualPtr[MAX + 2];
         for (int i = 0; i < MAX; i++) {
             virtualKey[i] = cursor->key[i];
         }
         for (int i = 0; i < MAX + 1; i++) {
-            virtualPtr[i] = cursor->ptr[i];
+            virtualPtr[i] = cursor->pointer[i];
         }
         int i = 0, j;
-        while (x > virtualKey[i] && i < MAX)
+        while (target > virtualKey[i] && i < MAX)
             i++;
         for (int j = MAX + 1; j > i; j--) {
             virtualKey[j] = virtualKey[j - 1];
         }
-        virtualKey[i] = x;
+        virtualKey[i] = target;
         for (int j = MAX + 2; j > i + 1; j--) {
             virtualPtr[j] = virtualPtr[j - 1];
         }
         virtualPtr[i + 1] = child;
-        newInternal->IS_LEAF = false;
+        newInternal->isLeaf = false;
         cursor->size = (MAX + 1) / 2;
         newInternal->size = MAX - (MAX + 1) / 2;
         for (i = 0, j = cursor->size + 1; i < newInternal->size; i++, j++) {
             newInternal->key[i] = virtualKey[j];
         }
         for (i = 0, j = cursor->size + 1; i < newInternal->size + 1; i++, j++) {
-            newInternal->ptr[i] = virtualPtr[j];
+            newInternal->pointer[i] = virtualPtr[j];
         }
         if (cursor == root) {
-            Node *newRoot = new Node;
+            TreeNode *newRoot = new TreeNode;
             newRoot->key[0] = cursor->key[cursor->size];
-            newRoot->ptr[0] = cursor;
-            newRoot->ptr[1] = newInternal;
-            newRoot->IS_LEAF = false;
+            newRoot->pointer[0] = cursor;
+            newRoot->pointer[1] = newInternal;
+            newRoot->isLeaf = false;
             newRoot->size = 1;
             root = newRoot;
         } else {
-            insertInternal(cursor->key[cursor->size], findParent(root, cursor), newInternal);
+            insertInternalNode(cursor->key[cursor->size], findParentNode(root, cursor), newInternal);
         }
     }
+}
+
+// Find the parent
+TreeNode *BplusTree::findParentNode(TreeNode *cursor, TreeNode *child) {
+    TreeNode *parent;
+    if (cursor->isLeaf || (cursor->pointer[0])->isLeaf) {
+        return NULL;
+    }
+    for (int i = 0; i < cursor->size + 1; i++) {
+        if (cursor->pointer[i] == child) {
+            parent = cursor;
+            return parent;
+        } else {
+            parent = findParentNode(cursor->pointer[i], child);
+            if (parent != NULL)
+                return parent;
+        }
+    }
+    return parent;
 }
