@@ -46,7 +46,7 @@ void BplusTree::searchElm(int targetElement) {
 
         for (int index = 0; index < cursor->size; index++) {
             if (cursor->key[index] == targetElement) {
-                cout << targetElement << " is found at Block " << &cursor << endl;
+                cout << targetElement << " is found at Block " << *(cursor->key) << endl;
                 return;
             }
         }
@@ -56,21 +56,21 @@ void BplusTree::searchElm(int targetElement) {
 
 // Find the parent
 TreeNode *BplusTree::findParentNode(TreeNode *cursor, TreeNode *child) {
-    TreeNode *parent;
+    TreeNode *parentNode;
     if (cursor->isLeaf || (cursor->pointer[0])->isLeaf) {
         return NULL;
     }
     for (int i = 0; i < cursor->size + 1; i++) {
         if (cursor->pointer[i] == child) {
-            parent = cursor;
-            return parent;
+            parentNode = cursor;
+            return parentNode;
         } else {
-            parent = findParentNode(cursor->pointer[i], child);
-            if (parent != NULL)
-                return parent;
+            parentNode = findParentNode(cursor->pointer[i], child);
+            if (parentNode != NULL)
+                return parentNode;
         }
     }
-    return parent;
+    return parentNode;
 }
 
 // Insert the leaf element
