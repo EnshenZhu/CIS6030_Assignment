@@ -150,33 +150,6 @@ BplusTree_library/BplusTree.cpp.s:
 	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.s
 .PHONY : BplusTree_library/BplusTree.cpp.s
 
-TestKit/generalTest.o: TestKit/generalTest.cpp.o
-
-.PHONY : TestKit/generalTest.o
-
-# target to build an object file
-TestKit/generalTest.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/TestKit/generalTest.cpp.o
-.PHONY : TestKit/generalTest.cpp.o
-
-TestKit/generalTest.i: TestKit/generalTest.cpp.i
-
-.PHONY : TestKit/generalTest.i
-
-# target to preprocess a source file
-TestKit/generalTest.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/TestKit/generalTest.cpp.i
-.PHONY : TestKit/generalTest.cpp.i
-
-TestKit/generalTest.s: TestKit/generalTest.cpp.s
-
-.PHONY : TestKit/generalTest.s
-
-# target to generate assembly for a file
-TestKit/generalTest.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/TestKit/generalTest.cpp.s
-.PHONY : TestKit/generalTest.cpp.s
-
 db_library/dbComponents.o: db_library/dbComponents.cpp.o
 
 .PHONY : db_library/dbComponents.o
@@ -243,9 +216,6 @@ help:
 	@echo "... BplusTree_library/BplusTree.o"
 	@echo "... BplusTree_library/BplusTree.i"
 	@echo "... BplusTree_library/BplusTree.s"
-	@echo "... TestKit/generalTest.o"
-	@echo "... TestKit/generalTest.i"
-	@echo "... TestKit/generalTest.s"
 	@echo "... db_library/dbComponents.o"
 	@echo "... db_library/dbComponents.i"
 	@echo "... db_library/dbComponents.s"

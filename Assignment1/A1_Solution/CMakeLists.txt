@@ -11,4 +11,4 @@ add_executable(A1_Solution
         db_library/dbComponents.h
         BplusTree_library/BplusTree.cpp
         BplusTree_library/BplusTree.h
-        TestKit/generalTest.cpp TestKit/generalTest.cpp TestKit/generalTest.h)
+        )

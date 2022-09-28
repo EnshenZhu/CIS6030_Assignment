@@ -1,8 +1,11 @@
 #include <iostream>
-#include "db_library/dbComponents.h"
 #include <fstream>
 #include <cstdlib>
 #include <algorithm>  // implement sorting
+#include <typeinfo>
+
+#include "db_library/dbComponents.h"
+#include "BplusTree_library/BplusTree.h"
 
 using namespace std;
 
@@ -15,8 +18,8 @@ int getSizeOfAllData(int numsOfRecords, vector<Record> allRecords) {
 }
 
 int fieldTwoEndIdx(string aString) {
-    int count = 3;
-    for (int idx = 0; idx < aString.size(); idx++) {
+    short count = 3;
+    for (short idx = 0; idx < aString.size(); idx++) {
         if (isspace(aString[idx])) {
             count -= 1;
             if (count == 0) return idx;
@@ -80,14 +83,15 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
                     newBlockNode.startPositionOfEachRecord[currentNumsOfRecordInTheBlock - 1] +
                     contentOfCurrentRecord.size()); // update the startPositionOfEachRecord
 
-            indexOfRecord += 1; // move to the next record
+            indexOfRecord++; // move to the next record
         }
 
 //        cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
 //        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentSize() << endl;
 //        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.startPositionOfEachRecord[1])
 //             << endl;
-        indexOfBlockNode += 1; // move to the next node
+
+        indexOfBlockNode++; // move to the next node
 
     }
 
@@ -107,7 +111,7 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
 int calculateRealBlockSize(vector<BlockNode> allBlock) {
     int realSize = 0;
 
-    for (int idx = 0; idx <= allBlock.size(); idx++) {
+    for (short idx = 0; idx <= allBlock.size(); idx++) {
         realSize += allBlock[idx].currentSize();
     }
 
@@ -168,7 +172,21 @@ int main() {
     // end validation priting
 
 //    cout<<metaBlock[3276].startPositionOfEachRecord(endl()<<endl;
-    cout << metaBlock[3276].recordContent.substr(0, 0) << endl;
+
+// start testing the tree
+    BplusTree allNodes;
+    allNodes.insertElm(5);
+    allNodes.insertElm(15);
+    allNodes.insertElm(25);
+    allNodes.insertElm(35);
+    allNodes.insertElm(45);
+    allNodes.insertElm(55);
+    allNodes.insertElm(40);
+    allNodes.insertElm(30);
+    allNodes.insertElm(20);
+//    allNodes.display(allNodes.getRoot());
+
+    allNodes.searchElm(15);
 
     return 0;
 }

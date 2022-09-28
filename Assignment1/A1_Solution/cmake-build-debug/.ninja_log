@@ -1,8 +1,10 @@
 # ninja log v5
-16	648	6859318244279728	build.ninja	f4bf13fc992888bc
+16	648	6861013111443241	build.ninja	f4bf13fc992888bc
 11	1157	6857677569953982	CMakeFiles/A1_Solution.dir/dblibrary/dbComponents.cpp.obj	a6e04d5bbba21d97
-4	695	6859167265074245	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-696	857	6859167266756182	A1_Solution.exe	8ea28200e0a72fb5
+6	827	6861009870066672	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+866	1167	6861011000203995	A1_Solution.exe	6a2e4e964c61df53
 10	512	6856674580373776	CMakeFiles/A1_Solution.dir/library/dbComponents.cpp.obj	cccbcfd506712f3d
 12	719	6859142590804035	CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.obj	4f016bca4ffac02
-9	475	6859166623738364	CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj	3e6349ae41b99d78
+6	865	6861010997523992	CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj	3e6349ae41b99d78
+20	397	6860856055567389	CMakeFiles/A1_Solution.dir/TestKit/generalTest.cpp.obj	c703fff8d39283e8
+8	477	6861008721432909	CMakeFiles/A1_Solution.dir/testBplusTree/test.cpp.obj	981a33f5bb25a025

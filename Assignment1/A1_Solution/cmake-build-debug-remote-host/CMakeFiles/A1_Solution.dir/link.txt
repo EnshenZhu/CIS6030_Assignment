@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/A1_Solution.dir/main.cpp.o CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.o CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o CMakeFiles/A1_Solution.dir/TestKit/generalTest.cpp.o  -o A1_Solution 
+/usr/bin/c++  -g   CMakeFiles/A1_Solution.dir/main.cpp.o CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.o CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o  -o A1_Solution 
