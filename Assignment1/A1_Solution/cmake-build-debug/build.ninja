@@ -55,11 +55,11 @@ build CMakeFiles/A1_Solution.dir/main.cpp.obj: CXX_COMPILER__A1_Solution_Debug D
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
   OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir
 
-build CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/db_library/dbComponents.cpp || cmake_object_order_depends_target_A1_Solution
-  DEP_FILE = CMakeFiles\A1_Solution.dir\db_library\dbComponents.cpp.obj.d
+build CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/DB_library/dbComponents.cpp || cmake_object_order_depends_target_A1_Solution
+  DEP_FILE = CMakeFiles\A1_Solution.dir\DB_library\dbComponents.cpp.obj.d
   FLAGS = -g -Wall -std=gnu++14
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
-  OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir\db_library
+  OBJECT_FILE_DIR = CMakeFiles\A1_Solution.dir\DB_library
 
 build CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj: CXX_COMPILER__A1_Solution_Debug D$:/Guelph_Master/CIS6030$ Information$ System/CIS6030_Assignment/Assignment1/A1_Solution/BplusTree_library/BplusTree.cpp || cmake_object_order_depends_target_A1_Solution
   DEP_FILE = CMakeFiles\A1_Solution.dir\BplusTree_library\BplusTree.cpp.obj.d
@@ -75,7 +75,7 @@ build CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable A1_Solution.exe
 
-build A1_Solution.exe: CXX_EXECUTABLE_LINKER__A1_Solution_Debug CMakeFiles/A1_Solution.dir/main.cpp.obj CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.obj CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj
+build A1_Solution.exe: CXX_EXECUTABLE_LINKER__A1_Solution_Debug CMakeFiles/A1_Solution.dir/main.cpp.obj CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.obj CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\A1_Solution.dir
