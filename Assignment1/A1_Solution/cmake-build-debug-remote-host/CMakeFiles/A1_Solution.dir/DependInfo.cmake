@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/undergrad/0/enshen/workspace/assignment1/BplusTree_library/BplusTree.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o"
-  "/home/undergrad/0/enshen/workspace/assignment1/db_library/dbComponents.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.o"
+  "/home/undergrad/0/enshen/workspace/assignment1/DB_library/dbComponents.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o"
   "/home/undergrad/0/enshen/workspace/assignment1/main.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles/A1_Solution.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

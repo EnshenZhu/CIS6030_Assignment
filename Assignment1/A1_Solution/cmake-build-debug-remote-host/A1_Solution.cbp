@@ -90,10 +90,10 @@
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/BplusTree_library/BplusTree.h">
 			<Option target="A1_Solution"/>
 		</Unit>
-		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/db_library/dbComponents.cpp">
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/DB_library/dbComponents.cpp">
 			<Option target="A1_Solution"/>
 		</Unit>
-		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/db_library/dbComponents.h">
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/DB_library/dbComponents.h">
 			<Option target="A1_Solution"/>
 		</Unit>
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/main.cpp">

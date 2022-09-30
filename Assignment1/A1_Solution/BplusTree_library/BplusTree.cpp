@@ -46,7 +46,7 @@ void BplusTree::searchElm(int targetElement) {
 
         for (int index = 0; index < cursor->size; index++) {
             if (cursor->key[index] == targetElement) {
-                cout << targetElement << " is found at Block " << *(cursor->key) << endl;
+                cout << targetElement << " is found " << endl;
                 return;
             }
         }

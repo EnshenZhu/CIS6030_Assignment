@@ -150,32 +150,32 @@ BplusTree_library/BplusTree.cpp.s:
 	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.s
 .PHONY : BplusTree_library/BplusTree.cpp.s
 
-db_library/dbComponents.o: db_library/dbComponents.cpp.o
+DB_library/dbComponents.o: DB_library/dbComponents.cpp.o
 
-.PHONY : db_library/dbComponents.o
+.PHONY : DB_library/dbComponents.o
 
 # target to build an object file
-db_library/dbComponents.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.o
-.PHONY : db_library/dbComponents.cpp.o
+DB_library/dbComponents.cpp.o:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o
+.PHONY : DB_library/dbComponents.cpp.o
 
-db_library/dbComponents.i: db_library/dbComponents.cpp.i
+DB_library/dbComponents.i: DB_library/dbComponents.cpp.i
 
-.PHONY : db_library/dbComponents.i
+.PHONY : DB_library/dbComponents.i
 
 # target to preprocess a source file
-db_library/dbComponents.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.i
-.PHONY : db_library/dbComponents.cpp.i
+DB_library/dbComponents.cpp.i:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.i
+.PHONY : DB_library/dbComponents.cpp.i
 
-db_library/dbComponents.s: db_library/dbComponents.cpp.s
+DB_library/dbComponents.s: DB_library/dbComponents.cpp.s
 
-.PHONY : db_library/dbComponents.s
+.PHONY : DB_library/dbComponents.s
 
 # target to generate assembly for a file
-db_library/dbComponents.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.s
-.PHONY : db_library/dbComponents.cpp.s
+DB_library/dbComponents.cpp.s:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.s
+.PHONY : DB_library/dbComponents.cpp.s
 
 main.o: main.cpp.o
 
@@ -216,9 +216,9 @@ help:
 	@echo "... BplusTree_library/BplusTree.o"
 	@echo "... BplusTree_library/BplusTree.i"
 	@echo "... BplusTree_library/BplusTree.s"
-	@echo "... db_library/dbComponents.o"
-	@echo "... db_library/dbComponents.i"
-	@echo "... db_library/dbComponents.s"
+	@echo "... DB_library/dbComponents.o"
+	@echo "... DB_library/dbComponents.i"
+	@echo "... DB_library/dbComponents.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
