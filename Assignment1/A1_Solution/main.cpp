@@ -4,8 +4,8 @@
 #include <algorithm>  // implement sorting
 #include <typeinfo>
 
-#include "db_library/dbComponents.h"
-#include "BplusTree_library/BplusTree.h"
+#include "db_lib/dbComponents.h"
+#include "BplusTree_lib/BplusTree.h"
 
 using namespace std;
 

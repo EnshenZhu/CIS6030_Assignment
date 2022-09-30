@@ -130,23 +130,23 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "DB_library/dbComponents.cpp",
+			"path" : "DB_lib/dbComponents.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "DB_library/dbComponents.h",
+			"path" : "DB_lib/dbComponents.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "BplusTree_library/BplusTree.cpp",
+			"path" : "BplusTree_lib/BplusTree.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "BplusTree_library/BplusTree.h",
+			"path" : "BplusTree_lib/BplusTree.h",
 			"sourceGroupIndex" : 1
 		}
 	],

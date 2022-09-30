@@ -7,8 +7,8 @@ add_compile_options(-Wall)
 
 add_executable(A1_Solution
         main.cpp
-        DB_library/dbComponents.cpp
-        DB_library/dbComponents.h
-        BplusTree_library/BplusTree.cpp
-        BplusTree_library/BplusTree.h
+        DB_lib/dbComponents.cpp
+        DB_lib/dbComponents.h
+        BplusTree_lib/BplusTree.cpp
+        BplusTree_lib/BplusTree.h
         )
