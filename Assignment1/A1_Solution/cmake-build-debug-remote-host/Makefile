@@ -110,100 +110,6 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named A1_Solution
-
-# Build rule for target.
-A1_Solution: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 A1_Solution
-.PHONY : A1_Solution
-
-# fast build rule for target.
-A1_Solution/fast:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/build
-.PHONY : A1_Solution/fast
-
-BplusTree_library/BplusTree.o: BplusTree_library/BplusTree.cpp.o
-
-.PHONY : BplusTree_library/BplusTree.o
-
-# target to build an object file
-BplusTree_library/BplusTree.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o
-.PHONY : BplusTree_library/BplusTree.cpp.o
-
-BplusTree_library/BplusTree.i: BplusTree_library/BplusTree.cpp.i
-
-.PHONY : BplusTree_library/BplusTree.i
-
-# target to preprocess a source file
-BplusTree_library/BplusTree.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.i
-.PHONY : BplusTree_library/BplusTree.cpp.i
-
-BplusTree_library/BplusTree.s: BplusTree_library/BplusTree.cpp.s
-
-.PHONY : BplusTree_library/BplusTree.s
-
-# target to generate assembly for a file
-BplusTree_library/BplusTree.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.s
-.PHONY : BplusTree_library/BplusTree.cpp.s
-
-DB_library/dbComponents.o: DB_library/dbComponents.cpp.o
-
-.PHONY : DB_library/dbComponents.o
-
-# target to build an object file
-DB_library/dbComponents.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o
-.PHONY : DB_library/dbComponents.cpp.o
-
-DB_library/dbComponents.i: DB_library/dbComponents.cpp.i
-
-.PHONY : DB_library/dbComponents.i
-
-# target to preprocess a source file
-DB_library/dbComponents.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.i
-.PHONY : DB_library/dbComponents.cpp.i
-
-DB_library/dbComponents.s: DB_library/dbComponents.cpp.s
-
-.PHONY : DB_library/dbComponents.s
-
-# target to generate assembly for a file
-DB_library/dbComponents.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.s
-.PHONY : DB_library/dbComponents.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,17 +117,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... A1_Solution"
 	@echo "... edit_cache"
-	@echo "... BplusTree_library/BplusTree.o"
-	@echo "... BplusTree_library/BplusTree.i"
-	@echo "... BplusTree_library/BplusTree.s"
-	@echo "... DB_library/dbComponents.o"
-	@echo "... DB_library/dbComponents.i"
-	@echo "... DB_library/dbComponents.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

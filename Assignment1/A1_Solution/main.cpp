@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <algorithm>  // implement sorting
 #include <typeinfo>
+#include <bitset>
 
 #include "db_lib/dbComponents.h"
 #include "BplusTree_lib/BplusTree.h"
@@ -118,9 +119,43 @@ int calculateRealBlockSize(vector<BlockNode> allBlock) {
     return realSize;
 }
 
-void writeAllFile(string saveRoute, vector<BlockNode> allBlocks){
-    cout<<"1"<<endl;
+void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
+    char singleLine[1024];
+
+    // 以写模式打开文件
+    ofstream outfile(saveRoute);
+
+    unsigned short x = allBlocks[0].numsOfRecords();
+    cout << x << endl;
+    bitset<8> mybit(x);
+    cout << mybit << endl;
+
+    singleLine[0] = x;
+    outfile << singleLine[0] << endl;
+//    singleLine[0] << mybit << endl;
+
+    outfile.close();
 };
+
+void readAllFile(string saveRoute) {
+
+    char value;
+
+    fstream file(saveRoute, ios::in);
+    if (!file) {
+        cout << "Error opening file.";
+        return;
+    }
+
+    file.seekg(0L, ios::beg);
+    file.get(value);
+
+    bitset<8> newBit(value);
+
+    cout << "The read value is " << newBit << endl;
+
+
+}
 
 int main() {
     // config the raw input data location
@@ -167,6 +202,8 @@ int main() {
 
     // now we are going to store all blocks (with records) into the datafilsse
     string saveRoute = "../assets/dataFile.txt";
+    writeAllFile(saveRoute, metaBlock);
+    readAllFile(saveRoute);
 
 
     // do validation printing
@@ -192,7 +229,7 @@ int main() {
     allNodes.insertElm(40);
     allNodes.insertElm(30);
     allNodes.insertElm(20);
-//    allNodes.display(allNodes.getRoot());
+//allNodes.display(allNodes.getRoot());
 
     allNodes.searchElm(15);
 
