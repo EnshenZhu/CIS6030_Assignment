@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/A1_Solution.dir/main.cpp.o"
-  "CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o"
-  "CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o"
+  "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o"
+  "CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o"
   "A1_Solution.pdb"
   "A1_Solution"
 )

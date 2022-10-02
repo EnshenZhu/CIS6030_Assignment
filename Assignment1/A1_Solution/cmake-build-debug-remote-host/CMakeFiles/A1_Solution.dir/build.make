@@ -70,44 +70,44 @@ CMakeFiles/A1_Solution.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/main.cpp -o CMakeFiles/A1_Solution.dir/main.cpp.s
 
-CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o: CMakeFiles/A1_Solution.dir/flags.make
-CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o: ../DB_library/dbComponents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o -c /home/undergrad/0/enshen/workspace/assignment1/DB_library/dbComponents.cpp
+CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o: CMakeFiles/A1_Solution.dir/flags.make
+CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o: ../DB_lib/dbComponents.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o -c /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.cpp
 
-CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/undergrad/0/enshen/workspace/assignment1/DB_library/dbComponents.cpp > CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.i
+CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.cpp > CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.i
 
-CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/DB_library/dbComponents.cpp -o CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.s
+CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.cpp -o CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.s
 
-CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o: CMakeFiles/A1_Solution.dir/flags.make
-CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o: ../BplusTree_library/BplusTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o -c /home/undergrad/0/enshen/workspace/assignment1/BplusTree_library/BplusTree.cpp
+CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o: CMakeFiles/A1_Solution.dir/flags.make
+CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o: ../BplusTree_lib/BplusTree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o -c /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp
 
-CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/undergrad/0/enshen/workspace/assignment1/BplusTree_library/BplusTree.cpp > CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.i
+CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp > CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.i
 
-CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/BplusTree_library/BplusTree.cpp -o CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.s
+CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp -o CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s
 
 # Object files for target A1_Solution
 A1_Solution_OBJECTS = \
 "CMakeFiles/A1_Solution.dir/main.cpp.o" \
-"CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o" \
-"CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o"
+"CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o" \
+"CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o"
 
 # External object files for target A1_Solution
 A1_Solution_EXTERNAL_OBJECTS =
 
 A1_Solution: CMakeFiles/A1_Solution.dir/main.cpp.o
-A1_Solution: CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.o
-A1_Solution: CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.o
+A1_Solution: CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o
+A1_Solution: CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o
 A1_Solution: CMakeFiles/A1_Solution.dir/build.make
 A1_Solution: CMakeFiles/A1_Solution.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable A1_Solution"

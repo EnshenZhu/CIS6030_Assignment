@@ -5,7 +5,7 @@
 #include <typeinfo>
 #include <bitset>
 
-#include "db_lib/dbComponents.h"
+#include "DB_lib/dbComponents.h"
 #include "BplusTree_lib/BplusTree.h"
 
 using namespace std;
