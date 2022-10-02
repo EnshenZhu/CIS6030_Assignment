@@ -29,6 +29,16 @@ int fieldTwoEndIdx(string aString) {
     return -1;
 }
 
+void printShort(short input) {
+    bitset<16> mybit(input);
+    cout << mybit << endl;
+}
+
+void printChar(char input) {
+    bitset<8> mybit(input);
+    cout << mybit << endl;
+}
+
 vector<Record> transferFileToRecord(string theRoute) {
     ifstream readFILE;
     readFILE.open(theRoute);
@@ -125,37 +135,82 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     // 以写模式打开文件
     ofstream outfile(saveRoute);
 
-    unsigned short x = allBlocks[0].numsOfRecords();
-    cout << x << endl;
-    bitset<8> mybit(x);
-    cout << mybit << endl;
+    unsigned short thisNumOfRecord = allBlocks[0].numsOfRecords();
+    singleLine[0] = thisNumOfRecord;
+    outfile << singleLine[0]; // PLACE the thisNumOfRecord INTO the data file
 
-    singleLine[0] = x;
-    outfile << singleLine[0] << endl;
-//    singleLine[0] << mybit << endl;
+    int singleLineIndexTracker = 1; // all jumpers will be recorded from the second element of the single line.
+    for (short jumperIdx = 0; jumperIdx < allBlocks[0].numsOfRecords(); jumperIdx++) {
+        unsigned short theRecordJumper = allBlocks[0].startPositionOfEachRecord[jumperIdx]; // subtract the jumper (start position of each record)
+
+        // split each record jumper into two chars
+        char low = theRecordJumper;
+        theRecordJumper = theRecordJumper >> 8;
+        char high = theRecordJumper;
+
+        int plusOne_singleLineIndexTracker = singleLineIndexTracker + 1;
+
+        singleLine[singleLineIndexTracker] = high;
+        outfile << singleLine[singleLineIndexTracker];
+        singleLine[plusOne_singleLineIndexTracker] = low;
+        outfile << singleLine[plusOne_singleLineIndexTracker];
+
+        singleLineIndexTracker += 2;
+    }
+
+    for (int contentIdx = 0; contentIdx <= allBlocks[0].recordContent.size(); contentIdx++) {
+        singleLine[singleLineIndexTracker] = allBlocks[0].recordContent[contentIdx];
+        outfile << singleLine[singleLineIndexTracker];
+        singleLineIndexTracker += 1;
+    }
+
+    for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
+        outfile << 0;
+    }
+//    bitset<8> mybit(x);
+//    cout << mybit << endl;
+
+//unsigned short thisN
+//
+//    singleLine[0] = x;
+//    outfile << singleLine << endl;
 
     outfile.close();
 };
 
-void readAllFile(string saveRoute) {
 
-    char value;
+//void readAllFile(string saveRoute) {
+//
+//    char value;
+//
+//    fstream file(saveRoute, ios::in);
+//    if (!file) {
+//        cout << "Error opening file.";
+//        return;
+//    }
+//
+//    file.seekg(0L, ios::beg);
+//    file.get(value);
+//
+//    bitset<8> newBit(value);
+//
+//    cout << "The read value is " << newBit << endl;
+//}
 
-    fstream file(saveRoute, ios::in);
-    if (!file) {
-        cout << "Error opening file.";
-        return;
-    }
-
-    file.seekg(0L, ios::beg);
-    file.get(value);
-
-    bitset<8> newBit(value);
-
-    cout << "The read value is " << newBit << endl;
-
-
-}
+//int main(){
+//    short x = 1000;
+//    printShort(x);
+//
+//    char high;
+//    char low;
+//
+//    low = x;
+//    printChar(low);
+//
+//    x = x >> 8;
+//    cout<<"after right shift 8 bits:"<<endl;
+//    printShort(x);
+//}
 
 int main() {
     // config the raw input data location
@@ -192,7 +247,7 @@ int main() {
     // get how many blocks we created
     int totalNumOfBlock = metaBlock.size();
 
-    //get the total size of all data in bytes
+    // get the total size of all data in bytes
     int sizeOfAllBlock = totalNumOfBlock * 1024;
 
     cout << "This script creates " << totalNumOfBlock << " blocks." << endl;
@@ -200,23 +255,18 @@ int main() {
 
     cout << "The space usage rate is " << ((realAllBlockSize + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
 
-    // now we are going to store all blocks (with records) into the datafilsse
+//    cout << metaBlock[0].recordContent << endl;
+
+
+    // now we are going to store all blocks (with records) into the datafile
     string saveRoute = "../assets/dataFile.txt";
     writeAllFile(saveRoute, metaBlock);
     readAllFile(saveRoute);
-
 
     // do validation printing
 //    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
 //        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
 //    }
-//    cout << endl;
-//
-//    cout << metaRecord[0].field3.size() << endl;
-//    cout << metaBlock[0].recordContent[55] << endl;
-    // end validation priting
-
-//    cout<<metaBlock[3276].startPositionOfEachRecord(endl()<<endl;
 
 // start testing the tree
     BplusTree allNodes;
@@ -231,7 +281,7 @@ int main() {
     allNodes.insertElm(20);
 //allNodes.display(allNodes.getRoot());
 
-    allNodes.searchElm(15);
+//    allNodes.searchElm(15);
 
 
     return 0;
