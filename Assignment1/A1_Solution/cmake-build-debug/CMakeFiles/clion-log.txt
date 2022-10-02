@@ -1,4 +1,4 @@
-C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution -B E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug
+C:\Users\winni\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/winni/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/ninja/win/ninja.exe -G Ninja -S "D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution" -B "D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug"
 -- Configuring done
 -- Generating done
--- Build files have been written to: E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug
+-- Build files have been written to: D:/Guelph_Master/CIS6030 Information System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug

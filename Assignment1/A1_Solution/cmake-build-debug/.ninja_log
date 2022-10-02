@@ -1,15 +1,9 @@
 # ninja log v5
-16	648	6862672200209721	build.ninja	f4bf13fc992888bc
-11	1157	6857677569953982	CMakeFiles/A1_Solution.dir/dblibrary/dbComponents.cpp.obj	a6e04d5bbba21d97
-9	794	6862664755249915	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-794	956	6862664756915779	A1_Solution.exe	f7d1c114aba86e63
-10	512	6856674580373776	CMakeFiles/A1_Solution.dir/library/dbComponents.cpp.obj	cccbcfd506712f3d
-12	719	6859142590804035	CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.obj	4f016bca4ffac02
-20	482	6862664752138243	CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj	3e6349ae41b99d78
-20	397	6860856055567389	CMakeFiles/A1_Solution.dir/TestKit/generalTest.cpp.obj	c703fff8d39283e8
-8	477	6861008721432909	CMakeFiles/A1_Solution.dir/testBplusTree/test.cpp.obj	981a33f5bb25a025
-4	438	6862664751689438	CMakeFiles/A1_Solution.dir/DB_library/dbComponents.cpp.obj	a456fcd6680cce92
-11	383	6862672539242711	CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj	9fde7a91b7ff3354
-8	421	6862672539611731	CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj	6d35fed7017593eb
-4	733	6862672542733386	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-733	1017	6862672545585759	A1_Solution.exe	5bfb31c23607539
+16	648	6864374924877793	build.ninja	f4bf13fc992888bc
+16	2970	6864344578594982	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+2971	3668	6864344585775785	A1_Solution.exe	272897e65cce02e5
+10	1140	6864337665019259	CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj	9fde7a91b7ff3354
+29	1660	6864344565380309	CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj	6d35fed7017593eb
+28	297	6864344387269185	CMakeFiles/A1_Solution.dir/DB_lib/dbIO.cpp.obj	ff0691de5556bdd3
+11	1761	6864375003711025	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+1762	2120	6864375007420711	A1_Solution.exe	5bfb31c23607539

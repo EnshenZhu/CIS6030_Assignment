@@ -6,7 +6,6 @@
 
 #include "db_lib/dbComponents.h"
 #include "BplusTree_lib/BplusTree.h"
-#include
 
 using namespace std;
 
@@ -119,6 +118,10 @@ int calculateRealBlockSize(vector<BlockNode> allBlock) {
     return realSize;
 }
 
+void writeAllFile(string saveRoute, vector<BlockNode> allBlocks){
+    cout<<"1"<<endl;
+};
+
 int main() {
     // config the raw input data location
     string FileRoute = "../assets/A1_data.txt";
@@ -162,6 +165,10 @@ int main() {
 
     cout << "The space usage rate is " << ((realAllBlockSize + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
 
+    // now we are going to store all blocks (with records) into the datafilsse
+    string saveRoute = "../assets/dataFile.txt";
+
+
     // do validation printing
 //    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
 //        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
@@ -188,7 +195,6 @@ int main() {
 //    allNodes.display(allNodes.getRoot());
 
     allNodes.searchElm(15);
-
 
 
     return 0;

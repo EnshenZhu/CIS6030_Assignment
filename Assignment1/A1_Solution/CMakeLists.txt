@@ -11,4 +11,4 @@ add_executable(A1_Solution
         DB_lib/dbComponents.h
         BplusTree_lib/BplusTree.cpp
         BplusTree_lib/BplusTree.h
-        DB_lib/dbIO.cpp DB_lib/dbIO.h)
+        )
