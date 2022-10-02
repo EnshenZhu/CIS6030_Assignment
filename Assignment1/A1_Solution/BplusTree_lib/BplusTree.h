@@ -49,8 +49,10 @@ public:
     void searchElm(int targetElement);
 
     void insertElm(int target);
-
     void insertInternalNode(int target, TreeNode *cursor, TreeNode *child);
+
+    void removeElm()
+    void removeInternalNode();
 
 };
 

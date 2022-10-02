@@ -176,6 +176,30 @@ DB_lib/dbComponents.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.s
 .PHONY : DB_lib/dbComponents.cpp.s
 
+DB_lib/dbIO.obj: DB_lib/dbIO.cpp.obj
+.PHONY : DB_lib/dbIO.obj
+
+# target to build an object file
+DB_lib/dbIO.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbIO.cpp.obj
+.PHONY : DB_lib/dbIO.cpp.obj
+
+DB_lib/dbIO.i: DB_lib/dbIO.cpp.i
+.PHONY : DB_lib/dbIO.i
+
+# target to preprocess a source file
+DB_lib/dbIO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbIO.cpp.i
+.PHONY : DB_lib/dbIO.cpp.i
+
+DB_lib/dbIO.s: DB_lib/dbIO.cpp.s
+.PHONY : DB_lib/dbIO.s
+
+# target to generate assembly for a file
+DB_lib/dbIO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbIO.cpp.s
+.PHONY : DB_lib/dbIO.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -215,6 +239,9 @@ help:
 	@echo ... DB_lib/dbComponents.obj
 	@echo ... DB_lib/dbComponents.i
 	@echo ... DB_lib/dbComponents.s
+	@echo ... DB_lib/dbIO.obj
+	@echo ... DB_lib/dbIO.i
+	@echo ... DB_lib/dbIO.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

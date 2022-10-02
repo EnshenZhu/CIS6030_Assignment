@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj.d"
   "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj"
   "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj.d"
+  "CMakeFiles/A1_Solution.dir/DB_lib/dbIO.cpp.obj"
+  "CMakeFiles/A1_Solution.dir/DB_lib/dbIO.cpp.obj.d"
   "CMakeFiles/A1_Solution.dir/main.cpp.obj"
   "CMakeFiles/A1_Solution.dir/main.cpp.obj.d"
   "libA1_Solution.dll.a"
