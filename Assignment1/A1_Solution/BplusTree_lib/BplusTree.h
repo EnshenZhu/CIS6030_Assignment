@@ -46,7 +46,7 @@ public:
 
     void showElm(int targetValue);
 
-    void searchElm(int targetElement);
+    void searchElm(int target);
 
     void insertElm(int target);
     void insertInternalNode(int target, TreeNode *cursor, TreeNode *child);

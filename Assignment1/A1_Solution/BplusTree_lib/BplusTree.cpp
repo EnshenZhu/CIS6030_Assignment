@@ -23,7 +23,7 @@ BplusTree::BplusTree() {
 }
 
 // Search the leaf element
-void BplusTree::searchElm(int targetElement) {
+void BplusTree::searchElm(int target) {
     if (root == NULL) {
         // if there is no root, the tree does not exist
         cout << "The tree is empty." << endl;
@@ -32,7 +32,7 @@ void BplusTree::searchElm(int targetElement) {
 
         while (cursor->isLeaf == false) {
             for (int idx = 0; idx < cursor->size; idx++) {
-                if (targetElement < cursor->key[idx]) {
+                if (target < cursor->key[idx]) {
                     cursor = cursor->pointer[idx];
                     break;
                 }
@@ -45,12 +45,12 @@ void BplusTree::searchElm(int targetElement) {
         }
 
         for (int index = 0; index < cursor->size; index++) {
-            if (cursor->key[index] == targetElement) {
-                cout << targetElement << " is found " << endl;
+            if (cursor->key[index] == target) {
+                cout << target << " is found " << endl;
                 return;
             }
         }
-        cout << targetElement << " cannot be found inside the tree" << endl;
+        cout << target << " cannot be found inside the tree" << endl;
     }
 }
 

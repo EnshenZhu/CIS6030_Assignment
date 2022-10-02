@@ -179,23 +179,23 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 };
 
 
-//void readAllFile(string saveRoute) {
-//
-//    char value;
-//
-//    fstream file(saveRoute, ios::in);
-//    if (!file) {
-//        cout << "Error opening file.";
-//        return;
-//    }
-//
-//    file.seekg(0L, ios::beg);
-//    file.get(value);
-//
-//    bitset<8> newBit(value);
-//
-//    cout << "The read value is " << newBit << endl;
-//}
+void readAllFile(string saveRoute) {
+
+    char value;
+
+    fstream file(saveRoute, ios::in);
+    if (!file) {
+        cout << "Error opening file.";
+        return;
+    }
+
+    file.seekg(0L, ios::beg);
+    file.get(value);
+
+    bitset<8> newBit(value);
+
+    cout << "The read value is " << newBit << endl;
+}
 
 //int main(){
 //    short x = 1000;
