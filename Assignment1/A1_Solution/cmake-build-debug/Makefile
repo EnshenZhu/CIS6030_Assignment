@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\winni\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\winni\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Guelph_Master\CIS6030_Assignment\Assignment1\A1_Solution
+CMAKE_SOURCE_DIR = E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Guelph_Master\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug
+CMAKE_BINARY_DIR = E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = D:\Guelph_Master\CIS6030_Assignment\Assignment1\A1_Solution\c
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\winni\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\winni\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Guelph_Master\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug\CMakeFiles D:\Guelph_Master\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug\CMakeFiles E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Guelph_Master\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\GuelphMaster\CIS6030_Information_System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,29 +128,53 @@ A1_Solution/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/build
 .PHONY : A1_Solution/fast
 
-library/dbComponents.obj: library/dbComponents.cpp.obj
-.PHONY : library/dbComponents.obj
+BplusTree_lib/BplusTree.obj: BplusTree_lib/BplusTree.cpp.obj
+.PHONY : BplusTree_lib/BplusTree.obj
 
 # target to build an object file
-library/dbComponents.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/library/dbComponents.cpp.obj
-.PHONY : library/dbComponents.cpp.obj
+BplusTree_lib/BplusTree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj
+.PHONY : BplusTree_lib/BplusTree.cpp.obj
 
-library/dbComponents.i: library/dbComponents.cpp.i
-.PHONY : library/dbComponents.i
+BplusTree_lib/BplusTree.i: BplusTree_lib/BplusTree.cpp.i
+.PHONY : BplusTree_lib/BplusTree.i
 
 # target to preprocess a source file
-library/dbComponents.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/library/dbComponents.cpp.i
-.PHONY : library/dbComponents.cpp.i
+BplusTree_lib/BplusTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.i
+.PHONY : BplusTree_lib/BplusTree.cpp.i
 
-library/dbComponents.s: library/dbComponents.cpp.s
-.PHONY : library/dbComponents.s
+BplusTree_lib/BplusTree.s: BplusTree_lib/BplusTree.cpp.s
+.PHONY : BplusTree_lib/BplusTree.s
 
 # target to generate assembly for a file
-library/dbComponents.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/library/dbComponents.cpp.s
-.PHONY : library/dbComponents.cpp.s
+BplusTree_lib/BplusTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s
+.PHONY : BplusTree_lib/BplusTree.cpp.s
+
+DB_lib/dbComponents.obj: DB_lib/dbComponents.cpp.obj
+.PHONY : DB_lib/dbComponents.obj
+
+# target to build an object file
+DB_lib/dbComponents.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj
+.PHONY : DB_lib/dbComponents.cpp.obj
+
+DB_lib/dbComponents.i: DB_lib/dbComponents.cpp.i
+.PHONY : DB_lib/dbComponents.i
+
+# target to preprocess a source file
+DB_lib/dbComponents.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.i
+.PHONY : DB_lib/dbComponents.cpp.i
+
+DB_lib/dbComponents.s: DB_lib/dbComponents.cpp.s
+.PHONY : DB_lib/dbComponents.s
+
+# target to generate assembly for a file
+DB_lib/dbComponents.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\A1_Solution.dir\build.make CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.s
+.PHONY : DB_lib/dbComponents.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -185,9 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... A1_Solution
-	@echo ... library/dbComponents.obj
-	@echo ... library/dbComponents.i
-	@echo ... library/dbComponents.s
+	@echo ... BplusTree_lib/BplusTree.obj
+	@echo ... BplusTree_lib/BplusTree.i
+	@echo ... BplusTree_lib/BplusTree.s
+	@echo ... DB_lib/dbComponents.obj
+	@echo ... DB_lib/dbComponents.i
+	@echo ... DB_lib/dbComponents.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
