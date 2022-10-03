@@ -132,7 +132,7 @@ int calculateRealBlockSize(vector<BlockNode> allBlock) {
 void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     char singleLine[1024];
 
-    // 以写模式打开文件
+    // open the file in the write mode
     ofstream outfile(saveRoute);
 
     unsigned short thisNumOfRecord = allBlocks[0].numsOfRecords();
@@ -242,8 +242,6 @@ int main() {
     vector<BlockNode> metaBlock = storeRecordToBlocks(totalNumOfRecords, metaRecord);
     int realAllBlockSize = calculateRealBlockSize(metaBlock);
 
-//    vector<int> metaBlock={1,1,1};
-
     // get how many blocks we created
     int totalNumOfBlock = metaBlock.size();
 
@@ -263,10 +261,10 @@ int main() {
     writeAllFile(saveRoute, metaBlock);
     readAllFile(saveRoute);
 
-    // do validation printing
-//    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
-//        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
-//    }
+    //do validation printing
+    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
+        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
+    }
 
 // start testing the tree
     BplusTree allNodes;
