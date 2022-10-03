@@ -132,10 +132,13 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     // open the file in the write mode
     ofstream outfile(saveRoute);
 
+    // Block Part 1: nums of records
+    // PLACE the thisNumOfRecord INTO the data file
     unsigned short thisNumOfRecord = allBlocks[0].numsOfRecords();
     singleLine[0] = thisNumOfRecord;
-    outfile << singleLine[0]; // PLACE the thisNumOfRecord INTO the data file
+    outfile << singleLine[0];
 
+    // Block Part 2: vector list of end positions of each record
     int singleLineIndexTracker = 1; // all jumpers will be recorded from the second element of the single line.
     for (short jumperIdx = 0; jumperIdx < allBlocks[0].numsOfRecords(); jumperIdx++) {
         unsigned short theRecordJumper = allBlocks[0].endPostionOfEachRecord[jumperIdx]; // subtract the jumper (end position of each record)
@@ -155,6 +158,13 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
         singleLineIndexTracker += 2;
     }
 
+    // Block Part 3: size of the block head
+    unsigned short thisSizeOfHead = allBlocks[0].sizeOfHead();
+    singleLine[singleLineIndexTracker] = thisNumOfRecord;
+    outfile << singleLine[singleLineIndexTracker];
+    singleLineIndexTracker += 1;
+
+    // Block Part 4: very long string of record contents
     for (int contentIdx = 0; contentIdx <= allBlocks[0].recordContent.size(); contentIdx++) {
         singleLine[singleLineIndexTracker] = allBlocks[0].recordContent[contentIdx];
         outfile << singleLine[singleLineIndexTracker];
@@ -179,6 +189,7 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 void readAllFile(string saveRoute) {
 
     char value;
+    int integer; // this is only for reading the record jumper (end positon of each record)
 
     fstream file(saveRoute, ios::in);
     if (!file) {
@@ -194,14 +205,27 @@ void readAllFile(string saveRoute) {
     long thisNumOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
     cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
 
-    // get each record
+    // get each record end positions
     for (int idxOfRecord = 0; idxOfRecord < thisNumOfRecord_Decimal - 1; idxOfRecord++) {
         // get the end position of each record
         file.seekg(8L, ios::cur);
         file.get(value);
+        char temp = value;
+        file.seekg(8L, ios::cur);
+        file.get(value);
+        char aJumper = temp + value;
 
-        bitset<8> thisEndPositonOfRecord_Binary(value);
-        long thisEndPositonOfRecord_Decimal = thisEndPositonOfRecord_Binary.to_ulong();
+        bitset<16> thisEndPositonOfRecord_Binary(aJumper);
+
+//        file.seekg(8L, ios::cur);
+//        file.get(value);
+//        bitset<8> thisEndPositonOfRecordBinaryPartTwo(value);
+//
+//        dynamic_bitset
+//        bitset<16> thisEndPositonOfRecord_Binary =
+//                thisEndPositonOfRecord_Binary_PartONE + thisEndPositonOfRecordBinaryPartTwo;
+
+        long thisEndPositonOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
         cout << thisEndPositonOfRecord_Decimal << "|";
     }
 

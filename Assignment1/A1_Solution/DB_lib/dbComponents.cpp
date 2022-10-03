@@ -32,11 +32,15 @@ void Record::destructTheRecordValue(std::string input) {
 
 //currentSize=recordContent.size+endPostionOfEachRecord.size*2+miscSize !!!!!
 short BlockNode::currentSize() {
-    return this->recordContent.size() + endPostionOfEachRecord.size() * 2 + miscSize;
+    return this->recordContent.size() + this->endPostionOfEachRecord.size() * 2 + this->miscSize;
 }
 
 short BlockNode::numsOfRecords() {
     return this->endPostionOfEachRecord.size();
+}
+
+short BlockNode::sizeOfHead() {
+    return this->numsOfRecords() * 2 + this->miscSize;
 }
 
 

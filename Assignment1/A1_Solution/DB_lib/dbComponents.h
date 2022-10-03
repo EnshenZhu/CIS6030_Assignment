@@ -18,6 +18,7 @@ public:
 
     // get the size of the current Record
     short getRecordSize();
+
     void destructTheRecordValue(string input);
 };
 
@@ -26,7 +27,7 @@ class BlockNode {
 
 public:
     short static const maxCapacity = 1024;
-    short static const miscSize = 2; // default miscellaneous size of a block
+    short static const miscSize = 2; // default miscellaneous size of a block (=char(numsOfRecord)+char(sizeOfHead))
     short currentSize();
 
 //    BlockNode *previousBlockNode = nullptr; // specify the previous pointer for the next block node
@@ -38,7 +39,9 @@ public:
     vector<short> endPostionOfEachRecord; // recall that each <short> element takes two bits
     string recordContent;
 
-    short numsOfRecords();
+    short numsOfRecords(); // to record the number of the record; char(the_value)=1
+    short sizeOfHead(); // to record the size of the block head; char(the_value)=1
+
 };
 
 
