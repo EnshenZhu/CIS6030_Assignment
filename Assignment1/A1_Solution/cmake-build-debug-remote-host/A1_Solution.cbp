@@ -99,6 +99,9 @@
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/main.cpp">
 			<Option target="A1_Solution"/>
 		</Unit>
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/util/utility.h">
+			<Option target="A1_Solution"/>
+		</Unit>
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -1,3 +1,0 @@
-C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\A1_Solution.dir/objects.a
-C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\mingw\bin\ar.exe qc CMakeFiles\A1_Solution.dir/objects.a @CMakeFiles\A1_Solution.dir\objects1.rsp
-C:\Users\1\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\A1_Solution.dir/objects.a -Wl,--no-whole-archive -o A1_Solution.exe -Wl,--out-implib,libA1_Solution.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\A1_Solution.dir\linklibs.rsp

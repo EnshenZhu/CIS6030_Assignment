@@ -1,4 +1,6 @@
 # ninja log v5
-16	648	6864569594625009	build.ninja	f4bf13fc992888bc
-5	1141	6859142595054392	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-1141	1418	6859142597854037	A1_Solution.exe	8ea28200e0a72fb5
+16	648	6865183442165475	build.ninja	f4bf13fc992888bc
+660	795	6865173618254818	A1_Solution.exe	5bfb31c23607539
+7	366	6865168168154016	CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj	9fde7a91b7ff3354
+4	395	6865145960128411	CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj	6d35fed7017593eb
+3	660	6865173616828575	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03

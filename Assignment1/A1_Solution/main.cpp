@@ -4,6 +4,7 @@
 #include <algorithm>  // implement sorting
 #include <typeinfo>
 #include <bitset>
+#include <cmath>
 
 #include "DB_lib/dbComponents.h"
 #include "BplusTree_lib/BplusTree.h"
@@ -16,17 +17,6 @@ int getSizeOfAllData(int numsOfRecords, vector<Record> allRecords) {
         totalSize += allRecords[idx].getRecordSize();
     }
     return totalSize;
-}
-
-int fieldTwoEndIdx(string aString) {
-    short count = 3;
-    for (short idx = 0; idx < aString.size(); idx++) {
-        if (isspace(aString[idx])) {
-            count -= 1;
-            if (count == 0) return idx;
-        }
-    }
-    return -1;
 }
 
 void printShort(short input) {
@@ -56,11 +46,7 @@ vector<Record> transferFileToRecord(string theRoute) {
         allRecords.push_back(Record());
         Record &newRecord = allRecords.back();
 
-        newRecord.endIndexField2 = fieldTwoEndIdx(textInput);
-
-        newRecord.field1 = textInput.substr(0, 10);
-        newRecord.field2 = textInput.substr(11, newRecord.endIndexField2 - 11);
-        newRecord.field3 = textInput.substr(newRecord.endIndexField2 + 1);
+        newRecord.destructTheRecordValue(textInput); // convert the textInput into the field1. field2 and field3
     }
 
     return allRecords;
@@ -78,8 +64,10 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
 
         allBlocks.push_back(BlockNode());
         BlockNode &newBlockNode = allBlocks.back();
-        newBlockNode.startPositionOfEachRecord.push_back(
-                0); // a new block will place the record started from the index=0 in the recordContent
+
+        int currentNumsOfRecordInTheBlock = 0;
+        //        newBlockNode.endPostionOfEachRecord.push_back(
+//                0); // a new block will place the record started from the index=0 in the recordContent
 
         while ((indexOfRecord < numsOfRecords) &&
                (newBlockNode.currentSize() + allRecords[indexOfRecord].getRecordSize() <=
@@ -89,17 +77,26 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
                                             allRecords[indexOfRecord].field3;
             newBlockNode.recordContent.append(contentOfCurrentRecord); // add a new record to the block
 
-            int currentNumsOfRecordInTheBlock = newBlockNode.startPositionOfEachRecord.size(); // temporarily store the current numbers of records inside this block
-            newBlockNode.startPositionOfEachRecord.push_back(
-                    newBlockNode.startPositionOfEachRecord[currentNumsOfRecordInTheBlock - 1] +
-                    contentOfCurrentRecord.size()); // update the startPositionOfEachRecord
+            // 少了if判断
+            if (newBlockNode.endPostionOfEachRecord.size() == 0) {
+                newBlockNode.endPostionOfEachRecord.push_back(contentOfCurrentRecord.size());
+            } else {
+                newBlockNode.endPostionOfEachRecord.push_back(contentOfCurrentRecord.size() +
+                                                              newBlockNode.endPostionOfEachRecord[
+                                                                      currentNumsOfRecordInTheBlock - 1]);
+            }
+
+            currentNumsOfRecordInTheBlock = newBlockNode.endPostionOfEachRecord.size(); // temporarily store the current numbers of records inside this block
+//            newBlockNode.endPostionOfEachRecord.push_back(
+//                    newBlockNode.endPostionOfEachRecord[currentNumsOfRecordInTheBlock - 1] +
+//                    contentOfCurrentRecord.size()); // update the endPostionOfEachRecord
 
             indexOfRecord++; // move to the next record
         }
 
 //        cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
 //        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentSize() << endl;
-//        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.startPositionOfEachRecord[1])
+//        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.endPostionOfEachRecord[1])
 //             << endl;
 
         indexOfBlockNode++; // move to the next node
@@ -141,7 +138,7 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 
     int singleLineIndexTracker = 1; // all jumpers will be recorded from the second element of the single line.
     for (short jumperIdx = 0; jumperIdx < allBlocks[0].numsOfRecords(); jumperIdx++) {
-        unsigned short theRecordJumper = allBlocks[0].startPositionOfEachRecord[jumperIdx]; // subtract the jumper (start position of each record)
+        unsigned short theRecordJumper = allBlocks[0].endPostionOfEachRecord[jumperIdx]; // subtract the jumper (end position of each record)
 
         // split each record jumper into two chars
         char low = theRecordJumper;
@@ -189,28 +186,15 @@ void readAllFile(string saveRoute) {
         return;
     }
 
+    // get nums of record
     file.seekg(0L, ios::beg);
     file.get(value);
+    bitset<8> thisNumOfRecord_Binary(value);
+    cout << "This block has nums of record: " << thisNumOfRecord_Binary << endl;
 
-    bitset<8> newBit(value);
+    // get each record
 
-    cout << "The read value is " << newBit << endl;
 }
-
-//int main(){
-//    short x = 1000;
-//    printShort(x);
-//
-//    char high;
-//    char low;
-//
-//    low = x;
-//    printChar(low);
-//
-//    x = x >> 8;
-//    cout<<"after right shift 8 bits:"<<endl;
-//    printShort(x);
-//}
 
 int main() {
     // config the raw input data location
@@ -262,9 +246,18 @@ int main() {
     readAllFile(saveRoute);
 
     //do validation printing
-    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
-        cout << metaBlock[0].startPositionOfEachRecord[idx] << " ";
-    }
+//    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
+//        cout << metaBlock[0].endPostionOfEachRecord[idx] << " ";
+//    }
+
+    cout << endl;
+
+    // verify the amount of records
+//    int total = 0;
+//    for (int idx = 0; idx < metaBlock.size(); idx++) {
+//        total += metaBlock[idx].numsOfRecords();
+//    }
+//    cout << total << endl;
 
 // start testing the tree
     BplusTree allNodes;
