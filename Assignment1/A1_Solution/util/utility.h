@@ -7,13 +7,19 @@
 
 #endif //A1_SOLUTION_UTILITY_H
 
+using namespace std;
 
-int convertBinaryToDecimal(long long binaryInput){
+// this method has problem
+int convertBinaryToDecimal(bitset<8> binaryInput) {
     int dec = 0, i = 0, residual;
 
-    while (binaryInput!=0) {
-        residual = binaryInput % 10;
-        binaryInput /= 10;
+    long long binaryInput_misc = binaryInput.to_ullong();
+    cout << binaryInput_misc << endl;
+
+    while (binaryInput_misc != 0) {
+        residual = binaryInput_misc % 10;
+        binaryInput_misc /= 10;
         dec += residual * pow(2, i);
         ++i;
+    }
 }

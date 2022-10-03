@@ -6,6 +6,7 @@
 #include <bitset>
 #include <cmath>
 
+#include "util/utility.h"
 #include "DB_lib/dbComponents.h"
 #include "BplusTree_lib/BplusTree.h"
 
@@ -77,7 +78,6 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
                                             allRecords[indexOfRecord].field3;
             newBlockNode.recordContent.append(contentOfCurrentRecord); // add a new record to the block
 
-            // 少了if判断
             if (newBlockNode.endPostionOfEachRecord.size() == 0) {
                 newBlockNode.endPostionOfEachRecord.push_back(contentOfCurrentRecord.size());
             } else {
@@ -190,9 +190,21 @@ void readAllFile(string saveRoute) {
     file.seekg(0L, ios::beg);
     file.get(value);
     bitset<8> thisNumOfRecord_Binary(value);
-    cout << "This block has nums of record: " << thisNumOfRecord_Binary << endl;
+//  cout << "This block has nums of record: " << thisNumOfRecord_Binary << endl;
+    long thisNumOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
+    cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
 
     // get each record
+    for (int idxOfRecord = 0; idxOfRecord < thisNumOfRecord_Decimal - 1; idxOfRecord++) {
+        // get the end position of each record
+        file.seekg(8L, ios::cur);
+        file.get(value);
+
+        bitset<8> thisEndPositonOfRecord_Binary(value);
+        long thisEndPositonOfRecord_Decimal = thisEndPositonOfRecord_Binary.to_ulong();
+        cout << thisEndPositonOfRecord_Decimal << "|";
+    }
+
 
 }
 
