@@ -34,7 +34,7 @@ bitset<Num1 + Num2> concat(const bitset<Num1> &b1, const bitset<Num2> &b2) {
     return bitset<Num1 + Num2>(s1 + s2);
 }
 
-void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
+void writeOneLineFile(string saveRoute, vector<BlockNode> allBlocks) {
     char singleLine[1024];
 
     // open the file in the write mode
@@ -86,11 +86,68 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     outfile.close();
 };
 
-// this fucntion is just a half work, we are going to use it directly in future
+void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
+
+    // open the file in the write mode
+    ofstream outfile(saveRoute);
+
+    for (int idxOfAllBlocks = 0; idxOfAllBlocks < allBlocks.size(); idxOfAllBlocks++) {
+
+        char singleLine[1024];
+
+        // Block Part 1: nums of records
+        // PLACE the thisNumOfRecord INTO the data file
+        unsigned short thisNumOfRecord = allBlocks[0].numsOfRecords();
+        singleLine[0] = thisNumOfRecord;
+        outfile << singleLine[0];
+
+        // Block Part 2: vector list of end positions of each record
+        int singleLineIndexTracker = 1; // all jumpers will be recorded from the second element of the single line.
+        for (short jumperIdx = 0; jumperIdx < allBlocks[0].numsOfRecords(); jumperIdx++) {
+            unsigned short theRecordJumper = allBlocks[0].endPostionOfEachRecord[jumperIdx]; // subtract the jumper (end position of each record)
+
+            // split each record jumper into two chars
+            char low = theRecordJumper;
+            theRecordJumper = theRecordJumper >> 8;
+            char high = theRecordJumper;
+            int plusOne_singleLineIndexTracker = singleLineIndexTracker + 1;
+
+            singleLine[singleLineIndexTracker] = high;
+            outfile << singleLine[singleLineIndexTracker];
+            singleLine[plusOne_singleLineIndexTracker] = low;
+            outfile << singleLine[plusOne_singleLineIndexTracker];
+
+            singleLineIndexTracker += 2;
+        }
+
+
+        // Block Part 3: size of the block head
+        unsigned short thisSizeOfHead = allBlocks[0].sizeOfHead();
+        singleLine[singleLineIndexTracker] = thisNumOfRecord;
+        outfile << singleLine[singleLineIndexTracker];
+        singleLineIndexTracker += 1;
+
+        // Block Part 4: very long string of record contents
+        for (int contentIdx = 0; contentIdx <= allBlocks[0].recordContent.size(); contentIdx++) {
+            singleLine[singleLineIndexTracker] = allBlocks[0].recordContent[contentIdx];
+            outfile << singleLine[singleLineIndexTracker];
+            singleLineIndexTracker += 1;
+        }
+
+        for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
+            outfile << 0;
+        }
+
+    }
+
+    outfile.close();
+};
+
+
+// this function is just a half work, we are going to use it directly in future
 void readAllFile(string saveRoute) {
 
     char value;
-    int integer; // this is only for reading the record jumper (end positon of each record)
 
     fstream file(saveRoute, ios::in);
     if (!file) {
@@ -127,4 +184,17 @@ void readAllFile(string saveRoute) {
         cout << thisEndPositonOfRecord_Decimal << "|";
     }
     cout << endl;
+}
+
+void readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOfRecordInBlock) {
+    char value;
+
+    fstream file(saveRoute, ios::in);
+    if (!file) {
+        cout << "Error opening file.";
+        return;
+    }
+
+
+
 }
