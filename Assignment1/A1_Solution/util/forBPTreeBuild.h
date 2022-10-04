@@ -49,6 +49,7 @@ void buildDataFileIntoBPTree(string fileSaveRoute, vector<BlockNode> allBlock) {
     for (short idxOfBlock = 0; idxOfBlock < totalBlockNum; idxOfBlock++) {
 
         TreeNodeList.push_back(ssTreeNode());
+        ssTreeNode &NEW_ssTreeNode = TreeNodeList.back();
 
         for (short relativeIdxOfRecord = 0;
              relativeIdxOfRecord < allBlock[idxOfBlock].numsOfRecords(); relativeIdxOfRecord++) {
