@@ -14,4 +14,4 @@ add_executable(A1_Solution
         util/forDataFileCRUD.h
         util/forBlockANDRecordGeneration.h
         newBPTree_lib/newBPTree.cpp
-        newBPTree_lib/newBPTree.h util/forBPTreeBuild.h)
+        newBPTree_lib/newBPTree.h util/forBPTreeBuild.h util/veryTrickyMethods.h)

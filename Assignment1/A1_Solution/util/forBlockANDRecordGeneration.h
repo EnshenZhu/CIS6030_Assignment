@@ -19,6 +19,7 @@
 
 using namespace std;
 
+
 int getSizeOfAllData(int numsOfRecords, vector<Record> allRecords) {
     int totalSize = 0;
     for (int idx = 0; idx < numsOfRecords; idx++) {
@@ -116,7 +117,7 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
 int calculateRealBlockSize(vector<BlockNode> allBlock) {
     int realSize = 0;
 
-    for (short idx = 0; idx <= allBlock.size(); idx++) {
+    for (short idx = 0; idx < allBlock.size(); idx++) {
         realSize += allBlock[idx].currentSize();
     }
 

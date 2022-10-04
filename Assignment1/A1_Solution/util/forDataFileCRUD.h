@@ -73,7 +73,7 @@ void writeOneLineFile(string saveRoute, vector<BlockNode> allBlocks) {
     singleLineIndexTracker += 1;
 
     // Block Part 4: very long string of record contents
-    for (int contentIdx = 0; contentIdx <= allBlocks[0].recordContent.size(); contentIdx++) {
+    for (int contentIdx = 0; contentIdx < allBlocks[0].recordContent.size(); contentIdx++) {
         singleLine[singleLineIndexTracker] = allBlocks[0].recordContent[contentIdx];
         outfile << singleLine[singleLineIndexTracker];
         singleLineIndexTracker += 1;
