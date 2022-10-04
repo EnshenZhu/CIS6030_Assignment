@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj.d"
   "CMakeFiles/A1_Solution.dir/main.cpp.obj"
   "CMakeFiles/A1_Solution.dir/main.cpp.obj.d"
+  "CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj"
+  "CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj.d"
   "libA1_Solution.dll.a"
 )
 

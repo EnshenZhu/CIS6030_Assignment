@@ -91,20 +91,21 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     // open the file in the write mode
     ofstream outfile(saveRoute);
 
-    for (int idxOfAllBlocks = 0; idxOfAllBlocks < allBlocks.size(); idxOfAllBlocks++) {
+    for (short idxOfAllBlocks = 0; idxOfAllBlocks < allBlocks.size(); idxOfAllBlocks++) {
 
+        BlockNode thisBlock = allBlocks[idxOfAllBlocks];
         char singleLine[1024];
 
         // Block Part 1: nums of records
         // PLACE the thisNumOfRecord INTO the data file
-        unsigned short thisNumOfRecord = allBlocks[0].numsOfRecords();
+        unsigned short thisNumOfRecord = thisBlock.numsOfRecords();
         singleLine[0] = thisNumOfRecord;
         outfile << singleLine[0];
 
         // Block Part 2: vector list of end positions of each record
         int singleLineIndexTracker = 1; // all jumpers will be recorded from the second element of the single line.
-        for (short jumperIdx = 0; jumperIdx < allBlocks[0].numsOfRecords(); jumperIdx++) {
-            unsigned short theRecordJumper = allBlocks[0].endPostionOfEachRecord[jumperIdx]; // subtract the jumper (end position of each record)
+        for (short jumperIdx = 0; jumperIdx < thisBlock.numsOfRecords(); jumperIdx++) {
+            unsigned short theRecordJumper = thisBlock.endPostionOfEachRecord[jumperIdx]; // subtract the jumper (end position of each record)
 
             // split each record jumper into two chars
             char low = theRecordJumper;
@@ -122,14 +123,14 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 
 
         // Block Part 3: size of the block head
-        unsigned short thisSizeOfHead = allBlocks[0].sizeOfHead();
-        singleLine[singleLineIndexTracker] = thisNumOfRecord;
+        unsigned short thisSizeOfHead = thisBlock.sizeOfHead();
+        singleLine[singleLineIndexTracker] = thisSizeOfHead;
         outfile << singleLine[singleLineIndexTracker];
         singleLineIndexTracker += 1;
 
         // Block Part 4: very long string of record contents
-        for (int contentIdx = 0; contentIdx <= allBlocks[0].recordContent.size(); contentIdx++) {
-            singleLine[singleLineIndexTracker] = allBlocks[0].recordContent[contentIdx];
+        for (int contentIdx = 0; contentIdx <= thisBlock.recordContent.size(); contentIdx++) {
+            singleLine[singleLineIndexTracker] = thisBlock.recordContent[contentIdx];
             outfile << singleLine[singleLineIndexTracker];
             singleLineIndexTracker += 1;
         }
@@ -137,7 +138,6 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
         for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
             outfile << 0;
         }
-
     }
 
     outfile.close();
@@ -169,14 +169,14 @@ void readAllFile(string saveRoute) {
         // get the end position of each record
         file.seekg(0, ios::cur);
         file.get(value);
-        bitset<8> left_thisEndPositonOfRecord_Binary(value);
+        bitset<8> left_thisEndPositionOfRecord_Binary(value);
 
         file.seekg(0, ios::cur);
         file.get(value);
-        bitset<8> right_thisEndPositonOfRecord_Binary(value);
+        bitset<8> right_thisEndPositionOfRecord_Binary(value);
 
-        bitset<16> fullSingleRecordJumper = concat(left_thisEndPositonOfRecord_Binary,
-                                                   right_thisEndPositonOfRecord_Binary);
+        bitset<16> fullSingleRecordJumper = concat(left_thisEndPositionOfRecord_Binary,
+                                                   right_thisEndPositionOfRecord_Binary);
 
         //    cout << fullSingleRecordJumper << endl;
 
@@ -195,6 +195,12 @@ void readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOfRe
         return;
     }
 
-
+    int cursorMoveAtStart = indexOfBlock * 1024; // recall that each block has 1024 byte size
+    // get nums of record
+    file.seekg(cursorMoveAtStart, ios::beg);
+    file.get(value);
+    bitset<8> thisNumOfRecord_Binary(value);
+    long thisNumOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
+    cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
 
 }

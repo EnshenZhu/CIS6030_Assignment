@@ -451,6 +451,9 @@ CMakeFiles/A1_Solution.dir/main.cpp.obj: ../main.cpp \
   C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
   C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc
 
+CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj: ../newBPTree_lib/newBPTree.cpp \
+  ../newBPTree_lib/newBPTree.h
+
 
 ../BplusTree_lib/BplusTree.cpp:
 
@@ -597,6 +600,8 @@ C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw
 C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/concept_check.h:
 
 C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/debug/assertions.h:
+
+../newBPTree_lib/newBPTree.cpp:
 
 C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_iterator.h:
 
@@ -777,3 +782,5 @@ C:/Users/1/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/mingw
 ../util/forBlockANDRecordGeneration.h:
 
 ../util/forDataFileCRUD.h:
+
+../newBPTree_lib/newBPTree.h:

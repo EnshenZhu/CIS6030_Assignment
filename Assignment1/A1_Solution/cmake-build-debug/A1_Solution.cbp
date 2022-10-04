@@ -97,6 +97,12 @@
 		<Unit filename="E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/main.cpp">
 			<Option target="A1_Solution"/>
 		</Unit>
+		<Unit filename="E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/newBPTree_lib/newBPTree.cpp">
+			<Option target="A1_Solution"/>
+		</Unit>
+		<Unit filename="E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/newBPTree_lib/newBPTree.h">
+			<Option target="A1_Solution"/>
+		</Unit>
 		<Unit filename="E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/util/forBlockANDRecordGeneration.h">
 			<Option target="A1_Solution"/>
 		</Unit>

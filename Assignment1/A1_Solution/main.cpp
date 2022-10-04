@@ -68,11 +68,14 @@ int main() {
     // now we are going to store all blocks (with records) into the datafile
     string saveRoute = "../assets/dataFile.txt";
     writAllFile(saveRoute, metaBlock);
-//    readAllFile(saveRoute);
 
-    //do validation printing
-    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
-        cout << metaBlock[0].endPostionOfEachRecord[idx] << " ";
+    int x = 200;
+    readACertainRecordInBlock(saveRoute, x, 2);
+    cout << metaBlock[x].numsOfRecords() << endl;
+
+    // do validation printing
+    for (int idx = 0; idx < metaBlock[x].numsOfRecords(); idx++) {
+        cout << metaBlock[x].endPostionOfEachRecord[idx] << " ";
     }
 
     cout << endl;

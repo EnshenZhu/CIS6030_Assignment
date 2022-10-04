@@ -12,4 +12,6 @@ add_executable(A1_Solution
         BplusTree_lib/BplusTree.cpp
         BplusTree_lib/BplusTree.h
         util/forDataFileCRUD.h
-        util/forBlockANDRecordGeneration.h)
+        util/forBlockANDRecordGeneration.h
+        newBPTree_lib/newBPTree.cpp
+        newBPTree_lib/newBPTree.h)
