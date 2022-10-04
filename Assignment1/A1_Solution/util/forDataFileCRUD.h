@@ -12,19 +12,19 @@
 using namespace std;
 
 // this method has problem
-int convertBinaryToDecimal(bitset<8> binaryInput) {
-    int dec = 0, i = 0, residual;
-
-    long long binaryInput_misc = binaryInput.to_ullong();
-    cout << binaryInput_misc << endl;
-
-    while (binaryInput_misc != 0) {
-        residual = binaryInput_misc % 10;
-        binaryInput_misc /= 10;
-        dec += residual * pow(2, i);
-        ++i;
-    }
-}
+//int convertBinaryToDecimal(bitset<8> binaryInput) {
+//    int dec = 0, i = 0, residual;
+//
+//    long long binaryInput_misc = binaryInput.to_ullong();
+//    cout << binaryInput_misc << endl;
+//
+//    while (binaryInput_misc != 0) {
+//        residual = binaryInput_misc % 10;
+//        binaryInput_misc /= 10;
+//        dec += residual * pow(2, i);
+//        ++i;
+//    }
+//}
 
 // bitset concatenation
 template<size_t Num1, size_t Num2>
@@ -34,7 +34,7 @@ bitset<Num1 + Num2> concat(const bitset<Num1> &b1, const bitset<Num2> &b2) {
     return bitset<Num1 + Num2>(s1 + s2);
 }
 
-void writeAllFile(string saveRoute, vector <BlockNode> allBlocks) {
+void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     char singleLine[1024];
 
     // open the file in the write mode
