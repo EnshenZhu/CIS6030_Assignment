@@ -7,8 +7,8 @@
 
 #endif //A1_SOLUTION_VERYTRICKYMETHODS_H
 
-#include <vector>
 #include "iostream"
+#include <vector>
 
 using namespace std;
 

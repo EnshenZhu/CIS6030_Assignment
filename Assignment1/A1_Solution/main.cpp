@@ -10,6 +10,7 @@
 #include "util/forDataFileCRUD.h"
 #include "DB_lib/dbComponents.h"
 #include "BplusTree_lib/BplusTree.h"
+#include "util/forBPTreeBuild.h"
 
 using namespace std;
 
@@ -78,6 +79,8 @@ int main() {
     }
 
     cout << endl;
+
+    buildDataFileIntoBPTree(saveRoute, metaBlock);
     // verify the amount of records
 //    int total = 0;
 //    for (int idx = 0; idx < metaBlock.size(); idx++) {

@@ -28,7 +28,7 @@ class newTreeNode {
 
     short currentKeySize();
 
-    bool isLeaf;
+    bool isLeaf = true;
 
     bool isFull();
 };
