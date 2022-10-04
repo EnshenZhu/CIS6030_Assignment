@@ -14,7 +14,7 @@ public:
     string field1;
     string field2;
     string field3;
-//    short endIndexField2;
+    short endIndexField2;
 
     // get the size of the current Record
     short getRecordSize();

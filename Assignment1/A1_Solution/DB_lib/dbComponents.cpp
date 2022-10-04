@@ -12,16 +12,18 @@ short Record::getRecordSize() {
     return this->field1.size() + this->field2.size() + this->field3.size();
 }
 
-void Record::destructTheRecordValue(std::string input) {
+void Record::destructTheRecordValue(string input) {
 
     this->endIndexField2 = fieldTwoEndIdx(input);
 
-    this->field1 = input.substr(0, 10);
-    this->field2 = input.substr(10, this->endIndexField2 - 11);
-    this->field3 = input.substr(this->endIndexField2 + 1);
+    vector<string> destructionResult = splitTheRecordContent(input);
+
+    this->field1 = destructionResult[0];
+    this->field2 = destructionResult[1];
+    this->field3 = destructionResult[2];
 }
 
-//currentKeySize=recordContent.size+endPostionOfEachRecord.size*2+miscSize !!!!!
+//currentKeySize=recordContent.size+endPositionOfEachRecord.size*2+miscSize !!!!!
 short BlockNode::currentSize() {
     return this->recordContent.size() + this->endPostionOfEachRecord.size() * 2 + this->miscSize;
 }
