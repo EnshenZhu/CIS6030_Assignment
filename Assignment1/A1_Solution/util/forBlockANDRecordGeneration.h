@@ -92,7 +92,7 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
         }
 
 //        cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
-//        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentSize() << endl;
+//        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentKeySize() << endl;
 //        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.endPostionOfEachRecord[1])
 //             << endl;
 

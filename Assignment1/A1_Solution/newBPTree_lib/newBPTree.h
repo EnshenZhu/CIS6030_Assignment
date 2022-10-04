@@ -4,22 +4,42 @@
 
 #ifndef A1_SOLUTION_NEWBPTREE_H
 #define A1_SOLUTION_NEWBPTREE_H
+#endif //A1_SOLUTION_NEWBPTREE_H
+
+#include <vector>
+#include <string>
+#include "../DB_lib/dbComponents.h"
+
+using namespace std;
+
+int m_value = 8;
+
 
 class newTreeNode {
-    friend class newTreeNode;
+    vector<string> fieldOne_AsKey;
+    vector<string> fieldTwoThree_AsValue;
+    vector<newTreeNode *> child;
 
-    newTreeNode();
+    newTreeNode *nextNewTreeNode;
 
-    int *key;
-    int size;
+    short maxKeySize();
 
-    newTreeNode *(*pointer);
+    short minKeySize();
+
+    short currentKeySize();
+
     bool isLeaf;
+
+    bool isFull();
 };
 
 class newBPTree {
+    void buildTree(string RecordContent);
 
+    void searchElm();
+
+    void insertElm();
+
+    void deleteElm();
 };
 
-
-#endif //A1_SOLUTION_NEWBPTREE_H

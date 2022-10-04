@@ -11,5 +11,9 @@ CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o: ../DB_lib/dbComponents.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../BplusTree_lib/BplusTree.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../DB_lib/dbComponents.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../main.cpp
-CMakeFiles/A1_Solution.dir/main.cpp.o: ../util/utility.h
+CMakeFiles/A1_Solution.dir/main.cpp.o: ../util/forBlockANDRecordGeneration.h
+CMakeFiles/A1_Solution.dir/main.cpp.o: ../util/forDataFileCRUD.h
+
+CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: ../newBPTree_lib/newBPTree.cpp
+CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: ../newBPTree_lib/newBPTree.h
 

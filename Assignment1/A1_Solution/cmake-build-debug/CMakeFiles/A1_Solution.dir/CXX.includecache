@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp
-BplusTree.h
-/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h
-iostream
--
-cmath
--
-
 /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h
 iostream
 -
@@ -23,18 +15,6 @@ fstream
 -
 sstream
 -
-
-/home/undergrad/0/enshen/workspace/assignment1/DB_lib/./dbComponents.h
-vector
--
-
-/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.cpp
-iostream
--
-./dbComponents.h
-/home/undergrad/0/enshen/workspace/assignment1/DB_lib/./dbComponents.h
-dbComponents.h
-/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
 
 /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
 vector
@@ -53,8 +33,36 @@ typeinfo
 -
 bitset
 -
-db_lib/dbComponents.h
-/home/undergrad/0/enshen/workspace/assignment1/db_lib/dbComponents.h
+cmath
+-
+util/forBlockANDRecordGeneration.h
+/home/undergrad/0/enshen/workspace/assignment1/util/forBlockANDRecordGeneration.h
+util/forDataFileCRUD.h
+/home/undergrad/0/enshen/workspace/assignment1/util/forDataFileCRUD.h
+DB_lib/dbComponents.h
+/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
 BplusTree_lib/BplusTree.h
 /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h
+
+/home/undergrad/0/enshen/workspace/assignment1/util/forBlockANDRecordGeneration.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+algorithm
+-
+typeinfo
+-
+bitset
+-
+cmath
+-
+../DB_lib/dbComponents.h
+/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
+
+/home/undergrad/0/enshen/workspace/assignment1/util/forDataFileCRUD.h
+../DB_lib/dbComponents.h
+/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
 
