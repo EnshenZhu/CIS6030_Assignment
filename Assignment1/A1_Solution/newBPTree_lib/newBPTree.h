@@ -12,10 +12,10 @@
 
 using namespace std;
 
-int m_value = 8;
-
-
 class newTreeNode {
+
+    int m_value = 8;
+
     vector<string> fieldOne_AsKey;
     vector<string> fieldTwoThree_AsValue;
     vector<newTreeNode *> child;

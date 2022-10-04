@@ -7,3 +7,9 @@
 4	482	6866233192738218	CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj	9fde7a91b7ff3354
 7	833	6866233196289301	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
 833	1016	6866233198164551	A1_Solution.exe	56faab8523927f1a
+6	302	6866236025465776	CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj	8e8351d3437e0bc0
+3	822	6866236030658500	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+7	317	6866244949207762	CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj	8e8351d3437e0bc0
+3	961	6866244955603256	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+3	771	6866245403146599	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+771	961	6866245405093013	A1_Solution.exe	56faab8523927f1a

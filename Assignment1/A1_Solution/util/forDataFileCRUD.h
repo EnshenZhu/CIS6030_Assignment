@@ -153,13 +153,9 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
         for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
             outfile << 0;
         }
-
-
     }
 
     outfile.close();
-
-
 };
 
 
@@ -204,13 +200,14 @@ void readAllFile(string saveRoute) {
     cout << endl;
 }
 
-void readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOfRecordInBlock) {
+// this function is expected to extract a certain record value in a long string
+string readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOfRecordInBlock) {
     char value;
 
     fstream file(saveRoute, ios::in);
     if (!file) {
         cout << "Error opening file.";
-        return;
+        return "0";
     }
 
     int cursorMoveAtStart = indexOfBlock * 1024; // recall that each block has 1024 byte size
@@ -268,9 +265,13 @@ void readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOfRe
     for (int relativeIdxOfRecord = 0; relativeIdxOfRecord < thisRecordLength; relativeIdxOfRecord++) {
         file.get(value);
         rawRecordValue.push_back(value);
-        cout << rawRecordValue[relativeIdxOfRecord];
+//        cout << rawRecordValue[relativeIdxOfRecord];
     }
 
     cout << endl;
+
+    string inString_rawRecordValue(rawRecordValue.begin(), rawRecordValue.end());
+
+    return inString_rawRecordValue;
 
 }
