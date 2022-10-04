@@ -96,25 +96,25 @@ CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp -o CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s
 
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: CMakeFiles/A1_Solution.dir/flags.make
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: ../newBPTree_lib/newBPTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o -c /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/newBPTree.cpp
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o: CMakeFiles/A1_Solution.dir/flags.make
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o: ../newBPTree_lib/ssBPTree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o -c /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.cpp
 
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/newBPTree.cpp > CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.i
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.cpp > CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.i
 
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/newBPTree.cpp -o CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.s
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.cpp -o CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.s
 
 # Object files for target A1_Solution
 A1_Solution_OBJECTS = \
 "CMakeFiles/A1_Solution.dir/main.cpp.o" \
 "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o" \
 "CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o" \
-"CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o"
+"CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o"
 
 # External object files for target A1_Solution
 A1_Solution_EXTERNAL_OBJECTS =
@@ -122,7 +122,7 @@ A1_Solution_EXTERNAL_OBJECTS =
 A1_Solution: CMakeFiles/A1_Solution.dir/main.cpp.o
 A1_Solution: CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o
 A1_Solution: CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o
-A1_Solution: CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o
+A1_Solution: CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o
 A1_Solution: CMakeFiles/A1_Solution.dir/build.make
 A1_Solution: CMakeFiles/A1_Solution.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug-remote-host/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable A1_Solution"

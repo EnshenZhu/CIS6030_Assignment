@@ -12,15 +12,15 @@
 
 using namespace std;
 
-class newTreeNode {
+class ssTreeNode {
 
     int m_value = 8;
 
     vector<string> fieldOne_AsKey;
     vector<string> fieldTwoThree_AsValue;
-    vector<newTreeNode *> child;
+    vector<ssTreeNode *> child;
 
-    newTreeNode *nextNewTreeNode;
+    ssTreeNode *nextNewTreeNode;
 
     short maxKeySize();
 
@@ -33,7 +33,7 @@ class newTreeNode {
     bool isFull();
 };
 
-class newBPTree {
+class ssBPTree {
     void buildTree(string RecordContent);
 
     void searchElm();

@@ -11,11 +11,12 @@ CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o: ../util/veryTrickyMethods.
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../BplusTree_lib/BplusTree.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../DB_lib/dbComponents.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../main.cpp
+CMakeFiles/A1_Solution.dir/main.cpp.o: ../newBPTree_lib/ssBPTree.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../util/forBPTreeBuild.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../util/forBlockANDRecordGeneration.h
 CMakeFiles/A1_Solution.dir/main.cpp.o: ../util/forDataFileCRUD.h
 
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: ../DB_lib/dbComponents.h
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: ../newBPTree_lib/newBPTree.cpp
-CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o: ../newBPTree_lib/newBPTree.h
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o: ../DB_lib/dbComponents.h
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o: ../newBPTree_lib/ssBPTree.cpp
+CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o: ../newBPTree_lib/ssBPTree.h
 
