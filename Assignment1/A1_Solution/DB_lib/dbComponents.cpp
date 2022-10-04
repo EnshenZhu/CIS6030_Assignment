@@ -26,7 +26,7 @@ void Record::destructTheRecordValue(std::string input) {
     this->endIndexField2 = fieldTwoEndIdx(input);
 
     this->field1 = input.substr(0, 10);
-    this->field2 = input.substr(11, this->endIndexField2 - 11);
+    this->field2 = input.substr(10, this->endIndexField2 - 11);
     this->field3 = input.substr(this->endIndexField2 + 1);
 }
 

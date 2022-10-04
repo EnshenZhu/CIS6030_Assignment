@@ -1,17 +1,18 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug/CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o"
+  "/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug/CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o"
+  "/home/undergrad/0/enshen/workspace/assignment1/main.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug/CMakeFiles/A1_Solution.dir/main.cpp.o"
+  "/home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/newBPTree.cpp" "/home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug/CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/BplusTree_lib/BplusTree.cpp" "CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj" "gcc" "CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj.d"
-  "E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/DB_lib/dbComponents.cpp" "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj" "gcc" "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj.d"
-  "E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/main.cpp" "CMakeFiles/A1_Solution.dir/main.cpp.obj" "gcc" "CMakeFiles/A1_Solution.dir/main.cpp.obj.d"
-  "E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/newBPTree_lib/newBPTree.cpp" "CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj" "gcc" "CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.obj.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # Targets to which this target links.

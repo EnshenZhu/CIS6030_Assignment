@@ -91,7 +91,8 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
     // open the file in the write mode
     ofstream outfile(saveRoute);
 
-    for (short idxOfAllBlocks = 0; idxOfAllBlocks < allBlocks.size(); idxOfAllBlocks++) {
+    for (short idxOfAllBlocks = 0; idxOfAllBlocks < 17; idxOfAllBlocks++) {
+
 
         BlockNode thisBlock = allBlocks[idxOfAllBlocks];
         char singleLine[1024];
@@ -121,26 +122,44 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
             singleLineIndexTracker += 2;
         }
 
-
         // Block Part 3: size of the block head
         unsigned short thisSizeOfHead = thisBlock.sizeOfHead();
         singleLine[singleLineIndexTracker] = thisSizeOfHead;
         outfile << singleLine[singleLineIndexTracker];
         singleLineIndexTracker += 1;
 
+//        cout << "loop" << idxOfAllBlocks << endl;
+
         // Block Part 4: very long string of record contents
-        for (int contentIdx = 0; contentIdx <= thisBlock.recordContent.size(); contentIdx++) {
+
+        for (int contentIdx = 0; contentIdx < thisBlock.recordContent.size(); contentIdx++) {
             singleLine[singleLineIndexTracker] = thisBlock.recordContent[contentIdx];
+
+//            if (idxOfAllBlocks == 17) {
+//                cout << "this is " << contentIdx << endl;
+//            }
+
             outfile << singleLine[singleLineIndexTracker];
+
+//            if (idxOfAllBlocks == 17) {
+//                cout << "this is " << contentIdx << endl;
+//            }
+
             singleLineIndexTracker += 1;
         }
+
+//        cout << "loop" << idxOfAllBlocks << endl;
 
         for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
             outfile << 0;
         }
+
+
     }
 
     outfile.close();
+
+
 };
 
 
@@ -179,7 +198,6 @@ void readAllFile(string saveRoute) {
                                                    right_thisEndPositionOfRecord_Binary);
 
         //    cout << fullSingleRecordJumper << endl;
-
         long thisEndPositonOfRecord_Decimal = fullSingleRecordJumper.to_ulong();
         cout << thisEndPositonOfRecord_Decimal << "|";
     }
@@ -202,5 +220,57 @@ void readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOfRe
     bitset<8> thisNumOfRecord_Binary(value);
     long thisNumOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
     cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
+
+    // get the record start positions
+    long full_thisStartPositionOfRecord_Decimal;
+    if (indexOfRecordInBlock != 0) {
+        file.seekg(2 * (indexOfRecordInBlock - 1), ios::cur);
+        file.get(value);
+        bitset<8> left_thisStartPositionOfRecord_Binary(value);
+        // 注意！！！这边seekg的参数必须仍然设为0
+        file.seekg(0, ios::cur);
+        file.get(value);
+        bitset<8> right_thisStartPositionOfRecord_Binary(value);
+
+        bitset<16> full_thisStartPositionOfRecord_Binary = concat(left_thisStartPositionOfRecord_Binary,
+                                                                  right_thisStartPositionOfRecord_Binary);
+        full_thisStartPositionOfRecord_Decimal = full_thisStartPositionOfRecord_Binary.to_ulong();
+    } else {
+        full_thisStartPositionOfRecord_Decimal = 0;
+    }
+
+    // get the record end position
+    file.seekg(0, ios::cur);
+    file.get(value);
+    bitset<8> left_thisEndPositionOfRecord_Binary(value);
+    // 注意！！！这边seekg的参数必须仍然设为0
+    file.seekg(0, ios::cur);
+    file.get(value);
+    bitset<8> right_thisEndPositionOfRecord_Binary(value);
+
+    bitset<16> full_thisEndPositionOfRecord_Binary = concat(left_thisEndPositionOfRecord_Binary,
+                                                            right_thisEndPositionOfRecord_Binary);
+    long full_thisEndPositionOfRecord_Decimal = full_thisEndPositionOfRecord_Binary.to_ulong();
+
+    // get the size of the block head
+    file.seekg(cursorMoveAtStart + 1 + thisNumOfRecord_Decimal * 2, ios::beg);
+    file.get(value);
+    bitset<8> thisBlockHeadSize_Binary(value);
+    long thisBlockHeadSize_Decimal = thisBlockHeadSize_Binary.to_ulong();
+    cout << "this block has the head size of " << thisBlockHeadSize_Decimal << endl;
+
+    // get the record value in string
+
+    //move the cursor to the start positon of the certain record
+    file.seekg(cursorMoveAtStart + thisBlockHeadSize_Decimal + full_thisStartPositionOfRecord_Decimal, ios::beg);
+    int thisRecordLength = full_thisEndPositionOfRecord_Decimal - full_thisStartPositionOfRecord_Decimal;
+    vector<char> rawRecordValue;
+    for (int relativeIdxOfRecord = 0; relativeIdxOfRecord < thisRecordLength; relativeIdxOfRecord++) {
+        file.get(value);
+        rawRecordValue.push_back(value);
+        cout << rawRecordValue[relativeIdxOfRecord];
+    }
+
+    cout << endl;
 
 }

@@ -204,6 +204,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+newBPTree_lib/newBPTree.o: newBPTree_lib/newBPTree.cpp.o
+
+.PHONY : newBPTree_lib/newBPTree.o
+
+# target to build an object file
+newBPTree_lib/newBPTree.cpp.o:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.o
+.PHONY : newBPTree_lib/newBPTree.cpp.o
+
+newBPTree_lib/newBPTree.i: newBPTree_lib/newBPTree.cpp.i
+
+.PHONY : newBPTree_lib/newBPTree.i
+
+# target to preprocess a source file
+newBPTree_lib/newBPTree.cpp.i:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.i
+.PHONY : newBPTree_lib/newBPTree.cpp.i
+
+newBPTree_lib/newBPTree.s: newBPTree_lib/newBPTree.cpp.s
+
+.PHONY : newBPTree_lib/newBPTree.s
+
+# target to generate assembly for a file
+newBPTree_lib/newBPTree.cpp.s:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree_lib/newBPTree.cpp.s
+.PHONY : newBPTree_lib/newBPTree.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... newBPTree_lib/newBPTree.o"
+	@echo "... newBPTree_lib/newBPTree.i"
+	@echo "... newBPTree_lib/newBPTree.s"
 .PHONY : help
 
 

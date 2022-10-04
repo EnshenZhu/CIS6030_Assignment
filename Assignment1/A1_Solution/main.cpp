@@ -62,24 +62,22 @@ int main() {
 
     cout << "The space usage rate is " << ((realAllBlockSize + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
 
-//    cout << metaBlock[0].recordContent << endl;
-
-
     // now we are going to store all blocks (with records) into the datafile
     string saveRoute = "../assets/dataFile.txt";
     writAllFile(saveRoute, metaBlock);
 
-    int x = 200;
-    readACertainRecordInBlock(saveRoute, x, 2);
-    cout << metaBlock[x].numsOfRecords() << endl;
+    int quest_blockIdx = 0;
+    int quest_relativeRecordIdx = 0;
+    readACertainRecordInBlock(saveRoute, quest_blockIdx, quest_relativeRecordIdx);
+//     cout << metaBlock[quest_blockIdx].numsOfRecords() << endl;
+    cout << endl;
 
     // do validation printing
-    for (int idx = 0; idx < metaBlock[x].numsOfRecords(); idx++) {
-        cout << metaBlock[x].endPostionOfEachRecord[idx] << " ";
+    for (int idx = 0; idx < metaBlock[quest_blockIdx].numsOfRecords(); idx++) {
+        cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[idx] << " ";
     }
 
     cout << endl;
-
     // verify the amount of records
 //    int total = 0;
 //    for (int idx = 0; idx < metaBlock.size(); idx++) {
