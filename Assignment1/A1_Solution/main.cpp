@@ -126,112 +126,6 @@ int calculateRealBlockSize(vector<BlockNode> allBlock) {
     return realSize;
 }
 
-void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
-    char singleLine[1024];
-
-    // open the file in the write mode
-    ofstream outfile(saveRoute);
-
-    // Block Part 1: nums of records
-    // PLACE the thisNumOfRecord INTO the data file
-    unsigned short thisNumOfRecord = allBlocks[0].numsOfRecords();
-    singleLine[0] = thisNumOfRecord;
-    outfile << singleLine[0];
-
-    // Block Part 2: vector list of end positions of each record
-    int singleLineIndexTracker = 1; // all jumpers will be recorded from the second element of the single line.
-    for (short jumperIdx = 0; jumperIdx < allBlocks[0].numsOfRecords(); jumperIdx++) {
-        unsigned short theRecordJumper = allBlocks[0].endPostionOfEachRecord[jumperIdx]; // subtract the jumper (end position of each record)
-
-        // split each record jumper into two chars
-        char low = theRecordJumper;
-        theRecordJumper = theRecordJumper >> 8;
-        char high = theRecordJumper;
-
-        int plusOne_singleLineIndexTracker = singleLineIndexTracker + 1;
-
-        singleLine[singleLineIndexTracker] = high;
-        outfile << singleLine[singleLineIndexTracker];
-        singleLine[plusOne_singleLineIndexTracker] = low;
-        outfile << singleLine[plusOne_singleLineIndexTracker];
-
-        singleLineIndexTracker += 2;
-    }
-
-    // Block Part 3: size of the block head
-    unsigned short thisSizeOfHead = allBlocks[0].sizeOfHead();
-    singleLine[singleLineIndexTracker] = thisNumOfRecord;
-    outfile << singleLine[singleLineIndexTracker];
-    singleLineIndexTracker += 1;
-
-    // Block Part 4: very long string of record contents
-    for (int contentIdx = 0; contentIdx <= allBlocks[0].recordContent.size(); contentIdx++) {
-        singleLine[singleLineIndexTracker] = allBlocks[0].recordContent[contentIdx];
-        outfile << singleLine[singleLineIndexTracker];
-        singleLineIndexTracker += 1;
-    }
-
-    for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
-        outfile << 0;
-    }
-//    bitset<8> mybit(x);
-//    cout << mybit << endl;
-
-//unsigned short thisN
-//
-//    singleLine[0] = x;
-//    outfile << singleLine << endl;
-
-    outfile.close();
-};
-
-
-void readAllFile(string saveRoute) {
-
-    char value;
-    int integer; // this is only for reading the record jumper (end positon of each record)
-
-    fstream file(saveRoute, ios::in);
-    if (!file) {
-        cout << "Error opening file.";
-        return;
-    }
-
-    // get nums of record
-    file.seekg(0L, ios::beg);
-    file.get(value);
-    bitset<8> thisNumOfRecord_Binary(value);
-//  cout << "This block has nums of record: " << thisNumOfRecord_Binary << endl;
-    long thisNumOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
-    cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
-
-    // get each record end positions
-    for (int idxOfRecord = 0; idxOfRecord < thisNumOfRecord_Decimal - 1; idxOfRecord++) {
-        // get the end position of each record
-        file.seekg(8L, ios::cur);
-        file.get(value);
-        char temp = value;
-        file.seekg(8L, ios::cur);
-        file.get(value);
-        char aJumper = temp + value;
-
-        bitset<16> thisEndPositonOfRecord_Binary(aJumper);
-
-//        file.seekg(8L, ios::cur);
-//        file.get(value);
-//        bitset<8> thisEndPositonOfRecordBinaryPartTwo(value);
-//
-//        dynamic_bitset
-//        bitset<16> thisEndPositonOfRecord_Binary =
-//                thisEndPositonOfRecord_Binary_PartONE + thisEndPositonOfRecordBinaryPartTwo;
-
-        long thisEndPositonOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
-        cout << thisEndPositonOfRecord_Decimal << "|";
-    }
-
-
-}
-
 int main() {
     // config the raw input data location
     string FileRoute = "../assets/A1_data.txt";
@@ -249,12 +143,6 @@ int main() {
 
     //get the total size of all data in bytes
     int sizeOfAllRecord = getSizeOfAllData(totalNumOfRecords, metaRecord);
-
-//    cout << metaRecord[7].field1 << endl;
-//    cout << metaRecord[7].field2 << endl;
-//    cout << metaRecord[7].field3 << endl;
-//
-//    cout << metaRecord[0].getRecordSize() << endl;
 
     cout << "This script creates " << totalNumOfRecords << " records." << endl;
     cout << "The total size of all records are " << sizeOfAllRecord << " bytes." << endl;
@@ -282,9 +170,9 @@ int main() {
     readAllFile(saveRoute);
 
     //do validation printing
-//    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
-//        cout << metaBlock[0].endPostionOfEachRecord[idx] << " ";
-//    }
+    for (int idx = 0; idx < metaBlock[0].numsOfRecords(); idx++) {
+        cout << metaBlock[0].endPostionOfEachRecord[idx] << " ";
+    }
 
     cout << endl;
 
