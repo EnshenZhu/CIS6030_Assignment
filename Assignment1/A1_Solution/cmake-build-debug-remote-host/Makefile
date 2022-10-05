@@ -204,32 +204,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-newBPTree_lib/ssBPTree.o: newBPTree_lib/ssBPTree.cpp.o
+newBPTree/ssBPTree.o: newBPTree/ssBPTree.cpp.o
 
-.PHONY : newBPTree_lib/ssBPTree.o
+.PHONY : newBPTree/ssBPTree.o
 
 # target to build an object file
-newBPTree_lib/ssBPTree.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o
-.PHONY : newBPTree_lib/ssBPTree.cpp.o
+newBPTree/ssBPTree.cpp.o:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.o
+.PHONY : newBPTree/ssBPTree.cpp.o
 
-newBPTree_lib/ssBPTree.i: newBPTree_lib/ssBPTree.cpp.i
+newBPTree/ssBPTree.i: newBPTree/ssBPTree.cpp.i
 
-.PHONY : newBPTree_lib/ssBPTree.i
+.PHONY : newBPTree/ssBPTree.i
 
 # target to preprocess a source file
-newBPTree_lib/ssBPTree.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.i
-.PHONY : newBPTree_lib/ssBPTree.cpp.i
+newBPTree/ssBPTree.cpp.i:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.i
+.PHONY : newBPTree/ssBPTree.cpp.i
 
-newBPTree_lib/ssBPTree.s: newBPTree_lib/ssBPTree.cpp.s
+newBPTree/ssBPTree.s: newBPTree/ssBPTree.cpp.s
 
-.PHONY : newBPTree_lib/ssBPTree.s
+.PHONY : newBPTree/ssBPTree.s
 
 # target to generate assembly for a file
-newBPTree_lib/ssBPTree.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.s
-.PHONY : newBPTree_lib/ssBPTree.cpp.s
+newBPTree/ssBPTree.cpp.s:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.s
+.PHONY : newBPTree/ssBPTree.cpp.s
 
 # Help Target
 help:
@@ -249,9 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... newBPTree_lib/ssBPTree.o"
-	@echo "... newBPTree_lib/ssBPTree.i"
-	@echo "... newBPTree_lib/ssBPTree.s"
+	@echo "... newBPTree/ssBPTree.o"
+	@echo "... newBPTree/ssBPTree.i"
+	@echo "... newBPTree/ssBPTree.s"
 .PHONY : help
 
 

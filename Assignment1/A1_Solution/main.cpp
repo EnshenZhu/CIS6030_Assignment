@@ -78,7 +78,7 @@ int main() {
         cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[idx] << " ";
     }
 
-    buildDataFileIntoBPTree(saveRoute, metaBlock);
+//    buildDataFileIntoBPTree(saveRoute, metaBlock);
     // verify the amount of records
 //    int total = 0;
 //    for (int idx = 0; idx < metaBlock.size(); idx++) {

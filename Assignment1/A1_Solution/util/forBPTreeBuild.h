@@ -9,7 +9,7 @@
 
 #include "iostream"
 #include "../DB_lib/dbComponents.h"
-#include "../newBPTree_lib/ssBPTree.h"
+#include "../newBPTree/ssBPTree.h"
 
 using namespace std;
 
@@ -41,27 +41,39 @@ vector<string> splitTheRecordContent_BPbackup(string input) {
     return result;
 }
 
-void buildDataFileIntoBPTree(string fileSaveRoute, vector<BlockNode> allBlock) {
-
-    vector<ssTreeNode> TreeNodeList;
-
-    int totalBlockNum = 17;
-    for (short idxOfBlock = 0; idxOfBlock < totalBlockNum; idxOfBlock++) {
-
-        TreeNodeList.push_back(ssTreeNode());
-        ssTreeNode &NEW_ssTreeNode = TreeNodeList.back();
-
-        for (short relativeIdxOfRecord = 0;
-             relativeIdxOfRecord < allBlock[idxOfBlock].numsOfRecords(); relativeIdxOfRecord++) {
-            string rawRecordStringValue = readACertainRecordInBlock(fileSaveRoute, idxOfBlock, relativeIdxOfRecord);
-
-            // get the split record value
-            vector<string> recordSplitResult = splitTheRecordContent_BPbackup(rawRecordStringValue);
-            string aFieldOne = recordSplitResult[0];
-            string aFieldTwoAndThree = recordSplitResult[1] + recordSplitResult[2];
-
-            // generate a new TreeNode element in the list
-
-        }
-    }
-}
+//void buildDataFileIntoBPTree(string fileSaveRoute, vector<BlockNode> allBlock) {
+//
+//    vector<ssTreeNode> TreeNodeList;
+//
+//    int totalBlockNum = 17;
+//    int idxTrackerBlockNum = 0;
+//
+//    while (idxTrackerBlockNum < totalBlockNum) {
+//
+//        // create a new ssTreeNode
+//        TreeNodeList.push_back(ssTreeNode());
+//        ssTreeNode &NEW_ssTreeNode = TreeNodeList.back();
+//
+//        while (idxTrackerBlockNum < totalBlockNum && NEW_ssTreeNode.isFull() == false) {
+//
+//        }
+//    }
+//    for (short idxOfBlock = 0; idxOfBlock < totalBlockNum; idxOfBlock++) {
+//
+//        TreeNodeList.push_back(ssTreeNode());
+//        ssTreeNode &NEW_ssTreeNode = TreeNodeList.back();
+//
+//        for (short relativeIdxOfRecord = 0;
+//             relativeIdxOfRecord < allBlock[idxOfBlock].numsOfRecords(); relativeIdxOfRecord++) {
+//            string rawRecordStringValue = readACertainRecordInBlock(fileSaveRoute, idxOfBlock, relativeIdxOfRecord);
+//
+//            // get the split record value
+//            vector<string> recordSplitResult = splitTheRecordContent_BPbackup(rawRecordStringValue);
+//            string aFieldOne = recordSplitResult[0];
+//            string aFieldTwoAndThree = recordSplitResult[1] + recordSplitResult[2];
+//
+//            // generate a new TreeNode element in the list
+//
+//        }
+//    }
+//}

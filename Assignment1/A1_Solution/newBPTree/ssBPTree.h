@@ -13,20 +13,27 @@
 using namespace std;
 
 class ssTreeNode {
+public:
+
+    friend class ssBPTree;
+
+    ssTreeNode();
 
     int m_value = 8;
 
     vector<string> fieldOne_AsKey;
-    vector<string> fieldTwoThree_AsValue;
+    vector<int> location;
     vector<ssTreeNode *> child;
 
     ssTreeNode *nextNewTreeNode;
+
+    ssTreeNode *(*pointer);
 
     short maxKeySize();
 
     short minKeySize();
 
-    short currentKeySize();
+    short currentKeySize;
 
     bool isLeaf = true;
 
@@ -34,11 +41,16 @@ class ssTreeNode {
 };
 
 class ssBPTree {
+public:
+    ssBPTree();
+
+    ssTreeNode *root;
+
     void buildTree(string RecordContent);
 
-    void searchElm();
+    ssTreeNode* searchElm(string);
 
-    void insertElm();
+    void insertElm(string,int);
 
     void deleteElm();
 };
