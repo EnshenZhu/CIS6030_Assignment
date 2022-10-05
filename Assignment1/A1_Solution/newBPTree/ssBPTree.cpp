@@ -9,12 +9,12 @@
 using namespace std;
 
 short ssTreeNode::maxKeySize() {
-    short maxNumsOfKey = m_value - 1;
+    short maxNumsOfKey = m_value;
     return maxNumsOfKey;
 }
 
 short ssTreeNode::minKeySize() {
-    short minNumOfKey = m_value / 2 - 1;
+    short minNumOfKey = (m_value + 1) / 2;
     return minNumOfKey;
 }
 
@@ -52,7 +52,7 @@ ssTreeNode *ssBPTree::searchElm(string targetKey) {
 
         for (int index = 0; index < cursor->currentKeySize; index++) {
             if (cursor->fieldOne_AsKey[index] == targetKey) {
-                cout << targetKey << "is found at " << cursor->location[index] << endl;
+                cout << targetKey << "is found at " << cursor->location_asValue[index] << endl;
                 return cursor;
             }
         }
@@ -67,7 +67,7 @@ void ssBPTree::insertElm(string aFieldOneValue, int aLocation) {
     if (root == NULL) {
         root = new ssTreeNode;
         root->fieldOne_AsKey[0] = aFieldOneValue;
-        root->location[0] = aLocation;
+        root->location_asValue[0] = aLocation;
         root->isLeaf = true;
         root->currentKeySize = 1;
     } else {
@@ -95,6 +95,48 @@ void ssBPTree::insertElm(string aFieldOneValue, int aLocation) {
             }
             for (int j = cursor->currentKeySize; j > i; j--) {
                 cursor->fieldOne_AsKey[j] = cursor->fieldOne_AsKey[j - i];
+            }
+            cursor->fieldOne_AsKey[i] = aFieldOneValue;
+            cursor->location_asValue[i] = aLocation;
+            cursor->currentKeySize++;
+            cursor->pointer[cursor->currentKeySize] = cursor->pointer[cursor->currentKeySize - 1];
+            cursor->pointer[cursor->currentKeySize - 1] = NULL;
+        } else {
+            ssTreeNode *newLeaf = new ssTreeNode;
+            string virtualNode[m_value + 1];
+            for (int i = 0; i < m_value; i++) {
+                virtualNode[i] = cursor->fieldOne_AsKey[i];
+            }
+            int i = 0, j;
+            while (aFieldOneValue > virtualNode[i] && i < m_value) {
+                i++;
+            }
+            for (int j = m_value + 1; j > i; j--) {
+                virtualNode[j] = virtualNode[j - 1];
+            }
+            virtualNode[i] = aFieldOneValue;
+            newLeaf->isLeaf = true;
+            cursor->currentKeySize = (m_value + 1) / 2;
+            newLeaf->currentKeySize = m_value + 1 - (m_value + 1) / 2;
+            cursor->pointer[cursor->currentKeySize] = newLeaf;
+            newLeaf->pointer[newLeaf->currentKeySize] = cursor->pointer[m_value];
+            cursor->pointer[m_value] = NULL;
+            for (i = 0; i < cursor->currentKeySize; i++) {
+                cursor->fieldOne_AsKey[i] = virtualNode[i];
+            }
+            for (i = 0, j = cursor->currentKeySize; i < newLeaf->currentKeySize; i++, j++) {
+                newLeaf->fieldOne_AsKey[i] = virtualNode[j];
+            }
+            if (cursor == root) {
+                ssTreeNode *newRoot = new ssTreeNode;
+                newRoot->fieldOne_AsKey[0] = newLeaf->fieldOne_AsKey[0];
+                newRoot->pointer[0] = cursor;
+                newRoot->pointer[1] = newLeaf;
+                newRoot->isLeaf = false;
+                newRoot->currentKeySize = 1;
+                root = newRoot;
+            } else {
+                insertInternalNode(); // still need future work
             }
         }
     }

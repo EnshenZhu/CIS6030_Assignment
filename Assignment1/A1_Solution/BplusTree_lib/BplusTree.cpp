@@ -129,7 +129,7 @@ void BplusTree::insertElm(int target) {
             for (i = 0; i < cursor->size; i++) {
                 cursor->key[i] = virtualNode[i];
             }
-            for (i = 0, j = cursor->size; i < newLeaf->size; i++, j++) {
+            for (i = 0,j = cursor->size; i < newLeaf->size; i++, j++) {
                 newLeaf->key[i] = virtualNode[j];
             }
             if (cursor == root) {

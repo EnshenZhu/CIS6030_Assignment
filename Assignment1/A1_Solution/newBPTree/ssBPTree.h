@@ -12,6 +12,8 @@
 
 using namespace std;
 
+int m_value = 8;
+
 class ssTreeNode {
 public:
 
@@ -19,10 +21,8 @@ public:
 
     ssTreeNode();
 
-    int m_value = 8;
-
     vector<string> fieldOne_AsKey;
-    vector<int> location;
+    vector<int> location_asValue;
     vector<ssTreeNode *> child;
 
     ssTreeNode *nextNewTreeNode;
@@ -51,6 +51,7 @@ public:
     ssTreeNode* searchElm(string);
 
     void insertElm(string,int);
+    void insertInternalNode();
 
     void deleteElm();
 };

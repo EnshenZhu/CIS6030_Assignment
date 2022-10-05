@@ -29,7 +29,7 @@ using namespace std;
 
 
 int main() {
-    // config the raw input data location
+    // config the raw input data location_asValue
     string FileRoute = "../assets/A1_data.txt";
     vector<Record> metaRecord = transferFileToRecord(FileRoute);
 
