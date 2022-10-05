@@ -1,4 +1,16 @@
 # ninja log v5
-16	648	6866897230802903	build.ninja	f4bf13fc992888bc
-5	1141	6859142595054392	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+16	648	6866983693680152	build.ninja	f4bf13fc992888bc
+3	846	6866981885884015	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
 1141	1418	6859142597854037	A1_Solution.exe	8ea28200e0a72fb5
+10	772	6866981472972920	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
+8	956	6866979865894179	CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj	9fde7a91b7ff3354
+3	444	6866994186997768	CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj	6d35fed7017593eb
+10	649	6866996703186686	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
+5	1115	6866996707872936	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+12	551	6866998474407263	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
+3	966	6866998478564632	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+966	1160	6866998480546219	A1_Solution.exe	5f368092ca92f262
+3	812	6866999055718052	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+813	1012	6866999057780939	A1_Solution.exe	5f368092ca92f262
+4	909	6866999332489469	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+910	1102	6866999334466173	A1_Solution.exe	5f368092ca92f262

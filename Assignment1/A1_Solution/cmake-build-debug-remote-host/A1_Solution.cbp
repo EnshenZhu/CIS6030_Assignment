@@ -99,6 +99,12 @@
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/main.cpp">
 			<Option target="A1_Solution"/>
 		</Unit>
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.cpp">
+			<Option target="A1_Solution"/>
+		</Unit>
+		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.h">
+			<Option target="A1_Solution"/>
+		</Unit>
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/util/forBPTreeBuild.h">
 			<Option target="A1_Solution"/>
 		</Unit>

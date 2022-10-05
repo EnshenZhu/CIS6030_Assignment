@@ -13,7 +13,7 @@ add_executable(A1_Solution
         BplusTree_lib/BplusTree.h
         util/forDataFileCRUD.h
         util/forBlockANDRecordGeneration.h
-#        newBPTree/ssBPTree.cpp
-#        newBPTree/ssBPTree.h
+        newBPTree/ssBPTree.cpp
+        newBPTree/ssBPTree.h
         util/forBPTreeBuild.h
         util/veryTrickyMethods.h)

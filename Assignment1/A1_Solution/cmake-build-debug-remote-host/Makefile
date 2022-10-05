@@ -204,6 +204,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+newBPTree/ssBPTree.o: newBPTree/ssBPTree.cpp.o
+
+.PHONY : newBPTree/ssBPTree.o
+
+# target to build an object file
+newBPTree/ssBPTree.cpp.o:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.o
+.PHONY : newBPTree/ssBPTree.cpp.o
+
+newBPTree/ssBPTree.i: newBPTree/ssBPTree.cpp.i
+
+.PHONY : newBPTree/ssBPTree.i
+
+# target to preprocess a source file
+newBPTree/ssBPTree.cpp.i:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.i
+.PHONY : newBPTree/ssBPTree.cpp.i
+
+newBPTree/ssBPTree.s: newBPTree/ssBPTree.cpp.s
+
+.PHONY : newBPTree/ssBPTree.s
+
+# target to generate assembly for a file
+newBPTree/ssBPTree.cpp.s:
+	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.s
+.PHONY : newBPTree/ssBPTree.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... newBPTree/ssBPTree.o"
+	@echo "... newBPTree/ssBPTree.i"
+	@echo "... newBPTree/ssBPTree.s"
 .PHONY : help
 
 
