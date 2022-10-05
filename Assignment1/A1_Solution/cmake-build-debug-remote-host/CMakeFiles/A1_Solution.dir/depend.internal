@@ -12,11 +12,11 @@ CMakeFiles/A1_Solution.dir/main.cpp.o
  /home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h
  /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
  /home/undergrad/0/enshen/workspace/assignment1/main.cpp
- /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.h
+ /home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.h
  /home/undergrad/0/enshen/workspace/assignment1/util/forBPTreeBuild.h
  /home/undergrad/0/enshen/workspace/assignment1/util/forBlockANDRecordGeneration.h
  /home/undergrad/0/enshen/workspace/assignment1/util/forDataFileCRUD.h
-CMakeFiles/A1_Solution.dir/newBPTree_lib/ssBPTree.cpp.o
+CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.o
  /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
- /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.cpp
- /home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.h
+ /home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.cpp
+ /home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.h

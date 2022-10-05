@@ -46,11 +46,13 @@ BplusTree_lib/BplusTree.h
 util/forBPTreeBuild.h
 /home/undergrad/0/enshen/workspace/assignment1/util/forBPTreeBuild.h
 
-/home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.cpp
+/home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.cpp
 ssBPTree.h
-/home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.h
+/home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.h
+iostream
+-
 
-/home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.h
+/home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.h
 vector
 -
 string
@@ -63,8 +65,8 @@ iostream
 /home/undergrad/0/enshen/workspace/assignment1/util/iostream
 ../DB_lib/dbComponents.h
 /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
-../newBPTree_lib/ssBPTree.h
-/home/undergrad/0/enshen/workspace/assignment1/newBPTree_lib/ssBPTree.h
+../newBPTree/ssBPTree.h
+/home/undergrad/0/enshen/workspace/assignment1/newBPTree/ssBPTree.h
 
 /home/undergrad/0/enshen/workspace/assignment1/util/forBlockANDRecordGeneration.h
 iostream

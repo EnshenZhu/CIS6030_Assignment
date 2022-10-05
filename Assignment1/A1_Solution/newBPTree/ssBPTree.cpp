@@ -116,6 +116,7 @@ void ssBPTree::insertElm(string aFieldOneValue, int aLocation) {
             }
             virtualNode[i] = aFieldOneValue;
             newLeaf->isLeaf = true;
+            newLeaf->location_asValue[i] = aLocation; // still in trying
             cursor->currentKeySize = (m_value + 1) / 2;
             newLeaf->currentKeySize = m_value + 1 - (m_value + 1) / 2;
             cursor->pointer[cursor->currentKeySize] = newLeaf;
