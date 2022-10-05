@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.cpp">
-			<Option target="A1_Solution"/>
-		</Unit>
-		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h">
-			<Option target="A1_Solution"/>
-		</Unit>
 		<Unit filename="/home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.cpp">
 			<Option target="A1_Solution"/>
 		</Unit>

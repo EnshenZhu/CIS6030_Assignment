@@ -23,7 +23,7 @@ public:
 
     TreeNode();
 
-    int *key;
+    int* key;
     int size;
 
     TreeNode *(*pointer);

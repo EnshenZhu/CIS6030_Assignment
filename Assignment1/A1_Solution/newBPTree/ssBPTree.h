@@ -19,11 +19,17 @@ using namespace std;
 
 class ssTreeNode {
 public:
+    int m_value = 8;
 
     friend class ssBPTree;
 
-    vector<string> fieldOne_AsKey;
-    vector<int> location_asValue;
+    string *fieldOne_AsKey;
+    int *location_asValue;
+
+    ssTreeNode();
+
+//    vector<string> fieldOne_AsKey;
+//    vector<int> location_asValue;
 //    vector<ssTreeNode *> child;
 
 //    ssTreeNode *nextNewTreeNode;
@@ -45,7 +51,7 @@ class ssBPTree {
 public:
 //    ssBPTree();
 
-    ssTreeNode *root;
+    ssTreeNode *root = NULL;
 
     ssTreeNode *searchElm(string target);
 

@@ -68,8 +68,7 @@
 			[
 				0,
 				1,
-				3,
-				7
+				5
 			]
 		}
 	],
@@ -108,8 +107,7 @@
 			[
 				0,
 				1,
-				3,
-				7
+				5
 			]
 		},
 		{
@@ -117,12 +115,11 @@
 			"sourceIndexes" : 
 			[
 				2,
+				3,
 				4,
-				5,
 				6,
-				8,
-				9,
-				10
+				7,
+				8
 			]
 		}
 	],
@@ -143,17 +140,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "DB_lib/dbComponents.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "BplusTree_lib/BplusTree.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "BplusTree_lib/BplusTree.h",
 			"sourceGroupIndex" : 1
 		},
 		{

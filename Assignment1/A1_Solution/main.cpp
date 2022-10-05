@@ -78,6 +78,8 @@ int main() {
         cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[idx] << " ";
     }
 
+    cout << endl;
+
 
 //    buildDataFileIntoBPTree(saveRoute, metaBlock);
     // verify the amount of records
@@ -100,10 +102,24 @@ int main() {
 //    allNodes.insertElm(20);
 //allNodes.display(allNodes.getRoot());
 
-//    ssBPTree allNodes;
-//    allNodes.insertElm("aaa", 1024);
+    ssBPTree allNodes;
 
-//    allNodes.searchElm("aaa");
+//    allNodes.insertElm("aaa", 1024);
+//    allNodes.insertElm("bbb", 1200);
+//    allNodes.insertElm("czxvxc", 1431);
+//    allNodes.insertElm("dasfa", 2132);
+//    allNodes.insertElm("bgg", 31241);
+
+    for (int idx = 0; idx < 9; idx++) {
+        string superString = "s" + to_string(idx) + "s";
+        allNodes.insertElm(superString, idx);
+    }
+//        allNodes.insertElm("ccc", 45235);
+
+//    for (int idx = 0; idx < 30; idx++) {
+//        string superString = "s" + to_string(idx) + "s";
+//        allNodes.searchElm(superString);
+//    }
 
 //    allNodes.searchElm(15);
 

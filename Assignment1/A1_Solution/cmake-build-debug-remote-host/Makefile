@@ -123,33 +123,6 @@ A1_Solution/fast:
 	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/build
 .PHONY : A1_Solution/fast
 
-BplusTree_lib/BplusTree.o: BplusTree_lib/BplusTree.cpp.o
-
-.PHONY : BplusTree_lib/BplusTree.o
-
-# target to build an object file
-BplusTree_lib/BplusTree.cpp.o:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.o
-.PHONY : BplusTree_lib/BplusTree.cpp.o
-
-BplusTree_lib/BplusTree.i: BplusTree_lib/BplusTree.cpp.i
-
-.PHONY : BplusTree_lib/BplusTree.i
-
-# target to preprocess a source file
-BplusTree_lib/BplusTree.cpp.i:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.i
-.PHONY : BplusTree_lib/BplusTree.cpp.i
-
-BplusTree_lib/BplusTree.s: BplusTree_lib/BplusTree.cpp.s
-
-.PHONY : BplusTree_lib/BplusTree.s
-
-# target to generate assembly for a file
-BplusTree_lib/BplusTree.cpp.s:
-	$(MAKE) -f CMakeFiles/A1_Solution.dir/build.make CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.s
-.PHONY : BplusTree_lib/BplusTree.cpp.s
-
 DB_lib/dbComponents.o: DB_lib/dbComponents.cpp.o
 
 .PHONY : DB_lib/dbComponents.o
@@ -240,9 +213,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... A1_Solution"
 	@echo "... edit_cache"
-	@echo "... BplusTree_lib/BplusTree.o"
-	@echo "... BplusTree_lib/BplusTree.i"
-	@echo "... BplusTree_lib/BplusTree.s"
 	@echo "... DB_lib/dbComponents.o"
 	@echo "... DB_lib/dbComponents.i"
 	@echo "... DB_lib/dbComponents.s"

@@ -9,8 +9,8 @@ add_executable(A1_Solution
         main.cpp
         DB_lib/dbComponents.cpp
         DB_lib/dbComponents.h
-        BplusTree_lib/BplusTree.cpp
-        BplusTree_lib/BplusTree.h
+#        BplusTree_lib/BplusTree.cpp
+#        BplusTree_lib/BplusTree.h
         util/forDataFileCRUD.h
         util/forBlockANDRecordGeneration.h
         newBPTree/ssBPTree.cpp

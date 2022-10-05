@@ -10,6 +10,12 @@ using namespace std;
 
 int m_value = 8;
 
+ssTreeNode::ssTreeNode() {
+    fieldOne_AsKey = new string[m_value];
+    location_asValue = new int[m_value];
+    pointer = new ssTreeNode *[m_value + 1];
+}
+
 short ssTreeNode::maxKeySize() {
     short maxNumsOfKey = m_value;
     return maxNumsOfKey;
@@ -54,7 +60,7 @@ ssTreeNode *ssBPTree::searchElm(string targetKey) {
 
         for (int index = 0; index < cursor->currentKeySize; index++) {
             if (cursor->fieldOne_AsKey[index] == targetKey) {
-                cout << targetKey << "is found at " << cursor->location_asValue[index] << endl;
+                cout << targetKey << " is found at " << cursor->location_asValue[index] << endl;
                 return cursor;
             }
         }
@@ -114,12 +120,12 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
                 virtualNodeKey[i] = cursor->fieldOne_AsKey[i];
                 virtualNodeValue[i] = cursor->location_asValue[i];
             }
-            int i = 0, j;
+            int i = 0;
             while (Key_FieldOneValue > virtualNodeKey[i] && i < m_value) {
                 i++;
             }
             for (int j = m_value + 1; j > i; j--) {
-                virtualNodeKey[j] = virtualNodeKey[j - 1];
+                virtualNodeKey[j] = virtualNodeKey[j - 1]; // bug here
                 virtualNodeValue[j] = virtualNodeValue[j - 1];
             }
             virtualNodeKey[i] = Key_FieldOneValue;
@@ -130,11 +136,11 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
             cursor->pointer[cursor->currentKeySize] = newLeaf;
             newLeaf->pointer[newLeaf->currentKeySize] = cursor->pointer[m_value];
             cursor->pointer[m_value] = NULL;
-            for (i = 0; i < cursor->currentKeySize; i++) {
+            for (int i = 0; i < cursor->currentKeySize; i++) {
                 cursor->fieldOne_AsKey[i] = virtualNodeKey[i];
                 cursor->location_asValue[i] = virtualNodeValue[i];
             }
-            for (i = 0, j = cursor->currentKeySize; i < newLeaf->currentKeySize; i++, j++) {
+            for (int i = 0, j = cursor->currentKeySize; i < newLeaf->currentKeySize; i++, j++) {
                 newLeaf->fieldOne_AsKey[i] = virtualNodeKey[j];
                 newLeaf->location_asValue[i] = virtualNodeValue[j];
             }
