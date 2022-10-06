@@ -24,7 +24,7 @@ public:
 
     friend class ssBPTree;
 
-    vector<string> fieldOne_AsKey;
+    string *fieldOne_AsKey;
     int *location_asValue;
 
     ssTreeNode();

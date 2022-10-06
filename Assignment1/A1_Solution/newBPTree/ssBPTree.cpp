@@ -12,10 +12,11 @@ const static int m_value = 8;
 
 ssTreeNode::ssTreeNode() {
 
-    for (short idx = 0; idx < m_value; idx++) {
-        fieldOne_AsKey.push_back("");
-    }
+//    for (short idx = 0; idx < m_value; idx++) {
+//        fieldOne_AsKey.push_back("");
+//    }
 
+    fieldOne_AsKey = new string[m_value];
     location_asValue = new int[m_value];
     pointer = new ssTreeNode *[m_value + 1];
 }
@@ -132,7 +133,7 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
             int i = 0, j;
             while (Key_FieldOneValue > virtualNodeKey[i] && i < m_value)
                 i++;
-            for (int j = m_value + 1; j > i; j--) {
+            for (int j = m_value; j > i; j--) { // m_value+1 to m_value
                 virtualNodeKey[j] = virtualNodeKey[j - 1];
                 virtualNodeValue[j] = virtualNodeValue[j - 1];
             }
