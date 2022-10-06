@@ -8,12 +8,16 @@
 
 using namespace std;
 
-int m_value = 8;
+const static int m_value = 8;
 
 ssTreeNode::ssTreeNode() {
     fieldOne_AsKey = new string[m_value];
     location_asValue = new int[m_value];
     pointer = new ssTreeNode *[m_value + 1];
+}
+
+ssBPTree::ssBPTree() {
+    root = NULL;
 }
 
 short ssTreeNode::maxKeySize() {
@@ -45,14 +49,14 @@ ssTreeNode *ssBPTree::searchElm(string targetKey) {
         ssTreeNode *cursor = root; // start search from the root
 
         while (cursor->isLeaf == false) {
-            for (int idx = 0; idx < cursor->currentKeySize; idx++) {
-                if (targetKey < cursor->fieldOne_AsKey[idx]) {
-                    cursor = cursor->pointer[idx];
+            for (int i = 0; i < cursor->currentKeySize; i++) {
+                if (targetKey < cursor->fieldOne_AsKey[i]) {
+                    cursor = cursor->pointer[i];
                     break;
                 }
 
-                if (idx == cursor->currentKeySize - 1) {
-                    cursor = cursor->pointer[idx + 1];
+                if (i == cursor->currentKeySize - 1) {
+                    cursor = cursor->pointer[i + 1];
                     break;
                 }
             }
@@ -83,14 +87,14 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
         ssTreeNode *parent;
         while (cursor->isLeaf == false) {
             parent = cursor;
-            for (int idx = 0; idx < cursor->currentKeySize; idx++) {
-                if (Key_FieldOneValue < cursor->fieldOne_AsKey[idx]) {
-                    cursor = cursor->pointer[idx];
+            for (int i = 0; i < cursor->currentKeySize; i++) {
+                if (Key_FieldOneValue < cursor->fieldOne_AsKey[i]) {
+                    cursor = cursor->pointer[i];
                     break;
                 }
 
-                if (idx == cursor->currentKeySize - 1) {
-                    cursor = cursor->pointer[idx + 1];
+                if (i == cursor->currentKeySize - 1) {
+                    cursor = cursor->pointer[i + 1];
                     break;
                 }
             }
@@ -120,14 +124,14 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
                 virtualNodeKey[i] = cursor->fieldOne_AsKey[i];
                 virtualNodeValue[i] = cursor->location_asValue[i];
             }
-            int i = 0, j;
-            while (Key_FieldOneValue > virtualNodeKey[i] && i < m_value) {
+            int i = 0, j = 10000;
+            while (Key_FieldOneValue > virtualNodeKey[i] && i < m_value)
                 i++;
-            }
             for (int j = m_value + 1; j > i; j--) {
-                virtualNodeKey[j] = virtualNodeKey[j - 1]; // bug here
+                virtualNodeKey[j] = virtualNodeKey[j - 1];
                 virtualNodeValue[j] = virtualNodeValue[j - 1];
             }
+
             virtualNodeKey[i] = Key_FieldOneValue;
             virtualNodeValue[i] = Value_Location;
             newLeaf->isLeaf = true;

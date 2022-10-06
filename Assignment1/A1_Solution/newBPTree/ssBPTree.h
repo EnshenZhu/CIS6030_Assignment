@@ -13,13 +13,14 @@
 
 #include <vector>
 #include <string>
+#include <array>
 #include "../DB_lib/dbComponents.h"
 
 using namespace std;
 
 class ssTreeNode {
 public:
-    int m_value = 8;
+    const static int m_value = 8;
 
     friend class ssBPTree;
 
@@ -49,9 +50,9 @@ public:
 
 class ssBPTree {
 public:
-//    ssBPTree();
+    ssBPTree();
 
-    ssTreeNode *root = NULL;
+    ssTreeNode *root;
 
     ssTreeNode *searchElm(string target);
 
