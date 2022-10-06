@@ -44,8 +44,6 @@ public:
 
     TreeNode *findChildNode(TreeNode *cursor);
 
-    void showElm(int targetValue);
-
     void searchElm(int target);
 
     void insertElm(int target);

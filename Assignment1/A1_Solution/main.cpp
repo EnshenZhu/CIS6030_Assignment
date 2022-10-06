@@ -26,7 +26,20 @@ using namespace std;
 //    cout << mybit << endl;
 //}
 
-
+//int main() {
+//    string s = "123456789_and_some_thing_more";
+//
+//    char buffer[9];  //传一个盆进去
+//
+//    convertKeyStringTo_NineUnit_Array(s, buffer);
+//
+//
+//    for (char c: buffer) {
+//        cout << c << endl;
+//    }
+//
+//    return 0;
+//}
 
 int main() {
     // config the raw input data location_asValue
@@ -110,18 +123,57 @@ int main() {
 //    allNodes.insertElm("dasfa", 2132);
 //    allNodes.insertElm("bgg", 31241);
 
-//    for (int idx = 0; idx < 3; idx++) {
+//    for (int idx = 0; idx < 20; idx++) {
 //        string superString = "s" + to_string(idx) + "s";
 //        allNodes.insertElm(superString, idx);
 //    }
-        allNodes.insertElm("ccc", 45235);
+    allNodes.insertElm("s0s", 0);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
 
-//    for (int idx = 0; idx < 30; idx++) {
-//        string superString = "s" + to_string(idx) + "s";
-//        allNodes.searchElm(superString);
-//    }
+    allNodes.insertElm("s1s", 1);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
 
-    allNodes.searchElm("s2s");
+    allNodes.insertElm("s2s", 2);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s3s", 3);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s4s", 4);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s5s", 5);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s6s", 6);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s7s", 7);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s8s", 8);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s9s", 9);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s10s", 10);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s11s", 11);
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+    allNodes.insertElm("s12s", 12);
+
+//    allNodes.showBPTree(allNodes.getTreeRoot());
+
+
+    for (int idx = 0; idx < 13; idx++) {
+        string superString = "s" + to_string(idx) + "s";
+        allNodes.searchElm(superString);
+    }
+
+//    allNodes.searchElm("s2s");
 
 
     return 0;

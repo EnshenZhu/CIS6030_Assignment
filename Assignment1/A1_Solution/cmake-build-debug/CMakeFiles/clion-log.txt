@@ -1,4 +1,4 @@
-C:\Users\winni\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.4167.35\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/winni/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4167.35/bin/ninja/win/ninja.exe -G Ninja -S "D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution" -B "D:\Guelph_Master\CIS6030 Information System\CIS6030_Assignment\Assignment1\A1_Solution\cmake-build-debug"
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/undergrad/0/enshen/workspace/assignment1 -B /home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Guelph_Master/CIS6030 Information System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug
+-- Build files have been written to: /home/undergrad/0/enshen/workspace/assignment1/cmake-build-debug

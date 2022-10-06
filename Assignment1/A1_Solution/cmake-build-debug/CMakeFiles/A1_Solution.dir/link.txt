@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/A1_Solution.dir/main.cpp.o CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.o  -o A1_Solution 

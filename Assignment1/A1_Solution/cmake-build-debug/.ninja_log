@@ -1,20 +1,8 @@
 # ninja log v5
-16	648	6867104592233593	build.ninja	f4bf13fc992888bc
-4	1260	6867050160783823	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-390	572	6867100697890314	A1_Solution.exe	ee704b4a7293fa5e
-3	390	6867100696013783	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
-8	956	6866979865894179	CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj	9fde7a91b7ff3354
-3	444	6866994186997768	CMakeFiles/A1_Solution.dir/BplusTree_lib/BplusTree.cpp.obj	6d35fed7017593eb
-10	1238	6867290368233654	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
-4	1748	6867290373380998	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-1748	2158	6867290377450750	A1_Solution.exe	ee704b4a7293fa5e
-4	482	6867290550312487	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
-483	713	6867290552586733	A1_Solution.exe	ee704b4a7293fa5e
-4	475	6867290694647524	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
-475	657	6867290696433096	A1_Solution.exe	ee704b4a7293fa5e
-2	846	6867299538277400	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-9	521	6867302904992688	CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj	aa67706e1dbc80f7
-4	956	6867302909318748	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-956	1125	6867302910990296	A1_Solution.exe	ee704b4a7293fa5e
-3	792	6867305081303875	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
-3	161	6867305349976592	A1_Solution.exe	ee704b4a7293fa5e
+16	648	6859148864496958	build.ninja	f4bf13fc992888bc
+11	1157	6857677569953982	CMakeFiles/A1_Solution.dir/dblibrary/dbComponents.cpp.obj	a6e04d5bbba21d97
+5	1141	6859142595054392	CMakeFiles/A1_Solution.dir/main.cpp.obj	cfb76580ff184b03
+1141	1418	6859142597854037	A1_Solution.exe	8ea28200e0a72fb5
+10	512	6856674580373776	CMakeFiles/A1_Solution.dir/library/dbComponents.cpp.obj	cccbcfd506712f3d
+12	719	6859142590804035	CMakeFiles/A1_Solution.dir/db_library/dbComponents.cpp.obj	4f016bca4ffac02
+18	731	6859142590824087	CMakeFiles/A1_Solution.dir/BplusTree_library/BplusTree.cpp.obj	3e6349ae41b99d78

@@ -81,11 +81,13 @@ vector<string> splitTheRecordContent_BPbackup(string input) {
 //    }
 //}
 
-char[9]
-convertKeyStringTo_nineUnit_Array(string
-input){
-    for (short idx=0;idx<input.size();idx++){
 
-    }
-    return[];
-}
+//void convertKeyStringTo_NineUnit_Array(string input, char* buffer){
+//
+//    int start = 0;
+//    int end = 9;
+//    for (int i = start; i<end; ++i){
+//        *(buffer+i) = input[i]; // 拿盆接满水
+//    }
+//    return;
+//}

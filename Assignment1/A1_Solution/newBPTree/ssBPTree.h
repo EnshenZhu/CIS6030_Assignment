@@ -24,12 +24,12 @@ public:
 
     friend class ssBPTree;
 
-    char fieldOne_Char2D_AsKey[9][m_value];
+    vector<string> fieldOne_AsKey;
     int *location_asValue;
 
     ssTreeNode();
 
-//    vector<string> fieldOne_Char2D_AsKey;
+//    vector<string> fieldOne_AsKey;
 //    vector<int> location_asValue;
 //    vector<ssTreeNode *> child;
 
@@ -53,6 +53,10 @@ public:
     ssBPTree();
 
     ssTreeNode *root;
+
+    void showBPTree(ssTreeNode*);
+
+    ssTreeNode *getTreeRoot();
 
     ssTreeNode *searchElm(string target);
 
