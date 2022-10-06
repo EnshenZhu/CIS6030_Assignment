@@ -24,12 +24,12 @@ public:
 
     friend class ssBPTree;
 
-    string *fieldOne_AsKey;
+    char fieldOne_Char2D_AsKey[9][m_value];
     int *location_asValue;
 
     ssTreeNode();
 
-//    vector<string> fieldOne_AsKey;
+//    vector<string> fieldOne_Char2D_AsKey;
 //    vector<int> location_asValue;
 //    vector<ssTreeNode *> child;
 

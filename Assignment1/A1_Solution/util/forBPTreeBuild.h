@@ -13,6 +13,9 @@
 
 using namespace std;
 
+
+const static int m_value = 8;
+
 int fieldTwoEndIdx_BPbackup(string aString) {
     short count = 3;
     for (short idx = 0; idx < aString.size(); idx++) {
@@ -77,3 +80,12 @@ vector<string> splitTheRecordContent_BPbackup(string input) {
 //        }
 //    }
 //}
+
+char[9]
+convertKeyStringTo_nineUnit_Array(string
+input){
+    for (short idx=0;idx<input.size();idx++){
+
+    }
+    return[];
+}
