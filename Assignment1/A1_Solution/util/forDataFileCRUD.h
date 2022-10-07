@@ -132,22 +132,12 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
         outfile << singleLine[singleLineIndexTracker];
         singleLineIndexTracker += 1;
 
-//        cout << "loop" << idxOfAllBlocks << endl;
-
         // Block Part 4: very long string of record contents
 
         for (int contentIdx = 0; contentIdx < thisBlock.recordContent.size(); contentIdx++) {
             singleLine[singleLineIndexTracker] = thisBlock.recordContent[contentIdx];
 
-//            if (idxOfAllBlocks == 17) {
-//                cout << "this is " << contentIdx << endl;
-//            }
-
             outfile << singleLine[singleLineIndexTracker];
-
-//            if (idxOfAllBlocks == 17) {
-//                cout << "this is " << contentIdx << endl;
-//            }
 
             singleLineIndexTracker += 1;
         }
@@ -225,7 +215,7 @@ string readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOf
     file.get(value);
     bitset<8> thisNumOfRecord_Binary(value);
     long thisNumOfRecord_Decimal = thisNumOfRecord_Binary.to_ulong();
-    cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
+//    cout << "This block has nums of record: " << thisNumOfRecord_Decimal << endl;
 
     // get the record start positions
     long full_thisStartPositionOfRecord_Decimal;
@@ -263,7 +253,6 @@ string readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOf
     file.get(value);
     bitset<8> thisBlockHeadSize_Binary(value);
     long thisBlockHeadSize_Decimal = thisBlockHeadSize_Binary.to_ulong();
-    cout << "this block has the head size of " << thisBlockHeadSize_Decimal << endl;
 
     // get the record value in string
 
@@ -276,8 +265,6 @@ string readACertainRecordInBlock(string saveRoute, int indexOfBlock, int indexOf
         rawRecordValue.push_back(value);
 //        cout << rawRecordValue[relativeIdxOfRecord];
     }
-
-    cout << endl;
 
     string inString_rawRecordValue(rawRecordValue.begin(), rawRecordValue.end());
 

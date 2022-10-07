@@ -67,53 +67,36 @@ int main() {
     // now we are going to store all blocks (with records) into the datafile
     string saveRoute = "../assets/dataFile.txt";
 
-    cout << "17 has the total size " << metaBlock[17].currentSize() << endl;
-    cout << "17 has the head size " << metaBlock[17].sizeOfHead() << endl;
-    cout << "17 has the content size " << metaBlock[17].recordContent.size() << endl;
-    writeAllFile(saveRoute, metaBlock);
-    readACertainRecordInBlock(saveRoute, 0, 0);
+//    cout << "17 has the total size " << metaBlock[17].currentSize() << endl;
+//    cout << "17 has the head size " << metaBlock[17].sizeOfHead() << endl;
+//    cout << "17 has the content size " << metaBlock[17].recordContent.size() << endl;
+//    writeAllFile(saveRoute, metaBlock);
 
     int quest_blockIdx = 0;
-    int quest_relativeRecordIdx = 0;
-    readACertainRecordInBlock(saveRoute, quest_blockIdx, quest_relativeRecordIdx);
-//     cout << metaBlock[quest_blockIdx].numsOfRecords() << endl;
+    int quest_relativeRecordIdx = 2;
+    cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[quest_relativeRecordIdx - 1] << endl;
+    cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[quest_relativeRecordIdx] << endl;
+    string astring = readACertainRecordInBlock(saveRoute, quest_blockIdx, quest_relativeRecordIdx);
+    cout << astring << endl;
     cout << endl;
 
-    // do validation printing
-//    for (int idx = 0; idx < metaBlock[quest_blockIdx].numsOfRecords(); idx++) {
-//        cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[idx] << " ";
-//    }
-//
-//    cout << endl;
-
-
-//    buildDataFileIntoBPTree(saveRoute, metaBlock);
-//     verify the amount of records
-//    int total = 0;
-//    for (int idx = 17; idx < 18; idx++) {
-//        total += metaBlock[idx].numsOfRecords();
-//    }
-//    cout << total << endl;
 
     ssBPTree allNodes;
+//    buildDataFileIntoBPTree(saveRoute, metaBlock, allNodes);
 
 
-    int global_int = 40;
+//    int global_int = 40;
+//
+//    for (int idx = 0; idx < global_int; idx++) {
+//        string superString = "s" + to_string(idx) + "s";
+//        allNodes.ramInsertElm(superString, idx);
 
-    for (int idx = 0; idx < global_int; idx++) {
-        string superString = "s" + to_string(idx) + "s";
-        allNodes.ramInsertElm(superString, idx);
-//        cout << idx << " ";
-//        allNodes.showBPTree(allNodes.getTreeRoot());
-//        cout << endl;
-    }
-
-    for (int idx = 0; idx < global_int; idx++) {
-        string superString = "s" + to_string(idx) + "s";
-        allNodes.searchElm(superString);
-    }
-
-//    allNodes.searchElm("s2s");
+//    }
+//
+//    for (int idx = 0; idx < global_int; idx++) {
+//        string superString = "s" + to_string(idx) + "s";
+//        allNodes.searchElm(superString);
+//    }
 
     return 0;
 }

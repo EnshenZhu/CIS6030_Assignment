@@ -8,6 +8,7 @@
 #endif //A1_SOLUTION_FORBPTREEBUILD_H
 
 #include "iostream"
+#include <vector>
 #include "../DB_lib/dbComponents.h"
 #include "../newBPTree/ssBPTree.h"
 
@@ -44,42 +45,44 @@ vector<string> splitTheRecordContent_BPbackup(string input) {
     return result;
 }
 
-//void buildDataFileIntoBPTree(string fileSaveRoute, vector<BlockNode> allBlock) {
-//
-//    vector<ssTreeNode> TreeNodeList;
-//
-//    int totalBlockNum = 17;
-//    int idxTrackerBlockNum = 0;
-//
-//    while (idxTrackerBlockNum < totalBlockNum) {
-//
-//        // create a new ssTreeNode
-//        TreeNodeList.push_back(ssTreeNode());
-//        ssTreeNode &NEW_ssTreeNode = TreeNodeList.back();
-//
-//        while (idxTrackerBlockNum < totalBlockNum && NEW_ssTreeNode.isFull() == false) {
-//
-//        }
-//    }
-//    for (short idxOfBlock = 0; idxOfBlock < totalBlockNum; idxOfBlock++) {
-//
-//        TreeNodeList.push_back(ssTreeNode());
-//        ssTreeNode &NEW_ssTreeNode = TreeNodeList.back();
-//
-//        for (short relativeIdxOfRecord = 0;
-//             relativeIdxOfRecord < allBlock[idxOfBlock].numsOfRecords(); relativeIdxOfRecord++) {
-//            string rawRecordStringValue = readACertainRecordInBlock(fileSaveRoute, idxOfBlock, relativeIdxOfRecord);
-//
-//            // get the split record value
-//            vector<string> recordSplitResult = splitTheRecordContent_BPbackup(rawRecordStringValue);
-//            string aFieldOne = recordSplitResult[0];
-//            string aFieldTwoAndThree = recordSplitResult[1] + recordSplitResult[2];
-//
-//            // generate a new TreeNode element in the list
-//
-//        }
-//    }
-//}
+int convertBlockRecordIdx_to_anInt(short IdxOfBlock, short relativeIdxOfRecord) {
+    return IdxOfBlock * 100 + relativeIdxOfRecord;
+}
+
+vector<int> convertAnInt_to_BlockRecordIdx(int inputInt) {
+    vector<int> result;
+    int blockIdx = floor(inputInt / 100);
+    int recordIdx = inputInt - blockIdx * 100;
+
+    result.push_back(blockIdx);
+    result.push_back(recordIdx);
+
+    return result;
+
+}
+
+void buildDataFileIntoBPTree(string fileSaveRoute, vector<BlockNode> allBlock, ssBPTree aBPTree) {
+
+    for (int idxOfBlock = 0; idxOfBlock < allBlock.size(); idxOfBlock++) {
+
+        for (int relativeIdxOfRecord = 0;
+             relativeIdxOfRecord < allBlock[idxOfBlock].numsOfRecords(); relativeIdxOfRecord++) {
+            string rawRecordStringValue = readACertainRecordInBlock(fileSaveRoute, idxOfBlock, relativeIdxOfRecord);
+
+            // get the split record value
+            vector<string> recordSplitResult = splitTheRecordContent_BPbackup(rawRecordStringValue);
+
+            string aKey_inFieldOne = recordSplitResult[0];
+            string aFieldTwoAndThree = recordSplitResult[1] + recordSplitResult[2];
+            int aValue_inLocationInt = convertBlockRecordIdx_to_anInt(idxOfBlock, relativeIdxOfRecord);
+
+            aBPTree.ramInsertElm(aKey_inFieldOne, aValue_inLocationInt);
+
+        }
+    }
+
+    cout << "The initial data has been stored into the BP Tree" << endl;
+}
 
 
 //void convertKeyStringTo_NineUnit_Array(string input, char* buffer){
