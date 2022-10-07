@@ -72,17 +72,17 @@ int main() {
 //    cout << "17 has the content size " << metaBlock[17].recordContent.size() << endl;
     writeAllFile(saveRoute, metaBlock);
 
-    int quest_blockIdx = 0;
-    int quest_relativeRecordIdx = 2;
-    cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[quest_relativeRecordIdx - 1] << endl;
-    cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[quest_relativeRecordIdx] << endl;
-    string astring = readACertainRecordInBlock(saveRoute, quest_blockIdx, quest_relativeRecordIdx);
-    cout << astring << endl;
-    cout << endl;
+//    int quest_blockIdx = 0;
+//    int quest_relativeRecordIdx = 2;
+//    cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[quest_relativeRecordIdx - 1] << endl;
+//    cout << metaBlock[quest_blockIdx].endPostionOfEachRecord[quest_relativeRecordIdx] << endl;
+//    string astring = readACertainRecordInBlock(saveRoute, quest_blockIdx, quest_relativeRecordIdx);
+//    cout << astring << endl;
+//    cout << endl;
 
 
     ssBPTree allNodes;
-    buildDataFileIntoBPTree(saveRoute, metaBlock, allNodes);
+//    buildDataFileIntoBPTree(saveRoute, metaBlock, allNodes);
 
 
 //    int global_int = 40;
