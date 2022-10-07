@@ -48,9 +48,9 @@ public:
 
     ssTreeNode *root;
 
-    void showBPTree(ssTreeNode*);
-
-    ssTreeNode *getTreeRoot();
+//    void showBPTree(ssTreeNode*);
+//
+//    ssTreeNode *getTreeRoot();
 
     ssTreeNode *searchElm(string target);
 

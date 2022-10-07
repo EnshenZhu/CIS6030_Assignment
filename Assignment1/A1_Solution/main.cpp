@@ -102,26 +102,8 @@ int main() {
 //    }
 //    cout << total << endl;
 
-// start testing the tree
-//    BplusTree allNodes;
-//    allNodes.insertElm(5);
-//    allNodes.insertElm(15);
-//    allNodes.insertElm(25);
-//    allNodes.insertElm(35);
-//    allNodes.insertElm(45);
-//    allNodes.insertElm(55);
-//    allNodes.insertElm(40);
-//    allNodes.insertElm(30);
-//    allNodes.insertElm(20);
-//allNodes.display(allNodes.getRoot());
-
     ssBPTree allNodes;
 
-//    allNodes.insertElm("aaa", 1024);
-//    allNodes.insertElm("bbb", 1200);
-//    allNodes.insertElm("czxvxc", 1431);
-//    allNodes.insertElm("dasfa", 2132);
-//    allNodes.insertElm("bgg", 31241);
 
     int global_int = 40;
 
@@ -139,7 +121,6 @@ int main() {
     }
 
 //    allNodes.searchElm("s2s");
-
 
     return 0;
 }
