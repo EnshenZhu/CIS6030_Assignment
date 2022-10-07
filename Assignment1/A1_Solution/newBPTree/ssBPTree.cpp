@@ -87,7 +87,6 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
         root->location_asValue[0] = Value_Location;
         root->isLeaf = true;
         root->currentKeySize = 1;
-//        delete root;
     } else {
         ssTreeNode *cursor = root;
         ssTreeNode *parent;
@@ -106,13 +105,13 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
             }
         }
 
-        if (!cursor->isFull()) {
+        if (cursor->currentKeySize < m_value) {
             int i = 0;
             while (Key_FieldOneValue > cursor->fieldOne_AsKey[i] && i < cursor->currentKeySize) {
                 i++;
             }
             for (int j = cursor->currentKeySize; j > i; j--) {
-                cursor->fieldOne_AsKey[j] = cursor->fieldOne_AsKey[j - i];
+                cursor->fieldOne_AsKey[j] = cursor->fieldOne_AsKey[j - 1];
                 cursor->location_asValue[j] = cursor->location_asValue[j - 1];
             }
             cursor->fieldOne_AsKey[i] = Key_FieldOneValue;
@@ -130,10 +129,11 @@ void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
                 virtualNodeKey[i] = cursor->fieldOne_AsKey[i];
                 virtualNodeValue[i] = cursor->location_asValue[i];
             }
-            int i = 0, j;
+            int i = 0;
+            int j;
             while (Key_FieldOneValue > virtualNodeKey[i] && i < m_value)
                 i++;
-            for (int j = m_value; j > i; j--) { // m_value+1 to m_value
+            for (int j = m_value + 1; j > i; j--) { // m_value+1 to m_value
                 virtualNodeKey[j] = virtualNodeKey[j - 1];
                 virtualNodeValue[j] = virtualNodeValue[j - 1];
             }

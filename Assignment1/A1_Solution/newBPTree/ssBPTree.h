@@ -29,12 +29,6 @@ public:
 
     ssTreeNode();
 
-//    vector<string> fieldOne_AsKey;
-//    vector<int> location_asValue;
-//    vector<ssTreeNode *> child;
-
-//    ssTreeNode *nextNewTreeNode;
-
     ssTreeNode **pointer;
 
     short maxKeySize();

@@ -123,52 +123,17 @@ int main() {
 //    allNodes.insertElm("dasfa", 2132);
 //    allNodes.insertElm("bgg", 31241);
 
-//    for (int idx = 0; idx < 20; idx++) {
-//        string superString = "s" + to_string(idx) + "s";
-//        allNodes.insertElm(superString, idx);
-//    }
-    allNodes.insertElm("s0s", 0);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
+    int global_int = 40;
 
-    allNodes.insertElm("s1s", 1);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
+    for (int idx = 0; idx < global_int; idx++) {
+        string superString = "s" + to_string(idx) + "s";
+        allNodes.insertElm(superString, idx);
+//        cout << idx << " ";
+//        allNodes.showBPTree(allNodes.getTreeRoot());
+//        cout << endl;
+    }
 
-    allNodes.insertElm("s2s", 2);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s3s", 3);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s4s", 4);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s5s", 5);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s6s", 6);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s7s", 7);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s8s", 8);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s9s", 9);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s10s", 10);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s11s", 11);
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-    allNodes.insertElm("s12s", 12);
-
-//    allNodes.showBPTree(allNodes.getTreeRoot());
-
-
-    for (int idx = 0; idx < 13; idx++) {
+    for (int idx = 0; idx < global_int; idx++) {
         string superString = "s" + to_string(idx) + "s";
         allNodes.searchElm(superString);
     }
