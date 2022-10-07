@@ -16,20 +16,18 @@ using namespace std;
 
 int main() {
 
-    fstream myfile;
-    myfile.open("example.txt");
-    myfile << "Writing this to a file.\n" << endl;
-    myfile.close();
-
-    fstream newFile;
-    newFile.open("example.txt");
-    char value;
-    newFile.seekg(0, ios::beg);
-    newFile.get(value);
-
-    cout << value << endl;
-
-
+//    ofstream myfile;
+//    myfile.open("example.txt");
+//    myfile << "Writing this to a file.\n" << endl;
+//    myfile.close();
+//
+//    fstream newFile;
+//    newFile.open("example.txt");
+//    char value;
+//    newFile.seekg(0, ios::beg);
+//    newFile.get(value);
+//
+//    cout << value << endl;
 
 
     // config the raw input data location_asValue
