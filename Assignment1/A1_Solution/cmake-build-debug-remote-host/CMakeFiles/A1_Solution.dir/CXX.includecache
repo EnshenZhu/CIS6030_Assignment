@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h
-iostream
--
-climits
--
-fstream
--
-sstream
--
-
 /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
 vector
 -
@@ -41,8 +31,6 @@ util/forDataFileCRUD.h
 /home/undergrad/0/enshen/workspace/assignment1/util/forDataFileCRUD.h
 DB_lib/dbComponents.h
 /home/undergrad/0/enshen/workspace/assignment1/DB_lib/dbComponents.h
-BplusTree_lib/BplusTree.h
-/home/undergrad/0/enshen/workspace/assignment1/BplusTree_lib/BplusTree.h
 util/forBPTreeBuild.h
 /home/undergrad/0/enshen/workspace/assignment1/util/forBPTreeBuild.h
 
@@ -76,6 +64,8 @@ iostream
 iostream
 -
 fstream
+-
+ostream
 -
 cstdlib
 -

@@ -54,7 +54,9 @@ public:
 
     ssTreeNode *searchElm(string target);
 
-    void insertElm(string, int);
+    void ramInsertElm(string Key_FieldOneValue, int Value_Location);
+
+    void outsourceInsertElm(string key, string str_f2f3);
 
     void insertInternalNode(string Key_FieldOneValue, ssTreeNode *cursor, ssTreeNode *child);
 

@@ -80,7 +80,7 @@ ssTreeNode *ssBPTree::searchElm(string targetKey) {
 }
 
 // recall that Value_Location is the idxBlock*100+r_idxRecord
-void ssBPTree::insertElm(string Key_FieldOneValue, int Value_Location) {
+void ssBPTree::ramInsertElm(string Key_FieldOneValue, int Value_Location) {
     if (root == NULL) {
         root = new ssTreeNode;
         root->fieldOne_AsKey[0] = Key_FieldOneValue;

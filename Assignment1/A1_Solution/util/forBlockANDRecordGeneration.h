@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <ostream>
 #include <cstdlib>
 #include <algorithm>  // implement sorting
 #include <typeinfo>
@@ -69,7 +70,8 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
 //                0); // a new block will place the record started from the index=0 in the recordContent
 
         while ((indexOfRecord < numsOfRecords) &&
-               (newBlockNode.currentSize() + allRecords[indexOfRecord].getRecordSize() <=
+               (newBlockNode.currentSize() + newBlockNode.singleJumperSize +
+                allRecords[indexOfRecord].getRecordSize() <=
                 newBlockNode.maxCapacity)) {  // we add another indexOfRecord <= numsOfRecords to prevent the over leak at the last block
 
             string contentOfCurrentRecord = allRecords[indexOfRecord].field1 + allRecords[indexOfRecord].field2 +
@@ -92,10 +94,14 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
             indexOfRecord++; // move to the next record
         }
 
-//        cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
-//        cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentKeySize() << endl;
-//        cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.endPostionOfEachRecord[1])
-//             << endl;
+        if (indexOfBlockNode == 17) {
+
+            cout << "Block " << indexOfBlockNode << " has max size " << newBlockNode.maxCapacity << endl;
+            cout << "Block " << indexOfBlockNode << " has " << newBlockNode.numsOfRecords() << " records " << endl;
+            cout << "Block " << indexOfBlockNode << " has the size of " << newBlockNode.currentSize() << endl;
+            cout << "Block " << indexOfBlockNode << " has the list " << int(newBlockNode.endPostionOfEachRecord[1])
+                 << endl;
+        }
 
         indexOfBlockNode++; // move to the next node
 
@@ -120,6 +126,5 @@ int calculateRealBlockSize(vector<BlockNode> allBlock) {
     for (short idx = 0; idx < allBlock.size(); idx++) {
         realSize += allBlock[idx].currentSize();
     }
-
     return realSize;
 }

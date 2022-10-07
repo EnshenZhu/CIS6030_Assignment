@@ -28,6 +28,7 @@ class BlockNode {
 public:
     short static const maxCapacity = 1024;
     short static const miscSize = 2; // default miscellaneous size of a block (=char(numsOfRecord)+char(sizeOfHead))
+    short static const singleJumperSize = 2;
     short currentSize();
 
     BlockNode *previousBlockNode = nullptr; // specify the previous pointer for the next block node

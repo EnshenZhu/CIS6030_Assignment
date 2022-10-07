@@ -65,7 +65,6 @@ void writeOneLineFile(string saveRoute, vector<BlockNode> allBlocks) {
         singleLineIndexTracker += 2;
     }
 
-
     // Block Part 3: size of the block head
     unsigned short thisSizeOfHead = allBlocks[0].sizeOfHead();
     singleLine[singleLineIndexTracker] = thisNumOfRecord;
@@ -86,12 +85,17 @@ void writeOneLineFile(string saveRoute, vector<BlockNode> allBlocks) {
     outfile.close();
 };
 
-void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
+void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 
     // open the file in the write mode
     ofstream outfile(saveRoute);
 
-    for (short idxOfAllBlocks = 0; idxOfAllBlocks < 17; idxOfAllBlocks++) {
+    if (!outfile.is_open()) {
+        cout << "Error on file writing to the data File!" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    for (short idxOfAllBlocks = 0; idxOfAllBlocks < allBlocks.size(); idxOfAllBlocks++) {
 
 
         BlockNode thisBlock = allBlocks[idxOfAllBlocks];
@@ -150,9 +154,14 @@ void writAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 
 //        cout << "loop" << idxOfAllBlocks << endl;
 
-        for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
+        while (singleLineIndexTracker < 1024) {
             outfile << 0;
+            singleLineIndexTracker++;
         }
+
+//        for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
+//            outfile << 0;
+//        }
     }
 
     outfile.close();
