@@ -70,7 +70,7 @@ int main() {
 //    cout << "17 has the total size " << metaBlock[17].currentSize() << endl;
 //    cout << "17 has the head size " << metaBlock[17].sizeOfHead() << endl;
 //    cout << "17 has the content size " << metaBlock[17].recordContent.size() << endl;
-//    writeAllFile(saveRoute, metaBlock);
+    writeAllFile(saveRoute, metaBlock);
 
     int quest_blockIdx = 0;
     int quest_relativeRecordIdx = 2;
@@ -82,7 +82,7 @@ int main() {
 
 
     ssBPTree allNodes;
-//    buildDataFileIntoBPTree(saveRoute, metaBlock, allNodes);
+    buildDataFileIntoBPTree(saveRoute, metaBlock, allNodes);
 
 
 //    int global_int = 40;

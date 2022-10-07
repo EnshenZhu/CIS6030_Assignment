@@ -37,6 +37,11 @@ bitset<Num1 + Num2> concat(const bitset<Num1> &b1, const bitset<Num2> &b2) {
 void writeOneLineFile(string saveRoute, vector<BlockNode> allBlocks) {
     char singleLine[1024];
 
+    for(short initialIdx=0;initialIdx<1024;initialIdx++){
+        char sss='\0';
+        singleLine[initialIdx]=sss;
+    }
+
     // open the file in the write mode
     ofstream outfile(saveRoute);
 
@@ -144,10 +149,10 @@ void writeAllFile(string saveRoute, vector<BlockNode> allBlocks) {
 
 //        cout << "loop" << idxOfAllBlocks << endl;
 
-        while (singleLineIndexTracker < 1024) {
-            outfile << 0;
-            singleLineIndexTracker++;
-        }
+//        while (singleLineIndexTracker < 1024) {
+//            outfile << 0;
+//            singleLineIndexTracker++;
+//        }
 
 //        for (int restPart = singleLineIndexTracker; restPart < 1024; restPart++) {
 //            outfile << 0;
