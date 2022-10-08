@@ -133,7 +133,7 @@ void ssBPTree::ramInsertElm(string Key_FieldOneValue, int Value_Location) {
             int jdx;
             while (Key_FieldOneValue > virtualNodeKey[idx] && idx < m_value)
                 idx++;
-            for (int jdx = m_value + 1; jdx > idx; jdx--) { // m_value+1 to m_value
+            for (int jdx = m_value; jdx > idx; jdx--) { // m_value+1 to m_value
                 virtualNodeKey[jdx] = virtualNodeKey[jdx - 1];
                 virtualNodeValue[jdx] = virtualNodeValue[jdx - 1];
             }
@@ -192,8 +192,8 @@ void ssBPTree::insertInternalNode(string Key_FieldOneValue, ssTreeNode *cursor, 
         cursor->pointer[idx + 1] = child;
     } else {
         ssTreeNode *newInternalNode = new ssTreeNode;
-        ssTreeNode *virtualNodePointer[m_value + 2];
         string virtualNodeKey[m_value + 1];
+        ssTreeNode *virtualNodePointer[m_value + 2];
 
         for (int idx = 0; idx < m_value; idx++) {
             virtualNodeKey[idx] = cursor->fieldOne_AsKey[idx];
@@ -208,12 +208,12 @@ void ssBPTree::insertInternalNode(string Key_FieldOneValue, ssTreeNode *cursor, 
             idx++;
         }
 
-        for (int jdx = m_value + 1; jdx > idx; jdx--) {
-            virtualNodePointer[jdx] = virtualNodePointer[jdx - 1];
+        for (int jdx = m_value; jdx > idx; jdx--) { // m_value+1 to m_value
+            virtualNodeKey[jdx] = virtualNodeKey[jdx - 1];
         }
 
-        virtualNodeKey[idx] = Key_FieldOneValue;
-        for (int jdx = m_value + 2; jdx > idx + 1; jdx--) {
+        virtualNodeKey[idx] = Key_FieldOneValue; // m_value+2 to m_value+1
+        for (int jdx = m_value + 1; jdx > idx + 1; jdx--) {
             virtualNodePointer[jdx] = virtualNodePointer[jdx - 1];
         }
 
@@ -261,23 +261,3 @@ ssTreeNode *ssBPTree::findParentNode(ssTreeNode *cursor, ssTreeNode *child) {
         }
     }
 }
-
-//// Show the tree
-//void ssBPTree::showBPTree(ssTreeNode *cursor) {
-//    if (cursor != NULL) {
-//        for (int idx = 0; idx < cursor->currentKeySize; idx++) {
-//            cout << cursor->fieldOne_AsKey[idx] << " ";
-//        }
-//        cout << "\n";
-//        if (cursor->isLeaf != true) {
-//            for (int idx = 0; idx < cursor->currentKeySize + 1; idx++) {
-//                showBPTree(cursor->pointer[idx]);
-//            }
-//        }
-//    }
-//}
-//
-//// Get the root
-//ssTreeNode *ssBPTree::getTreeRoot() {
-//    return root;
-//}

@@ -85,6 +85,24 @@ void buildDataFileIntoBPTree(string fileSaveRoute, vector<BlockNode> allBlock, s
     cout << "The initial data has been stored into the BP Tree" << endl;
 }
 
+void basic_buildDataFileIntoBPTree(vector<BlockNode> allBlock, ssBPTree aBPTree) {
+
+    for (int idxOfBlock = 0; idxOfBlock < allBlock.size(); idxOfBlock++) {
+
+        for (int relativeIdxOfRecord = 0;
+             relativeIdxOfRecord < allBlock[idxOfBlock].numsOfRecords(); relativeIdxOfRecord++) {
+
+            string aKey_inFieldOne = allBlock[idxOfBlock].innerRecordList[relativeIdxOfRecord].field1;
+            string aFieldTwoAndThree = allBlock[idxOfBlock].innerRecordList[relativeIdxOfRecord].field2+allBlock[idxOfBlock].innerRecordList[relativeIdxOfRecord].field3;
+            int aValue_inLocationInt = convertBlockRecordIdx_to_anInt(idxOfBlock, relativeIdxOfRecord);
+
+            aBPTree.ramInsertElm(aKey_inFieldOne, aValue_inLocationInt);
+
+        }
+    }
+    cout << "The initial data has been stored into the BP Tree" << endl;
+}
+
 
 //void convertKeyStringTo_NineUnit_Array(string input, char* buffer){
 //

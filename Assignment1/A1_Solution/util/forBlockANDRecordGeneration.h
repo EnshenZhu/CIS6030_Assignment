@@ -74,6 +74,7 @@ vector<BlockNode> storeRecordToBlocks(int numsOfRecords, vector<Record> allRecor
                 allRecords[indexOfRecord].getRecordSize() <=
                 newBlockNode.maxCapacity)) {  // we add another indexOfRecord <= numsOfRecords to prevent the over leak at the last block
 
+            newBlockNode.innerRecordList.push_back(allRecords[indexOfRecord]);
             string contentOfCurrentRecord = allRecords[indexOfRecord].field1 + allRecords[indexOfRecord].field2 +
                                             allRecords[indexOfRecord].field3;
             newBlockNode.recordContent.append(contentOfCurrentRecord); // add a new record to the block
