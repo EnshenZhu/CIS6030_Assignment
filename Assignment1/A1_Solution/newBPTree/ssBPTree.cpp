@@ -48,13 +48,21 @@ bool ssTreeNode::isFull() {
 }
 
 ssTreeNode *ssBPTree::searchElm(string targetKey) {
+
+    cout << "we are searching: " << targetKey << endl;
+
     if (root == NULL) {
         cout << "The tree does not exist" << endl;
     } else {
         ssTreeNode *cursor = root; // start search from the root
 
+        cout << "we start at the root " << *root->fieldOne_AsKey << endl;
+        int round = 0;
         while (cursor->isLeaf == false) {
+
+
             for (int idx = 0; idx < cursor->currentKeySize; idx++) {
+
                 if (targetKey < cursor->fieldOne_AsKey[idx]) {
                     cursor = cursor->pointer[idx];
                     break;
@@ -65,16 +73,21 @@ ssTreeNode *ssBPTree::searchElm(string targetKey) {
                     break;
                 }
             }
+            cout << "round " << round << ": visit the key " << *cursor->fieldOne_AsKey << endl;
+            round++;
         }
 
         for (int idx = 0; idx < cursor->currentKeySize; idx++) {
             if (cursor->fieldOne_AsKey[idx] == targetKey) {
                 cout << targetKey << " is found at " << cursor->location_asValue[idx] << endl;
+                cout << endl;
+
                 return cursor;
             }
         }
 
         cout << targetKey << " cannot be found inside the tree" << endl;
+        cout << endl;
 
     }
 }
@@ -178,12 +191,14 @@ void ssBPTree::insertInternalNode(string Key_FieldOneValue, ssTreeNode *cursor, 
         }
 
         // manipulate keys
-        for (int jdx = cursor->currentKeySize; jdx > idx; jdx--) {
+        for (int jdx = cursor->currentKeySize;
+             jdx > idx; jdx--) { // cursor->currentKeySize to cursor->currentKeySize-1
             cursor->fieldOne_AsKey[jdx] = cursor->fieldOne_AsKey[jdx - 1];
         }
 
         // manipulate pointers
-        for (int jdx = cursor->currentKeySize + 1; jdx > idx; jdx--) {
+        for (int jdx = cursor->currentKeySize + 1;
+             jdx > idx; jdx--) { // cursor->currentKeySize + 1 to cursor->currentKeySize
             cursor->pointer[jdx] = cursor->pointer[jdx - 1];
         }
 

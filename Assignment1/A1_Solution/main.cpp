@@ -63,6 +63,7 @@ int main() {
 
     cout << "The space usage rate is "
          << ((realAllBlockSize + 0.0) / sizeOfAllBlock) * 100 << "%" << endl;
+    cout << endl;
 
     // now we are going to store all blocks (with records) into the datafile
     string saveRoute = "../assets/dataFile.txt";
@@ -83,15 +84,15 @@ int main() {
     ssBPTree allNodes;
 //    basic_buildDataFileIntoBPTree(metaBlock, allNodes);
 
-    for (int idx = 0; idx < 500; idx++) {
+    for (int idx = 0; idx < 200; idx++) {
         string key = "s" + to_string(idx);
         allNodes.ramInsertElm(key, idx);
     }
 
-    for (int idx = 0; idx < 500; idx++) {
-        string key = "s" + to_string(idx);
-        allNodes.searchElm(key);
-    }
+
+    allNodes.searchElm("s70");
+    allNodes.searchElm("s25");
+    allNodes.searchElm("s60");
 
 
     return 0;
