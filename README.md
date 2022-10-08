@@ -16,7 +16,7 @@ B+ Tree is supposed to support valid search, create and delete.
 
 ### How to execute
 
-1. unzipped the downloaded folder in a CoSC directory.
+1. unzipped the downloaded folder in a CoCS directory.
 2. build up the directory by typing ```mkdir build```.
 3. cd to the new build directory by tying ```cd build```
 4. create the cmake source file by entering ```cmake ..```
