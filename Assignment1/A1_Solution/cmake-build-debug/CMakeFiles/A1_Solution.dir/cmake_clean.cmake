@@ -1,14 +1,9 @@
 file(REMOVE_RECURSE
-  "A1_Solution.exe"
-  "A1_Solution.exe.manifest"
+  "CMakeFiles/A1_Solution.dir/main.cpp.o"
+  "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.o"
+  "CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.o"
   "A1_Solution.pdb"
-  "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj"
-  "CMakeFiles/A1_Solution.dir/DB_lib/dbComponents.cpp.obj.d"
-  "CMakeFiles/A1_Solution.dir/main.cpp.obj"
-  "CMakeFiles/A1_Solution.dir/main.cpp.obj.d"
-  "CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj"
-  "CMakeFiles/A1_Solution.dir/newBPTree/ssBPTree.cpp.obj.d"
-  "libA1_Solution.dll.a"
+  "A1_Solution"
 )
 
 # Per-language clean rules from dependency scanning.
