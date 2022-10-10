@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution/cmake-build-debug",
-		"source" : "E:/GuelphMaster/CIS6030_Information_System/CIS6030_Assignment/Assignment1/A1_Solution"
+		"build" : "D:/Guelph_Master/CIS6030/Assignment/CIS6030_Assignment_1/A1_Solution/cmake-build-debug",
+		"source" : "D:/Guelph_Master/CIS6030/Assignment/CIS6030_Assignment_1/A1_Solution"
 	},
 	"version" : 
 	{
