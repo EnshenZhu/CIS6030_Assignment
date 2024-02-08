@@ -1,0 +1,3 @@
+C:\Users\1\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\A1_Solution.dir/objects.a
+C:\Users\1\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\A1_Solution.dir/objects.a @CMakeFiles\A1_Solution.dir\objects1.rsp
+C:\Users\1\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\A1_Solution.dir/objects.a -Wl,--no-whole-archive -o A1_Solution.exe -Wl,--out-implib,libA1_Solution.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\A1_Solution.dir\linkLibs.rsp
